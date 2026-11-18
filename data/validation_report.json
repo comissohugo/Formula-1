@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T10:58:10+00:00",
+  "generated_at": "2026-11-18T23:57:49+00:00",
   "db_path": "C:\\Users\\Usuario\\Documents\\f1-data-center\\data\\f1.db",
   "ok": true,
   "checks": [
@@ -968,11 +968,11 @@
       "id": "complementary_conflicts",
       "title": "Dados complementares coincidem com a fonte primária",
       "ok": true,
-      "detail": "0 conflito(s) em 96 registro(s) complementares.",
+      "detail": "0 conflito(s) em 67 registro(s) complementares.",
       "data": {
         "pole_conflicts": 0,
         "fastest_lap_conflicts": 0,
-        "complementary_rows": 96
+        "complementary_rows": 67
       }
     },
     {

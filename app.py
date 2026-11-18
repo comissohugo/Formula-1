@@ -245,10 +245,23 @@ with st.sidebar:
     st.divider()
     st.subheader("Estado da base")
     runs = frames["import_runs"]
-    last_run = runs.sort_values("id").iloc[-1] if not runs.empty else None
-    if last_run is not None:
-        st.caption(f"Última importação: {last_run['finished_at'] or last_run['started_at']}")
-        st.caption(f"Status: {last_run['status']}")
+    if not runs.empty:
+        ordered = runs.sort_values("id")
+        finished = ordered[ordered["finished_at"].notna()]
+        # ignora runs que ficaram sem data de fim (container reiniciado no meio)
+        last_run = finished.iloc[-1] if not finished.empty else ordered.iloc[-1]
+        status_labels = {
+            "ok": "concluída",
+            "running": "em andamento",
+            "interrupted": "interrompida",
+            "error": "com erro",
+            "failed": "com erro",
+        }
+        when = last_run["finished_at"] or last_run["started_at"]
+        st.caption(f"Última importação: {when}")
+        st.caption(
+            f"Status: {status_labels.get(last_run['status'], last_run['status'])}"
+        )
     st.caption(
         f"GPs no banco: {len(frames['races'])} / {expected_total_for_loaded_seasons()}"
     )
