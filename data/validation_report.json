@@ -1,0 +1,1274 @@
+{
+  "generated_at": "2026-11-11T10:58:10+00:00",
+  "db_path": "C:\\Users\\Usuario\\Documents\\f1-data-center\\data\\f1.db",
+  "ok": true,
+  "checks": [
+    {
+      "id": "seasons",
+      "title": "Temporadas 2000-2026 importadas com a contagem de GPs esperada",
+      "ok": true,
+      "detail": "27 temporadas, 523 GPs no total (esperado 523). Ausentes: nenhuma. Divergentes: nenhuma. Em andamento: 2026: 20 de 23 GPs concluídos.",
+      "data": {
+        "found": {
+          "2000": 17,
+          "2001": 17,
+          "2002": 17,
+          "2003": 16,
+          "2004": 18,
+          "2005": 19,
+          "2006": 18,
+          "2007": 17,
+          "2008": 18,
+          "2009": 17,
+          "2010": 19,
+          "2011": 19,
+          "2012": 20,
+          "2013": 19,
+          "2014": 19,
+          "2015": 19,
+          "2016": 21,
+          "2017": 20,
+          "2018": 21,
+          "2019": 21,
+          "2020": 17,
+          "2021": 22,
+          "2022": 22,
+          "2023": 22,
+          "2024": 24,
+          "2025": 24,
+          "2026": 20
+        },
+        "total_races": 523,
+        "in_progress": {
+          "2026": 20
+        }
+      }
+    },
+    {
+      "id": "races_without_results",
+      "title": "Todos os GPs possuem resultado de corrida",
+      "ok": true,
+      "detail": "Nenhum GP sem resultado.",
+      "data": []
+    },
+    {
+      "id": "races_without_qualifying",
+      "title": "Cobertura de classificação completa (qualifying) — informativo",
+      "ok": true,
+      "detail": "Nenhum GP sem classificação.",
+      "data": []
+    },
+    {
+      "id": "quali_without_race_result",
+      "title": "Classificados que não constam no resultado da corrida (DNS/fonte)",
+      "ok": true,
+      "detail": "5 caso(s). A fonte simplesmente não retorna o piloto no resultado; nenhuma posição é inventada.",
+      "data": [
+        {
+          "season": 2011,
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "karthikeyan",
+          "full_name": "Narain Karthikeyan"
+        },
+        {
+          "season": 2011,
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "liuzzi",
+          "full_name": "Vitantonio Liuzzi"
+        },
+        {
+          "season": 2012,
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "karthikeyan",
+          "full_name": "Narain Karthikeyan"
+        },
+        {
+          "season": 2012,
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "rosa",
+          "full_name": "Pedro de la Rosa"
+        },
+        {
+          "season": 2025,
+          "round": 9,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "stroll",
+          "full_name": "Lance Stroll"
+        }
+      ]
+    },
+    {
+      "id": "race_without_quali",
+      "title": "Pilotos no resultado sem linha na classificação (fonte)",
+      "ok": true,
+      "detail": "34 caso(s). Ausência real na classificação da fonte, mantida como ausente.",
+      "data": [
+        {
+          "season": 2001,
+          "round": 2,
+          "race_name": "Malaysian Grand Prix",
+          "driver_id": "bernoldi",
+          "full_name": "Enrique Bernoldi",
+          "status": "Spun off"
+        },
+        {
+          "season": 2001,
+          "round": 8,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "alonso",
+          "full_name": "Fernando Alonso",
+          "status": "Transmission"
+        },
+        {
+          "season": 2002,
+          "round": 5,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "irvine",
+          "full_name": "Eddie Irvine",
+          "status": "Hydraulics"
+        },
+        {
+          "season": 2002,
+          "round": 11,
+          "race_name": "French Grand Prix",
+          "driver_id": "fisichella",
+          "full_name": "Giancarlo Fisichella",
+          "status": "Injury"
+        },
+        {
+          "season": 2011,
+          "round": 4,
+          "race_name": "Turkish Grand Prix",
+          "driver_id": "kobayashi",
+          "full_name": "Kamui Kobayashi",
+          "status": "Finished"
+        },
+        {
+          "season": 2011,
+          "round": 5,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "heidfeld",
+          "full_name": "Nick Heidfeld",
+          "status": "+1 Lap"
+        },
+        {
+          "season": 2011,
+          "round": 12,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "michael_schumacher",
+          "full_name": "Michael Schumacher",
+          "status": "Finished"
+        },
+        {
+          "season": 2011,
+          "round": 18,
+          "race_name": "Abu Dhabi Grand Prix",
+          "driver_id": "barrichello",
+          "full_name": "Rubens Barrichello",
+          "status": "+1 Lap"
+        },
+        {
+          "season": 2012,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "perez",
+          "full_name": "Sergio Pérez",
+          "status": "+1 Lap"
+        },
+        {
+          "season": 2012,
+          "round": 8,
+          "race_name": "European Grand Prix",
+          "driver_id": "glock",
+          "full_name": "Timo Glock",
+          "status": "Withdrew"
+        },
+        {
+          "season": 2012,
+          "round": 13,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "hulkenberg",
+          "full_name": "Nico Hülkenberg",
+          "status": "Brakes"
+        },
+        {
+          "season": 2012,
+          "round": 16,
+          "race_name": "Korean Grand Prix",
+          "driver_id": "karthikeyan",
+          "full_name": "Narain Karthikeyan",
+          "status": "+2 Laps"
+        },
+        {
+          "season": 2014,
+          "round": 19,
+          "race_name": "Abu Dhabi Grand Prix",
+          "driver_id": "ricciardo",
+          "full_name": "Daniel Ricciardo",
+          "status": "Finished"
+        },
+        {
+          "season": 2014,
+          "round": 19,
+          "race_name": "Abu Dhabi Grand Prix",
+          "driver_id": "vettel",
+          "full_name": "Sebastian Vettel",
+          "status": "Finished"
+        },
+        {
+          "season": 2015,
+          "round": 2,
+          "race_name": "Malaysian Grand Prix",
+          "driver_id": "stevens",
+          "full_name": "Will Stevens",
+          "status": "Fuel system"
+        },
+        {
+          "season": 2015,
+          "round": 4,
+          "race_name": "Bahrain Grand Prix",
+          "driver_id": "button",
+          "full_name": "Jenson Button",
+          "status": "ERS"
+        },
+        {
+          "season": 2015,
+          "round": 7,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "button",
+          "full_name": "Jenson Button",
+          "status": "Retired"
+        },
+        {
+          "season": 2015,
+          "round": 15,
+          "race_name": "Russian Grand Prix",
+          "driver_id": "sainz",
+          "full_name": "Carlos Sainz",
+          "status": "Brakes"
+        },
+        {
+          "season": 2016,
+          "round": 7,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "kevin_magnussen",
+          "full_name": "Kevin Magnussen",
+          "status": "+2 Laps"
+        },
+        {
+          "season": 2016,
+          "round": 10,
+          "race_name": "British Grand Prix",
+          "driver_id": "ericsson",
+          "full_name": "Marcus Ericsson",
+          "status": "Power Unit"
+        },
+        {
+          "season": 2016,
+          "round": 13,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "alonso",
+          "full_name": "Fernando Alonso",
+          "status": "Finished"
+        },
+        {
+          "season": 2016,
+          "round": 14,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "ocon",
+          "full_name": "Esteban Ocon",
+          "status": "+2 Laps"
+        },
+        {
+          "season": 2016,
+          "round": 19,
+          "race_name": "Mexican Grand Prix",
+          "driver_id": "jolyon_palmer",
+          "full_name": "Jolyon Palmer",
+          "status": "+1 Lap"
+        },
+        {
+          "season": 2017,
+          "round": 8,
+          "race_name": "Azerbaijan Grand Prix",
+          "driver_id": "jolyon_palmer",
+          "full_name": "Jolyon Palmer",
+          "status": "Power Unit"
+        },
+        {
+          "season": 2017,
+          "round": 18,
+          "race_name": "Mexican Grand Prix",
+          "driver_id": "gasly",
+          "full_name": "Pierre Gasly",
+          "status": "+1 Lap"
+        },
+        {
+          "season": 2019,
+          "round": 3,
+          "race_name": "Chinese Grand Prix",
+          "driver_id": "albon",
+          "full_name": "Alexander Albon",
+          "status": "+1 Lap"
+        },
+        {
+          "season": 2019,
+          "round": 3,
+          "race_name": "Chinese Grand Prix",
+          "driver_id": "giovinazzi",
+          "full_name": "Antonio Giovinazzi",
+          "status": "+1 Lap"
+        },
+        {
+          "season": 2021,
+          "round": 5,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "mick_schumacher",
+          "full_name": "Mick Schumacher",
+          "status": "+3 Laps"
+        },
+        {
+          "season": 2025,
+          "round": 21,
+          "race_name": "São Paulo Grand Prix",
+          "driver_id": "bortoleto",
+          "full_name": "Gabriel Bortoleto",
+          "status": "Retired"
+        },
+        {
+          "season": 2026,
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "max_verstappen",
+          "full_name": "Max Verstappen",
+          "status": "Finished"
+        },
+        {
+          "season": 2026,
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "sainz",
+          "full_name": "Carlos Sainz",
+          "status": "Lapped"
+        },
+        {
+          "season": 2026,
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "stroll",
+          "full_name": "Lance Stroll",
+          "status": "Lapped"
+        },
+        {
+          "season": 2026,
+          "round": 14,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "bearman",
+          "full_name": "Oliver Bearman",
+          "status": "Lapped"
+        },
+        {
+          "season": 2026,
+          "round": 14,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "stroll",
+          "full_name": "Lance Stroll",
+          "status": "Retired"
+        }
+      ]
+    },
+    {
+      "id": "qualifying_row_counts",
+      "title": "Contagem de pilotos na classificação por GP (informativo)",
+      "ok": true,
+      "detail": "32 GP(s) com contagem de classificação diferente da contagem de resultado. Pode ser ausência real na fonte.",
+      "data": [
+        {
+          "season": 2001,
+          "round": 2,
+          "race_name": "Malaysian Grand Prix",
+          "results": 22,
+          "quali": 21
+        },
+        {
+          "season": 2001,
+          "round": 8,
+          "race_name": "Canadian Grand Prix",
+          "results": 22,
+          "quali": 21
+        },
+        {
+          "season": 2002,
+          "round": 5,
+          "race_name": "Spanish Grand Prix",
+          "results": 22,
+          "quali": 21
+        },
+        {
+          "season": 2002,
+          "round": 11,
+          "race_name": "French Grand Prix",
+          "results": 20,
+          "quali": 19
+        },
+        {
+          "season": 2011,
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "results": 22,
+          "quali": 24
+        },
+        {
+          "season": 2011,
+          "round": 4,
+          "race_name": "Turkish Grand Prix",
+          "results": 24,
+          "quali": 23
+        },
+        {
+          "season": 2011,
+          "round": 5,
+          "race_name": "Spanish Grand Prix",
+          "results": 24,
+          "quali": 23
+        },
+        {
+          "season": 2011,
+          "round": 12,
+          "race_name": "Belgian Grand Prix",
+          "results": 24,
+          "quali": 23
+        },
+        {
+          "season": 2011,
+          "round": 18,
+          "race_name": "Abu Dhabi Grand Prix",
+          "results": 24,
+          "quali": 23
+        },
+        {
+          "season": 2012,
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "results": 22,
+          "quali": 24
+        },
+        {
+          "season": 2012,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "results": 24,
+          "quali": 23
+        },
+        {
+          "season": 2012,
+          "round": 8,
+          "race_name": "European Grand Prix",
+          "results": 24,
+          "quali": 23
+        },
+        {
+          "season": 2012,
+          "round": 13,
+          "race_name": "Italian Grand Prix",
+          "results": 24,
+          "quali": 23
+        },
+        {
+          "season": 2012,
+          "round": 16,
+          "race_name": "Korean Grand Prix",
+          "results": 24,
+          "quali": 23
+        },
+        {
+          "season": 2014,
+          "round": 19,
+          "race_name": "Abu Dhabi Grand Prix",
+          "results": 20,
+          "quali": 18
+        },
+        {
+          "season": 2015,
+          "round": 2,
+          "race_name": "Malaysian Grand Prix",
+          "results": 20,
+          "quali": 19
+        },
+        {
+          "season": 2015,
+          "round": 4,
+          "race_name": "Bahrain Grand Prix",
+          "results": 20,
+          "quali": 19
+        },
+        {
+          "season": 2015,
+          "round": 7,
+          "race_name": "Canadian Grand Prix",
+          "results": 20,
+          "quali": 19
+        },
+        {
+          "season": 2015,
+          "round": 15,
+          "race_name": "Russian Grand Prix",
+          "results": 20,
+          "quali": 19
+        },
+        {
+          "season": 2016,
+          "round": 7,
+          "race_name": "Canadian Grand Prix",
+          "results": 22,
+          "quali": 21
+        },
+        {
+          "season": 2016,
+          "round": 10,
+          "race_name": "British Grand Prix",
+          "results": 22,
+          "quali": 21
+        },
+        {
+          "season": 2016,
+          "round": 13,
+          "race_name": "Belgian Grand Prix",
+          "results": 22,
+          "quali": 21
+        },
+        {
+          "season": 2016,
+          "round": 14,
+          "race_name": "Italian Grand Prix",
+          "results": 22,
+          "quali": 21
+        },
+        {
+          "season": 2016,
+          "round": 19,
+          "race_name": "Mexican Grand Prix",
+          "results": 22,
+          "quali": 21
+        },
+        {
+          "season": 2017,
+          "round": 8,
+          "race_name": "Azerbaijan Grand Prix",
+          "results": 20,
+          "quali": 19
+        },
+        {
+          "season": 2017,
+          "round": 18,
+          "race_name": "Mexican Grand Prix",
+          "results": 20,
+          "quali": 19
+        },
+        {
+          "season": 2019,
+          "round": 3,
+          "race_name": "Chinese Grand Prix",
+          "results": 20,
+          "quali": 18
+        },
+        {
+          "season": 2021,
+          "round": 5,
+          "race_name": "Monaco Grand Prix",
+          "results": 20,
+          "quali": 19
+        },
+        {
+          "season": 2025,
+          "round": 9,
+          "race_name": "Spanish Grand Prix",
+          "results": 19,
+          "quali": 20
+        },
+        {
+          "season": 2025,
+          "round": 21,
+          "race_name": "São Paulo Grand Prix",
+          "results": 20,
+          "quali": 19
+        },
+        {
+          "season": 2026,
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "results": 22,
+          "quali": 19
+        },
+        {
+          "season": 2026,
+          "round": 14,
+          "race_name": "Spanish Grand Prix",
+          "results": 22,
+          "quali": 20
+        }
+      ]
+    },
+    {
+      "id": "sprints",
+      "title": "Sprints separadas e completas (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 6, 6, 6 + em andamento)",
+      "ok": true,
+      "detail": "Sprints importadas por temporada: {2000: 0, 2001: 0, 2002: 0, 2003: 0, 2004: 0, 2005: 0, 2006: 0, 2007: 0, 2008: 0, 2009: 0, 2010: 0, 2011: 0, 2012: 0, 2013: 0, 2014: 0, 2015: 0, 2016: 0, 2017: 0, 2018: 0, 2019: 0, 2020: 0, 2021: 3, 2022: 3, 2023: 6, 2024: 6, 2025: 6, 2026: 6}.",
+      "data": {
+        "counts": {
+          "2000": 0,
+          "2001": 0,
+          "2002": 0,
+          "2003": 0,
+          "2004": 0,
+          "2005": 0,
+          "2006": 0,
+          "2007": 0,
+          "2008": 0,
+          "2009": 0,
+          "2010": 0,
+          "2011": 0,
+          "2012": 0,
+          "2013": 0,
+          "2014": 0,
+          "2015": 0,
+          "2016": 0,
+          "2017": 0,
+          "2018": 0,
+          "2019": 0,
+          "2020": 0,
+          "2021": 3,
+          "2022": 3,
+          "2023": 6,
+          "2024": 6,
+          "2025": 6,
+          "2026": 6
+        }
+      }
+    },
+    {
+      "id": "champions",
+      "title": "Campeões de pilotos e construtores conferem com a fonte externa (temporadas encerradas)",
+      "ok": true,
+      "detail": "2000: michael_schumacher / ferrari; 2001: michael_schumacher / ferrari; 2002: michael_schumacher / ferrari; 2003: michael_schumacher / ferrari; 2004: michael_schumacher / ferrari; 2005: alonso / renault; 2006: alonso / renault; 2007: raikkonen / ferrari; 2008: hamilton / ferrari; 2009: button / brawn; 2010: vettel / red_bull; 2011: vettel / red_bull; 2012: vettel / red_bull; 2013: vettel / red_bull; 2014: hamilton / mercedes; 2015: hamilton / mercedes; 2016: rosberg / mercedes; 2017: hamilton / mercedes; 2018: hamilton / mercedes; 2019: hamilton / mercedes; 2020: hamilton / mercedes; 2021: max_verstappen / mercedes; 2022: max_verstappen / red_bull; 2023: max_verstappen / red_bull; 2024: max_verstappen / mclaren; 2025: norris / mclaren; 2026: em andamento (líder atual: antonelli / mercedes; título matemático de pilotos: antonelli; título matemático de construtores: mercedes; temporada em andamento)",
+      "data": {
+        "found": {
+          "2000": [
+            "michael_schumacher",
+            "ferrari"
+          ],
+          "2001": [
+            "michael_schumacher",
+            "ferrari"
+          ],
+          "2002": [
+            "michael_schumacher",
+            "ferrari"
+          ],
+          "2003": [
+            "michael_schumacher",
+            "ferrari"
+          ],
+          "2004": [
+            "michael_schumacher",
+            "ferrari"
+          ],
+          "2005": [
+            "alonso",
+            "renault"
+          ],
+          "2006": [
+            "alonso",
+            "renault"
+          ],
+          "2007": [
+            "raikkonen",
+            "ferrari"
+          ],
+          "2008": [
+            "hamilton",
+            "ferrari"
+          ],
+          "2009": [
+            "button",
+            "brawn"
+          ],
+          "2010": [
+            "vettel",
+            "red_bull"
+          ],
+          "2011": [
+            "vettel",
+            "red_bull"
+          ],
+          "2012": [
+            "vettel",
+            "red_bull"
+          ],
+          "2013": [
+            "vettel",
+            "red_bull"
+          ],
+          "2014": [
+            "hamilton",
+            "mercedes"
+          ],
+          "2015": [
+            "hamilton",
+            "mercedes"
+          ],
+          "2016": [
+            "rosberg",
+            "mercedes"
+          ],
+          "2017": [
+            "hamilton",
+            "mercedes"
+          ],
+          "2018": [
+            "hamilton",
+            "mercedes"
+          ],
+          "2019": [
+            "hamilton",
+            "mercedes"
+          ],
+          "2020": [
+            "hamilton",
+            "mercedes"
+          ],
+          "2021": [
+            "max_verstappen",
+            "mercedes"
+          ],
+          "2022": [
+            "max_verstappen",
+            "red_bull"
+          ],
+          "2023": [
+            "max_verstappen",
+            "red_bull"
+          ],
+          "2024": [
+            "max_verstappen",
+            "mclaren"
+          ],
+          "2025": [
+            "norris",
+            "mclaren"
+          ],
+          "2026": [
+            "antonelli",
+            "mercedes"
+          ]
+        },
+        "expected": {
+          "2000": [
+            "michael_schumacher",
+            "ferrari"
+          ],
+          "2001": [
+            "michael_schumacher",
+            "ferrari"
+          ],
+          "2002": [
+            "michael_schumacher",
+            "ferrari"
+          ],
+          "2003": [
+            "michael_schumacher",
+            "ferrari"
+          ],
+          "2004": [
+            "michael_schumacher",
+            "ferrari"
+          ],
+          "2005": [
+            "alonso",
+            "renault"
+          ],
+          "2006": [
+            "alonso",
+            "renault"
+          ],
+          "2007": [
+            "raikkonen",
+            "ferrari"
+          ],
+          "2008": [
+            "hamilton",
+            "ferrari"
+          ],
+          "2009": [
+            "button",
+            "brawn"
+          ],
+          "2010": [
+            "vettel",
+            "red_bull"
+          ],
+          "2011": [
+            "vettel",
+            "red_bull"
+          ],
+          "2012": [
+            "vettel",
+            "red_bull"
+          ],
+          "2013": [
+            "vettel",
+            "red_bull"
+          ],
+          "2014": [
+            "hamilton",
+            "mercedes"
+          ],
+          "2015": [
+            "hamilton",
+            "mercedes"
+          ],
+          "2016": [
+            "rosberg",
+            "mercedes"
+          ],
+          "2017": [
+            "hamilton",
+            "mercedes"
+          ],
+          "2018": [
+            "hamilton",
+            "mercedes"
+          ],
+          "2019": [
+            "hamilton",
+            "mercedes"
+          ],
+          "2020": [
+            "hamilton",
+            "mercedes"
+          ],
+          "2021": [
+            "max_verstappen",
+            "mercedes"
+          ],
+          "2022": [
+            "max_verstappen",
+            "red_bull"
+          ],
+          "2023": [
+            "max_verstappen",
+            "red_bull"
+          ],
+          "2024": [
+            "max_verstappen",
+            "mclaren"
+          ],
+          "2025": [
+            "norris",
+            "mclaren"
+          ]
+        },
+        "in_progress": [
+          2026
+        ]
+      }
+    },
+    {
+      "id": "clinched_champions",
+      "title": "Títulos matemáticos em temporadas em andamento conferidos",
+      "ok": true,
+      "detail": "2026: pilotos antonelli com 111.0 ponto(s) de vantagem (máximo restante 75); construtores mercedes com 142.0 ponto(s) de vantagem (máximo restante 129); 3 corrida(s) e 0 sprint(s) restantes; temporada em andamento",
+      "data": {
+        "configured": {
+          "2026": {
+            "driver": "antonelli",
+            "constructor": "mercedes"
+          }
+        },
+        "in_progress": [
+          2026
+        ]
+      }
+    },
+    {
+      "id": "driver_points_reconciliation",
+      "title": "Pontos de corrida + sprint batem com a classificação oficial de pilotos",
+      "ok": true,
+      "detail": "Todos os pilotos conferem.",
+      "data": []
+    },
+    {
+      "id": "constructor_points_reconciliation",
+      "title": "Pontos de corrida + sprint batem com a classificação oficial de construtores",
+      "ok": true,
+      "detail": "Todos os construtores conferem. Ajustes oficiais aplicados: 2020 racing_point (-15). Equipes excluídas do campeonato (não reconciliadas): 2007 mclaren.",
+      "data": []
+    },
+    {
+      "id": "fastest_laps",
+      "title": "Cada GP possui volta mais rápida (fonte primária ou complementar)",
+      "ok": true,
+      "detail": "Todos os GPs possuem volta mais rápida, exceto 1 ausência(s) real(is) documentada(s) na fonte.",
+      "data": {
+        "por_temporada": {
+          "2000": 17,
+          "2001": 17,
+          "2002": 17,
+          "2003": 16,
+          "2004": 18,
+          "2005": 19,
+          "2006": 18,
+          "2007": 17,
+          "2008": 18,
+          "2009": 17,
+          "2010": 19,
+          "2011": 19,
+          "2012": 20,
+          "2013": 19,
+          "2014": 19,
+          "2015": 19,
+          "2016": 21,
+          "2017": 20,
+          "2018": 21,
+          "2019": 21,
+          "2020": 17,
+          "2021": 21,
+          "2022": 22,
+          "2023": 22,
+          "2024": 24,
+          "2025": 24,
+          "2026": 20
+        },
+        "sem_volta_rapida": [],
+        "ausencias_documentadas": [
+          {
+            "season": 2021,
+            "round": 12,
+            "race_name": "Belgian Grand Prix"
+          }
+        ]
+      }
+    },
+    {
+      "id": "poles",
+      "title": "Cada GP possui pole position (fonte primária ou complementar)",
+      "ok": true,
+      "detail": "Todos os GPs possuem pole identificada.",
+      "data": {
+        "poles": 523,
+        "races": 523,
+        "sem_pole": []
+      }
+    },
+    {
+      "id": "complementary_conflicts",
+      "title": "Dados complementares coincidem com a fonte primária",
+      "ok": true,
+      "detail": "0 conflito(s) em 96 registro(s) complementares.",
+      "data": {
+        "pole_conflicts": 0,
+        "fastest_lap_conflicts": 0,
+        "complementary_rows": 96
+      }
+    },
+    {
+      "id": "complementary_provenance",
+      "title": "Prêmios complementares possuem fonte, data e GP válido",
+      "ok": true,
+      "detail": "Todos os registros complementares têm fonte e data.",
+      "data": {
+        "sem_fonte": 0
+      }
+    },
+    {
+      "id": "grid",
+      "title": "Grid efetivo de largada preservado em todos os resultados",
+      "ok": true,
+      "detail": "Grid presente em todas as linhas.",
+      "data": {
+        "sem_grid": 0
+      }
+    },
+    {
+      "id": "status_integrity",
+      "title": "Status ausente não foi convertido em posição inventada",
+      "ok": true,
+      "detail": "Todas as linhas têm posição ou status textual.",
+      "data": {
+        "invalid": 0
+      }
+    },
+    {
+      "id": "duplicates",
+      "title": "Sem registros duplicados",
+      "ok": true,
+      "detail": "Nenhuma duplicata.",
+      "data": {
+        "duplicates": 0
+      }
+    },
+    {
+      "id": "winners_count",
+      "title": "Um vencedor por GP (contagem de vitórias por temporada)",
+      "ok": true,
+      "detail": "Vencedores por temporada: {2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24, 2026: 20}. Esperado nas encerradas: {2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24}; em andamento: {2026: 20}.",
+      "data": {
+        "2000": 17,
+        "2001": 17,
+        "2002": 17,
+        "2003": 16,
+        "2004": 18,
+        "2005": 19,
+        "2006": 18,
+        "2007": 17,
+        "2008": 18,
+        "2009": 17,
+        "2010": 19,
+        "2011": 19,
+        "2012": 20,
+        "2013": 19,
+        "2014": 19,
+        "2015": 19,
+        "2016": 21,
+        "2017": 20,
+        "2018": 21,
+        "2019": 21,
+        "2020": 17,
+        "2021": 22,
+        "2022": 22,
+        "2023": 22,
+        "2024": 24,
+        "2025": 24,
+        "2026": 20
+      }
+    }
+  ],
+  "notes": [
+    {
+      "season": 2026,
+      "round": null,
+      "race": "Temporada 2026 em andamento",
+      "note": "20 de 23 GPs concluídos; apenas etapas com resultado na fonte entram no banco. A classificação atual (não final) é liderada por Andrea Kimi Antonelli / Mercedes. O título de pilotos já está garantido matematicamente por Andrea Kimi Antonelli. O título de construtores já está garantido matematicamente por Mercedes. A temporada continua em andamento; a classificação exibida é a posição atual, não a final."
+    },
+    {
+      "season": 2020,
+      "round": null,
+      "race": "Racing Point",
+      "note": "Ajuste oficial de -15 ponto(s) no campeonato de construtores não aparece nos resultados individuais; o valor oficial dos standings é mantido."
+    },
+    {
+      "season": 2021,
+      "round": 12,
+      "race": "Belgian Grand Prix",
+      "note": "Corrida encerrada sob safety car após 1 volta; a fonte não registra volta mais rápida. Ausência real, não falha de importação."
+    },
+    {
+      "season": 2021,
+      "round": 5,
+      "race": "Monaco Grand Prix",
+      "note": "Mick Schumacher não participou da classificação (acidente no treino livre) e largou do pit lane. 19 pilotos na classificação é o dado correto da fonte."
+    },
+    {
+      "season": 2011,
+      "round": 1,
+      "race": "Australian Grand Prix",
+      "note": "Narain Karthikeyan fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 2011,
+      "round": 1,
+      "race": "Australian Grand Prix",
+      "note": "Vitantonio Liuzzi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 2012,
+      "round": 1,
+      "race": "Australian Grand Prix",
+      "note": "Narain Karthikeyan fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 2012,
+      "round": 1,
+      "race": "Australian Grand Prix",
+      "note": "Pedro de la Rosa fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 2025,
+      "round": 9,
+      "race": "Spanish Grand Prix",
+      "note": "Lance Stroll fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 2001,
+      "round": 2,
+      "race": "Malaysian Grand Prix",
+      "note": "Enrique Bernoldi consta no resultado (status: Spun off) mas não na classificação da fonte."
+    },
+    {
+      "season": 2001,
+      "round": 8,
+      "race": "Canadian Grand Prix",
+      "note": "Fernando Alonso consta no resultado (status: Transmission) mas não na classificação da fonte."
+    },
+    {
+      "season": 2002,
+      "round": 5,
+      "race": "Spanish Grand Prix",
+      "note": "Eddie Irvine consta no resultado (status: Hydraulics) mas não na classificação da fonte."
+    },
+    {
+      "season": 2002,
+      "round": 11,
+      "race": "French Grand Prix",
+      "note": "Giancarlo Fisichella consta no resultado (status: Injury) mas não na classificação da fonte."
+    },
+    {
+      "season": 2011,
+      "round": 4,
+      "race": "Turkish Grand Prix",
+      "note": "Kamui Kobayashi consta no resultado (status: Finished) mas não na classificação da fonte."
+    },
+    {
+      "season": 2011,
+      "round": 5,
+      "race": "Spanish Grand Prix",
+      "note": "Nick Heidfeld consta no resultado (status: +1 Lap) mas não na classificação da fonte."
+    },
+    {
+      "season": 2011,
+      "round": 12,
+      "race": "Belgian Grand Prix",
+      "note": "Michael Schumacher consta no resultado (status: Finished) mas não na classificação da fonte."
+    },
+    {
+      "season": 2011,
+      "round": 18,
+      "race": "Abu Dhabi Grand Prix",
+      "note": "Rubens Barrichello consta no resultado (status: +1 Lap) mas não na classificação da fonte."
+    },
+    {
+      "season": 2012,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Sergio Pérez consta no resultado (status: +1 Lap) mas não na classificação da fonte."
+    },
+    {
+      "season": 2012,
+      "round": 8,
+      "race": "European Grand Prix",
+      "note": "Timo Glock consta no resultado (status: Withdrew) mas não na classificação da fonte."
+    },
+    {
+      "season": 2012,
+      "round": 13,
+      "race": "Italian Grand Prix",
+      "note": "Nico Hülkenberg consta no resultado (status: Brakes) mas não na classificação da fonte."
+    },
+    {
+      "season": 2012,
+      "round": 16,
+      "race": "Korean Grand Prix",
+      "note": "Narain Karthikeyan consta no resultado (status: +2 Laps) mas não na classificação da fonte."
+    },
+    {
+      "season": 2014,
+      "round": 19,
+      "race": "Abu Dhabi Grand Prix",
+      "note": "Daniel Ricciardo consta no resultado (status: Finished) mas não na classificação da fonte."
+    },
+    {
+      "season": 2015,
+      "round": 2,
+      "race": "Malaysian Grand Prix",
+      "note": "Will Stevens consta no resultado (status: Fuel system) mas não na classificação da fonte."
+    },
+    {
+      "season": 2015,
+      "round": 4,
+      "race": "Bahrain Grand Prix",
+      "note": "Jenson Button consta no resultado (status: ERS) mas não na classificação da fonte."
+    },
+    {
+      "season": 2015,
+      "round": 7,
+      "race": "Canadian Grand Prix",
+      "note": "Jenson Button consta no resultado (status: Retired) mas não na classificação da fonte."
+    },
+    {
+      "season": 2015,
+      "round": 15,
+      "race": "Russian Grand Prix",
+      "note": "Carlos Sainz consta no resultado (status: Brakes) mas não na classificação da fonte."
+    },
+    {
+      "season": 2016,
+      "round": 7,
+      "race": "Canadian Grand Prix",
+      "note": "Kevin Magnussen consta no resultado (status: +2 Laps) mas não na classificação da fonte."
+    },
+    {
+      "season": 2016,
+      "round": 10,
+      "race": "British Grand Prix",
+      "note": "Marcus Ericsson consta no resultado (status: Power Unit) mas não na classificação da fonte."
+    },
+    {
+      "season": 2016,
+      "round": 13,
+      "race": "Belgian Grand Prix",
+      "note": "Fernando Alonso consta no resultado (status: Finished) mas não na classificação da fonte."
+    },
+    {
+      "season": 2016,
+      "round": 14,
+      "race": "Italian Grand Prix",
+      "note": "Esteban Ocon consta no resultado (status: +2 Laps) mas não na classificação da fonte."
+    },
+    {
+      "season": 2016,
+      "round": 19,
+      "race": "Mexican Grand Prix",
+      "note": "Jolyon Palmer consta no resultado (status: +1 Lap) mas não na classificação da fonte."
+    },
+    {
+      "season": 2017,
+      "round": 8,
+      "race": "Azerbaijan Grand Prix",
+      "note": "Jolyon Palmer consta no resultado (status: Power Unit) mas não na classificação da fonte."
+    },
+    {
+      "season": 2017,
+      "round": 18,
+      "race": "Mexican Grand Prix",
+      "note": "Pierre Gasly consta no resultado (status: +1 Lap) mas não na classificação da fonte."
+    },
+    {
+      "season": 2019,
+      "round": 3,
+      "race": "Chinese Grand Prix",
+      "note": "Alexander Albon consta no resultado (status: +1 Lap) mas não na classificação da fonte."
+    },
+    {
+      "season": 2025,
+      "round": 21,
+      "race": "São Paulo Grand Prix",
+      "note": "Gabriel Bortoleto consta no resultado (status: Retired) mas não na classificação da fonte."
+    },
+    {
+      "season": 2026,
+      "round": 1,
+      "race": "Australian Grand Prix",
+      "note": "Max Verstappen consta no resultado (status: Finished) mas não na classificação da fonte."
+    },
+    {
+      "season": 2026,
+      "round": 14,
+      "race": "Spanish Grand Prix",
+      "note": "Oliver Bearman consta no resultado (status: Lapped) mas não na classificação da fonte."
+    }
+  ]
+}
