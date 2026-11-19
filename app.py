@@ -97,15 +97,22 @@ def get_export_zip(signature: float) -> bytes:
     return build_export_zip(get_frames(signature), DB_PATH, REPORT_PATH)
 
 
-def run_import() -> None:
-    with st.status(f"Importando {PERIOD_LABEL} da Jolpica F1 API...", expanded=True) as status:
+def live_seasons() -> list[int]:
+    """Temporadas que ainda podem receber etapas novas."""
+    return sorted(config.IN_PROGRESS_SEASONS) or [max(config.SEASONS)]
+
+
+def run_import(seasons: list[int] | None = None) -> None:
+    seasons = seasons or live_seasons()
+    label = ", ".join(str(s) for s in seasons)
+    with st.status(f"Importando {label} da Jolpica F1 API...", expanded=True) as status:
         bar = st.progress(0.0, text="Iniciando...")
 
         def progress(fraction: float, message: str) -> None:
             bar.progress(min(max(fraction, 0.0), 1.0), text=message)
 
         try:
-            result = import_seasons(progress=progress)
+            result = import_seasons(seasons=seasons, progress=progress)
         except Exception as exc:  # noqa: BLE001 - mostrar erro ao usuário
             status.update(label="Falha na importação", state="error")
             st.exception(exc)
@@ -271,9 +278,14 @@ with st.sidebar:
         )
 
     st.divider()
-    if st.button("🔄 Atualizar dados da API", width="stretch"):
-        run_import()
-    st.caption("A atualização reescreve as temporadas sem duplicar registros.")
+    live = live_seasons()
+    live_label = ", ".join(str(s) for s in live)
+    if st.button(f"🔄 Atualizar {live_label} da API", width="stretch"):
+        run_import(live)
+    st.caption(
+        f"Reimporta só a temporada em andamento ({live_label}), sem duplicar "
+        "registros. O histórico anterior não é alterado."
+    )
 
 # --------------------------------------------------------------------------
 # cabeçalho
