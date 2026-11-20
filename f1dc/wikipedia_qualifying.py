@@ -1,7 +1,7 @@
 """Completa a classificação (qualifying) antiga com a Wikipédia (en).
 
 A fonte primária (Jolpica/Ergast) não possui classificação completa em todas as
-etapas de 1996–2002. As páginas de cada Grande Prêmio na Wikipédia em inglês
+etapas de 1990–2002. As páginas de cada Grande Prêmio na Wikipédia em inglês
 trazem a tabela de qualifying com posição, piloto, equipe e tempo, citando os
 arquivos da FIA. Este módulo importa **apenas os GPs em que a fonte primária
 não tem nenhuma linha de classificação**.
@@ -58,14 +58,24 @@ PAGE_URL = "https://en.wikipedia.org/wiki/{season}_{race}"
 WIKIPEDIA_MARKER = "wikipedia.org"
 
 # Temporadas cujas páginas de GP usam o formato de tabela suportado por este
-# importador (posição, piloto, equipe e tempo; grid quando existir). 1996 usa
-# tabelas com coluna de tempo; 1998 usa ``Lap Time``; 2000 usa tabelas sem
-# coluna de grid e predefinições {{sort}}/{{sortname}}; 2001 usa ``Lap``.
-SUPPORTED_SEASONS = (1996, 1997, 1998, 1999, 2000, 2001, 2002)
+# importador (posição, piloto, equipe e tempo; grid quando existir). 1990–1994
+# usam duas sessões (Q1/Q2) e às vezes uma tabela de pré-classificação antes da
+# principal; 1996 usa coluna de tempo; 1998 usa ``Lap Time``; 2000 usa tabelas
+# sem coluna de grid e predefinições {{sort}}/{{sortname}}; 2001 usa ``Lap``.
+SUPPORTED_SEASONS = (
+    1990, 1991, 1992, 1993, 1994,
+    1996, 1997, 1998, 1999, 2000, 2001, 2002,
+)
 
 # Rótulos de coluna de tempo encontrados nas páginas antigas: ``Time`` (2000),
-# ``Lap`` (2001) e ``Lap Time`` (1998).
-TIME_LABELS = ("time", "lap", "lap time")
+# ``Lap`` (2001), ``Lap Time`` (1998) e as duas sessões de 1990–1994, escritas
+# de várias formas conforme a página: ``Q1``/``Q2``, ``Q1 Time``/``Q2 Time`` ou
+# ``Friday Time``/``Saturday Time``.
+TIME_LABELS = (
+    "time", "lap", "lap time",
+    "q1", "q2", "q1 time", "q2 time",
+    "friday time", "saturday time",
+)
 
 MIN_CLASSIFIED = 10
 
@@ -74,6 +84,22 @@ MIN_CLASSIFIED = 10
 # divergência vira aviso, sem bloquear o preenchimento dos demais GPs. Cada
 # exceção precisa de justificativa e fonte externa de conferência.
 PRIMARY_DIVERGENCE_EXCEPTIONS = {
+    (1994, 1): (
+        "Bernard (P20): primária 1:19.398, Wikipédia 1:19.396. "
+        "Fonte primária mantida. "
+        "https://en.wikipedia.org/wiki/1994_Brazilian_Grand_Prix"
+    ),
+    (1994, 3): (
+        "Wikipédia marca Ratzenberger como WD e coloca Belmondo em P26; a "
+        "primária registra Ratzenberger em P26 (1:27.584) e Belmondo em P27. "
+        "Fonte primária mantida. "
+        "https://en.wikipedia.org/wiki/1994_San_Marino_Grand_Prix"
+    ),
+    (1994, 12): (
+        "Järvilehto (P20): Wikipédia escreve 26.384 sem o minuto; primária "
+        "registra 1:26.384. Fonte primária mantida. "
+        "https://en.wikipedia.org/wiki/1994_Italian_Grand_Prix"
+    ),
     (1997, 2): (
         "Frentzen (P8): primária 1:16.971, Wikipédia 1:16.924. "
         "Fonte primária mantida. "
@@ -183,17 +209,32 @@ def _lap_time(cell: str) -> str | None:
     return match.group(1) if match else None
 
 
+def _time_seconds(value: str) -> float:
+    """Converte ``1:15.962`` em segundos para escolher o melhor tempo."""
+    minutes, seconds = value.split(":") if ":" in value else ("0", value)
+    return int(minutes) * 60 + float(seconds)
+
+
+def _split_rows(table: str) -> list[str]:
+    """Separa as linhas de uma tabela, tolerando o separador malformado ``|-|``.
+
+    Em Itália 1994 a Wikipédia usa ``|-|`` como separador de linha: o pipe
+    extra é vazio, não uma célula de dados. Removê-lo evita deslocar todas as
+    colunas e perder a posição 2 daquela classificação.
+    """
+    table = re.sub(r"(?m)^\|-\|[ \t]*$", "|-", table)
+    return re.split(r"\n\|-", table)
+
+
 def parse_qualifying_table(wikitext: str) -> dict[str, Any]:
     """Extrai a tabela de classificação de uma página de Grande Prêmio.
 
     Retorna ``{"rows": [...], "skipped": [...]}``. Só entram em ``rows`` os
     pilotos com posição numérica; DNQ/EX ficam em ``skipped`` com o motivo.
     """
-    table = None
-    labels: list[str] = []
-    data_start = 2
+    best: dict[str, Any] | None = None
     for candidate in _iter_table_blocks(wikitext):
-        chunks = re.split(r"\n\|-", candidate)
+        chunks = _split_rows(candidate)
         # Em algumas páginas (ex.: Japão 2000) o cabeçalho vem antes do
         # primeiro ``|-``; em outras, vem no segundo bloco.
         header_index = 0
@@ -219,26 +260,45 @@ def parse_qualifying_table(wikitext: str) -> dict[str, Any]:
             and "constructor" in candidate_labels
             and any(label in TIME_LABELS for label in candidate_labels)
         ):
-            table = candidate
-            labels = candidate_labels
-            data_start = header_index + 1
-            break
-    if table is None:
+            count = sum(
+                1
+                for chunk in chunks[header_index + 1:]
+                if re.fullmatch(r"\d+", _clean_cell(_strip_attributes(
+                    next(
+                        (line for line in chunk.strip().splitlines() if line.strip()),
+                        "",
+                    )
+                )).rstrip("*") or "")
+            )
+            if best is None or count > best["count"]:
+                best = {
+                    "table": candidate,
+                    "labels": candidate_labels,
+                    "data_start": header_index + 1,
+                    "count": count,
+                }
+    if best is None:
         raise ValueError("tabela de classificação não encontrada")
+
+    table = best["table"]
+    labels: list[str] = best["labels"]
+    data_start: int = best["data_start"]
 
     driver_idx = labels.index("driver")
     constructor_idx = labels.index("constructor")
-    time_idx = next(labels.index(label) for label in TIME_LABELS if label in labels)
+    time_indices = [
+        labels.index(label) for label in TIME_LABELS if label in labels
+    ]
     position_idx = 0
 
     rows: list[dict[str, Any]] = []
     skipped: list[dict[str, Any]] = []
-    for chunk in re.split(r"\n\|-", table)[data_start:]:
+    for chunk in _split_rows(table)[data_start:]:
         lines = [line.strip() for line in chunk.strip().splitlines() if line.strip()]
         if not lines:
             continue
         cells = [_strip_attributes(line) for line in lines]
-        if len(cells) <= max(driver_idx, constructor_idx, time_idx):
+        if len(cells) <= max(driver_idx, constructor_idx, *time_indices):
             continue
 
         position_text = _abbreviation(cells[position_idx]) or _clean_cell(
@@ -253,12 +313,20 @@ def parse_qualifying_table(wikitext: str) -> dict[str, Any]:
                 skipped.append({"reason": position_text or "sem posição", "driver": name})
             continue
 
+        # 1990–1994 têm duas sessões (Q1/Q2). O tempo que representa o piloto é
+        # o melhor (menor) delas; nenhum dos dois existindo, fica ausente.
+        times = [
+            _lap_time(cells[index])
+            for index in time_indices
+            if _lap_time(cells[index]) is not None
+        ]
+        best_time = min(times, key=_time_seconds) if times else None
         rows.append(
             {
                 "position": int(position_match.group(0)),
                 "driver": name,
                 "constructor": _first_link(cells[constructor_idx]),
-                "time": _lap_time(cells[time_idx]),
+                "time": best_time,
             }
         )
 
@@ -494,7 +562,7 @@ def import_seasons(
                         )
                         break
                     constructor_id = _constructor_for(
-                        conn, season, round_, driver_id
+                        conn, season, round_, driver_id, row["constructor"]
                     )
                     if constructor_id is None:
                         season_errors.append(

@@ -86,6 +86,61 @@ def _wikitext_2001(count: int = 10) -> str:
     )
 
 
+def _wikitext_1990s(count: int = 10) -> str:
+    """Formato das páginas de 1990–1994: colunas Q1/Q2 e sessão dupla."""
+    rows = []
+    for position, name in enumerate(DRIVERS[:count], start=1):
+        rows.append(
+            "\n".join(
+                [
+                    "|-",
+                    f"! {position}",
+                    f"| {position}",
+                    f"| data-sort-value=\"P{position}\" | [[{name}]]",
+                    "| [[Equipe Um|Equipe 1]]",
+                    f"| 1:{20 + position:02d}.000",
+                    f"| '''1:{19 + position:02d}.000'''",
+                    "| +0.100",
+                ]
+            )
+        )
+    return (
+        '{| class="wikitable sortable"\n'
+        "|-\n"
+        "! Pos !! No !! Driver !! Constructor !! Q1 !! Q2 !! Gap\n"
+        + "\n".join(rows)
+        + "\n|}"
+    )
+
+
+def test_parse_qualifying_table_accepts_q1_q2_header():
+    parsed = wikipedia_qualifying.parse_qualifying_table(_wikitext_1990s())
+    # O tempo que vale é o melhor (menor) entre Q1 e Q2.
+    assert parsed["rows"][0]["time"] == "1:20.000"
+    assert len(parsed["rows"]) == 10
+
+
+def test_parse_qualifying_table_prefers_main_table_over_pre_qualifying():
+    pre = _wikitext_1990s(count=4).replace(
+        "! Pos !! No !! Driver !! Constructor !! Q1 !! Q2 !! Gap",
+        "! Pos !! No !! Driver !! Constructor !! Time !! Gap",
+    )
+    main = _wikitext_1990s(count=10)
+    parsed = wikipedia_qualifying.parse_qualifying_table(pre + "\n" + main)
+    assert len(parsed["rows"]) == 10
+
+
+def test_split_rows_tolerates_malformed_separator():
+    # Itália 1994 usa ``|-|`` como separador de linha; o pipe extra é vazio.
+    table = (
+        "|-\n! 1\n| 27\n| [[Equipe]]\n| 1:22.000"
+        "\n|-|\n! 2\n| 28\n| [[Equipe]]\n| 1:23.000"
+    )
+    rows = wikipedia_qualifying._split_rows(table)
+    assert len(rows) == 2
+    assert rows[1].lstrip().startswith("! 2")
+
+
 def test_parse_qualifying_table_accepts_2001_lap_header():
     parsed = wikipedia_qualifying.parse_qualifying_table(_wikitext_2001())
 

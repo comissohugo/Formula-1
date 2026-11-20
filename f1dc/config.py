@@ -5,6 +5,11 @@ from pathlib import Path
 # --- Fonte de dados -------------------------------------------------------
 BASE_URL = "https://api.jolpi.ca/ergast/f1"
 SEASONS = (
+    1990,
+    1991,
+    1992,
+    1993,
+    1994,
     1995,
     1996,
     1997,
@@ -77,6 +82,11 @@ PAGE_SIZE = 100
 
 # --- Expectativas do projeto (documento central, seção 2) -----------------
 EXPECTED_RACES = {
+    1990: 16,
+    1991: 16,
+    1992: 16,
+    1993: 16,
+    1994: 16,
     1995: 17,
     1996: 16,
     1997: 17,
@@ -146,6 +156,11 @@ EXPECTED_SPRINTS = {
 # Conferência externa dos campeões (fontes oficiais).
 # Usada apenas para VALIDAR o que a API entregou, nunca para preencher dado.
 EXPECTED_CHAMPIONS = {
+    1990: ("senna", "mclaren"),
+    1991: ("senna", "mclaren"),
+    1992: ("mansell", "williams"),
+    1993: ("prost", "williams"),
+    1994: ("michael_schumacher", "williams"),
     1995: ("michael_schumacher", "benetton"),
     1996: ("damon_hill", "williams"),
     1997: ("villeneuve", "williams"),
@@ -189,12 +204,26 @@ CONSTRUCTOR_POINT_ADJUSTMENTS = {
     (2020, "racing_point"): -15.0,
 }
 
-# Equipes excluídas do campeonato de construtores pela fonte oficial. Em 2007 a
-# McLaren foi excluída (posição nula, 0 pontos, texto "E") por causa do caso de
-# espionagem; os pilotos mantiveram seus pontos. A soma dos resultados da equipe
-# não é reconciliada com o standings nesse caso, porque a exclusão é uma decisão
-# oficial que não aparece como pontuação negativa nos resultados individuais.
+# Ajustes oficiais de pontos de pilotos. Em 1990 só os 11 melhores resultados
+# contavam para o campeonato: Prost somou 73 pontos brutos, mas o standings
+# oficial registra 71; Piquet somou 44 brutos e ficou com 43 oficiais. A soma
+# dos resultados é mantida; o ajuste existe apenas para reconciliar com o
+# standings oficial, nunca para alterar os dados importados.
+DRIVER_POINT_ADJUSTMENTS = {
+    (1990, "prost"): -2.0,
+    (1990, "piquet"): -1.0,
+}
+
+# Equipes excluídas do campeonato de construtores pela fonte oficial. Em 1994 a
+# Benetton foi excluída (Schumacher manteve o título de pilotos; Williams levou
+# o de construtores) por irregularidades no filtro de combustível e no "push
+# start". Em 2007 a McLaren foi excluída (posição nula, 0 pontos, texto "E") por
+# causa do caso de espionagem; os pilotos mantiveram seus pontos. A soma dos
+# resultados da equipe não é reconciliada com o standings nesses casos, porque
+# a exclusão é uma decisão oficial que não aparece como pontuação negativa nos
+# resultados individuais.
 EXCLUDED_CONSTRUCTOR_CHAMPIONSHIPS = {
+    (1994, "benetton"),
     (2007, "mclaren"),
 }
 

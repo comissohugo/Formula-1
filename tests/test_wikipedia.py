@@ -80,6 +80,19 @@ def test_parse_skips_legend_table_before_grand_prix_table():
     assert rows[0]["team"] == "Equipe 1"
 
 
+def test_constructor_for_uses_wikipedia_name_when_driver_has_no_result():
+    conn = db.connect(":memory:")
+    db.init_db(conn)
+    conn.execute(
+        "INSERT INTO constructors (constructor_id, name) VALUES ('larrousse', 'Larrousse')"
+    )
+    conn.commit()
+    assert wikipedia._constructor_for(conn, 1992, 1, "gachot", "Venturi") == "larrousse"
+    assert wikipedia._constructor_for(conn, 1990, 11, "gachot", "Coloni") == "coloni"
+    assert wikipedia._constructor_for(conn, 1991, 9, "bartels", "Lotus") == "team_lotus"
+    conn.close()
+
+
 def test_normalize_name_ignores_accents_and_case():
     assert wikipedia.normalize_name("Mika Häkkinen") == "mika hakkinen"
     assert wikipedia.normalize_name("  Kimi   Räikkönen ") == "kimi raikkonen"

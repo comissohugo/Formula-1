@@ -50,6 +50,31 @@ DRIVER_ALIASES: dict[str, str] = {
     "juan pablo montoya": "montoya",
     # Grafia usada na página de 2004 da Wikipédia.
     "rubens barrichelo": "barrichello",
+    # A Wikipédia usa "JJ Lehto"; a fonte primária registra "Jyrki Järvilehto".
+    "jj lehto": "lehto",
+}
+
+# Equipes que a Wikipédia (en) nomeia de forma diferente do cadastro da fonte
+# primária, ou que nunca apareceram em um resultado e por isso não têm registro
+# no banco. Usado apenas como último recurso para pilotos que não largaram.
+CONSTRUCTOR_ALIASES: dict[str, str] = {
+    "lotus": "team_lotus",
+    "team lotus": "team_lotus",
+    "venturi": "larrousse",  # Venturi Larrousse, mesmo time de 1992
+    "coloni": "coloni",      # incluída como complemento documentado
+    "pacific racing": "pacific",
+    "scuderia ferrari": "ferrari",
+    "benetton formula": "benetton",
+    "williams grand prix engineering": "williams",
+    "automobiles gonfaronnaises sportives": "ags",
+    "footwork arrows": "footwork",
+    "jordan grand prix": "jordan",
+    "eurobrun": "eurobrun",
+    "lola cars": "lola",
+    "andrea moda": "moda",
+    "tyrrell racing": "tyrrell",
+    "equipe ligier": "ligier",
+    "march engineering": "march",
 }
 
 
@@ -147,10 +172,26 @@ def parse_grand_prix_table(wikitext: str) -> list[dict[str, Any]]:
         lines = [line.strip() for line in chunk.strip().splitlines() if line.strip()]
         if not lines:
             continue
-        round_match = re.search(r"!\s*(\d+)", lines[0])
+        # Em páginas recentes a rodada vem como ``! 1``; em 1990–1992 vem
+        # como célula ``|align="center"| 1``.
+        round_match = None
+        for line in lines[:3]:
+            normalized = re.sub(
+                r'^(?:!|\|)\s*(?:[a-zA-Z-]+\s*=\s*"[^"]*"\s*)?(?:\|\s*)?',
+                "",
+                line.strip(),
+            )
+            match = re.match(r"^(\d+)", normalized)
+            if match:
+                round_match = match
+                break
         if not round_match:
             continue
         cells = [line[1:].strip() for line in lines if line.startswith("|")]
+        # Quando a rodada também é uma célula, remova-a para alinhar com os
+        # rótulos (o primeiro, "GP", já foi descartado de cell_labels).
+        if cells and re.sub(r"^.*\|\s*", "", cells[0]).strip().isdigit():
+            cells = cells[1:]
         if len(cells) < len(cell_labels):
             continue
 
@@ -219,7 +260,11 @@ def _resolve_driver(
 
 
 def _constructor_for(
-    conn, season: int, round_: int, driver_id: str
+    conn,
+    season: int,
+    round_: int,
+    driver_id: str,
+    constructor_name: str | None = None,
 ) -> str | None:
     for table in ("race_results", "qualifying_results"):
         row = conn.execute(
@@ -229,6 +274,30 @@ def _constructor_for(
         ).fetchone()
         if row:
             return str(row["constructor_id"])
+    # Piloto que não largou (DNS/DNQ) pode não aparecer no resultado deste GP
+    # nem na classificação importada. A equipe é a mesma na temporada: busca
+    # em qualquer etapa, em vez de inventar vínculo.
+    row = conn.execute(
+        'SELECT constructor_id FROM race_results '
+        'WHERE season = ? AND driver_id = ? '
+        'ORDER BY "round" LIMIT 1',
+        (season, driver_id),
+    ).fetchone()
+    if row:
+        return str(row["constructor_id"])
+    # Alguns pilotos de 1990–1992 só tentaram a classificação: a fonte primária
+    # não tem nenhum resultado para eles. Nesse caso a equipe vem da própria
+    # tabela da Wikipédia, nunca de inferência sobre o piloto.
+    if constructor_name:
+        normalized = normalize_name(constructor_name)
+        alias = CONSTRUCTOR_ALIASES.get(normalized)
+        if alias:
+            return alias
+        known = {
+            normalize_name(r["name"]): str(r["constructor_id"])
+            for r in conn.execute("SELECT constructor_id, name FROM constructors")
+        }
+        return known.get(normalized)
     return None
 
 

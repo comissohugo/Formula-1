@@ -1117,6 +1117,50 @@ validação da base.
 
 ------------------------------------------------------------------------
 
+## 2026-11-20 --- Extensão histórica para 1990–1994
+
+-   **Decisão:** atender ao pedido do usuário de ampliar a base agora,
+    incluindo 1990–1994. O recorte "século" continua sendo desde 2000, mesmo
+    com a base ampliada. Em 1994, o campeonato de construtores oficial é da
+    Williams (a Benetton ficou de fora), enquanto Schumacher é o campeão de
+    pilotos.
+-   **Arquivos alterados:** `f1dc/config.py` (temporadas, contagens,
+    campeões, ajustes de pontos e exclusão de Benetton 1994),
+    `f1dc/wikipedia.py`, `f1dc/wikipedia_qualifying.py`, `f1dc/validate.py`,
+    `f1dc/export.py`, `f1dc/__init__.py` (1.4.0), `app.py`, `README.md`,
+    `docs/PROJETO_F1.md` (2.2), `scripts/seed_wiki_entities.py` (novo) e
+    testes.
+-   **O que foi implementado:**
+    -   importação Jolpica de 1990–1994: 80 GPs, 2.076 resultados e os
+        standings oficiais; em 1990–1993 a primária não tem nenhuma linha de
+        qualifying e em 1994 cobre 15 de 16 GPs;
+    -   parser de qualifying da Wikipédia (en) estendido para as tabelas com
+        Q1/Q2 (1990–1994), incluindo o separador malformado `|-|` de Itália
+        1994 e a escolha da tabela principal quando há pré-classificação;
+    -   parser da tabela de GPs da Wikipédia (pt) estendido para 1990–1992,
+        onde a rodada aparece como célula e não como cabeçalho;
+    -   cadastro complementar mínimo (nome, nacionalidade e URL) de Michael
+        Bartels, Giovanna Amati e Coloni, que não aparecem em nenhum resultado
+        da fonte primária; as linhas de qualifying gravadas levam
+        `source_url`/`fetched_at`;
+    -   poles e voltas rápidas de 1990–1994 complementadas pela Wikipédia
+        (pt), e qualifying de 1990–1994 complementado/confirmado pela
+        Wikipédia (en); divergências conhecidas em 1994 R1, R3 e R12 mantidas
+        na fonte primária e documentadas;
+    -   ajuste oficial de pontos de pilotos em 1990 (descarte dos piores
+        resultados: Prost 71 em vez de 73 e Piquet 43 em vez de 44), aplicado
+        apenas na reconciliação da validação.
+-   **Testes realizados:** `python -m f1dc.validate` APROVADO (19/19),
+    `python -m pytest -q` (70 passando), AppTest sem exceções e conferência
+    dos campeões de 1990–1994 na base.
+-   **Problemas conhecidos:** a divergência de nome "Barcelona Grand Prix"
+    (base) × "Barcelona-Catalunya Grand Prix" (oficial) segue pendente de
+    registro; o encerramento oficial de 2026 continua manual.
+-   **Próxima ação:** regenerar o ZIP 1990–2026, fazer checkpoint do WAL,
+    commitar/publicar e verificar o Streamlit Cloud.
+
+------------------------------------------------------------------------
+
 ## Modelo para próximas atualizações
 
 ### AAAA-MM-DD --- Título da alteração

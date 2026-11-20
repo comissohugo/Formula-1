@@ -1,4 +1,4 @@
-"""F1 Data Center - dashboard histórico (1995-2026, com 2026 em andamento).
+"""F1 Data Center - dashboard histórico (1990-2026, com 2026 em andamento).
 
 Execute com:
     streamlit run app.py
@@ -481,7 +481,7 @@ with tab_races:
                 "Q3": q["q3"].fillna("—"),
             }
         else:
-            # Sessão única (1995–2002): o tempo é o melhor da classificação,
+            # Sessão única (1990–2002): o tempo é o melhor da classificação,
             # não uma etapa Q1 de formato eliminatório.
             time_columns = {"Tempo": q["q1"].fillna("—")}
         q_table = pd.DataFrame(
@@ -1451,7 +1451,7 @@ with tab_ranking:
         st.divider()
         st.markdown("#### Maiores vencedores do século — top 10 (desde 2000)")
         # "Século" é, por definição do projeto, o recorte desde 2000 —
-        # mesmo com a base abrangendo 1995 em diante.
+        # mesmo com a base abrangendo 1990 em diante.
         century_frames = {
             name: (frame[frame["season"] >= 2000] if "season" in frame.columns else frame)
             for name, frame in frames.items()
@@ -1492,7 +1492,7 @@ with tab_ranking:
                 "'século' definido pelo painel —, com desempate por pódios e "
                 "corridas. O circuito é contado por traçado, não pelo nome do GP. "
                 f"Vitórias em sprints não entram. A base cobre {PERIOD_LABEL}, mas "
-                "este recorte não inclui 1995–1999."
+                "este recorte não inclui 1990–1999."
             )
 
 # --------------------------------------------------------------------------

@@ -454,8 +454,9 @@ def validate(db_path: str | Path = config.DB_PATH) -> dict[str, Any]:
             for r in _rows(conn, "SELECT season, driver_id, points FROM driver_standings")
         }
         driver_mismatches = []
+        driver_adjustments = getattr(config, "DRIVER_POINT_ADJUSTMENTS", {})
         for key, official_points in official.items():
-            calculated = computed.get(key, 0.0)
+            calculated = computed.get(key, 0.0) + driver_adjustments.get(key, 0.0)
             if abs(calculated - official_points) > TOLERANCE:
                 driver_mismatches.append(
                     {
@@ -471,9 +472,22 @@ def validate(db_path: str | Path = config.DB_PATH) -> dict[str, Any]:
                 "driver_points_reconciliation",
                 "Pontos de corrida + sprint batem com a classificação oficial de pilotos",
                 not driver_mismatches,
-                "Todos os pilotos conferem."
-                if not driver_mismatches
-                else f"{len(driver_mismatches)} divergência(s) de pontos.",
+                (
+                    "Todos os pilotos conferem."
+                    if not driver_mismatches
+                    else f"{len(driver_mismatches)} divergência(s) de pontos."
+                )
+                + (
+                    " Ajustes oficiais aplicados: "
+                    + ", ".join(
+                        f"{s} {d} ({a:+.0f})"
+                        for (s, d), a in sorted(driver_adjustments.items())
+                        if (s, d) in official
+                    )
+                    + "."
+                    if driver_adjustments
+                    else ""
+                ),
                 driver_mismatches[:50],
             )
         )
