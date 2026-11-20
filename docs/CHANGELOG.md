@@ -1022,6 +1022,67 @@ validação da base.
 
 ------------------------------------------------------------------------
 
+## 2026-11-19 --- Extensão histórica para 1995–1999
+
+### Decisão
+
+-   Atender ao pedido do usuário de ampliar a base para **1995 a 1999**,
+    mantendo a regra de prioridade da fonte primária (Jolpica) e a
+    complementação via Wikipédia apenas onde a primária tem lacuna.
+-   "Século" continua sendo, por definição do painel, o recorte **desde 2000**:
+    a seção de maiores vencedores do século não inclui 1995–1999, embora o
+    ranking acumulado geral passe a incluí-los.
+
+### Arquivos alterados
+
+-   `f1dc/config.py` (1995–1999 em `SEASONS`, `EXPECTED_RACES`,
+    `EXPECTED_SPRINTS` e `EXPECTED_CHAMPIONS`), `f1dc/__init__.py` (1.3.0),
+    `f1dc/wikipedia_qualifying.py`, `f1dc/export.py`, `app.py`, `README.md`,
+    `docs/PROJETO_F1.md`, `data/f1.db` e `data/validation_report.json`.
+
+### O que foi implementado
+
+-   Importação de 1995 (17 GPs, qualifying completo na primária) e de
+    1996–1999 (16/17/16/16 GPs) pela Jolpica, com campeões oficiais
+    conferidos: 1995 Schumacher/Benetton, 1996 Hill/Williams, 1997
+    Villeneuve/Williams, 1998 Häkkinen/McLaren e 1999 Häkkinen/Ferrari.
+-   Poles e voltas rápidas de 1995–1999 complementadas pela Wikipédia (pt),
+    com `source_url` e `fetched_at`.
+-   Qualifying de 1996–1999 complementado pela Wikipédia (en): 9, 7, 9 e 13
+    GPs preenchidos, respectivamente. O parser passou a aceitar o cabeçalho
+    `Lap Time` (1998), posições anotadas com `*` (1997 Bélgica) e tempo em
+    branco em posições que não a pole (1996 França), gravando `NULL` sem
+    inventar valor.
+-   Divergências pontuais conhecidas registradas com justificativa e fonte:
+    1997 R2/R3/R8/R9, 1998 R3 e 1999 R2 (além da já existente em 2000 R3).
+    A fonte primária é sempre mantida nesses GPs.
+-   Rótulos e documentação atualizados de "2000–2026" para "1995–2026"; a base
+    passa a ter **32 temporadas e 605 GPs** (585 encerrados + 20 de 2026),
+    12.808 resultados, 12.778 classificações, 612 sprints, 187 prêmios e 44
+    circuitos.
+
+### Testes realizados
+
+-   `python -m f1dc.validate`: **APROVADO** (19/19).
+-   `python -m pytest -q`: **66 testes passando**.
+-   Dry run do importador de qualifying para 1996–1999: `status=ok` nas
+    quatro temporadas, com as divergências conhecidas sinalizadas como aviso.
+-   AppTest sem exceções com a temporada 1995 selecionada; campeões e
+    standings conferidos na base.
+
+### Problemas conhecidos
+
+-   Ainda faltam Las Vegas (22/11), Qatar (29/11) e Abu Dhabi (06/12) em 2026.
+-   A divergência de nome "Barcelona Grand Prix" (base) × "Barcelona-Catalunya
+    Grand Prix" (oficial) segue pendente de registro.
+
+### Próxima ação
+
+-   Regenerar o ZIP com o novo período e publicar; depois de Las Vegas,
+    reimportar 2026 e validar novamente.
+
+------------------------------------------------------------------------
+
 ## Modelo para próximas atualizações
 
 ### AAAA-MM-DD --- Título da alteração

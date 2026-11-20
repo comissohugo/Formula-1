@@ -6,6 +6,10 @@ from pathlib import Path
 BASE_URL = "https://api.jolpi.ca/ergast/f1"
 SEASONS = (
     1995,
+    1996,
+    1997,
+    1998,
+    1999,
     2000,
     2001,
     2002,
@@ -74,6 +78,10 @@ PAGE_SIZE = 100
 # --- Expectativas do projeto (documento central, seção 2) -----------------
 EXPECTED_RACES = {
     1995: 17,
+    1996: 16,
+    1997: 17,
+    1998: 16,
+    1999: 16,
     2000: 17,
     2001: 17,
     2002: 17,
@@ -103,6 +111,10 @@ EXPECTED_RACES = {
 }
 EXPECTED_SPRINTS = {
     1995: 0,
+    1996: 0,
+    1997: 0,
+    1998: 0,
+    1999: 0,
     2000: 0,
     2001: 0,
     2002: 0,
@@ -135,6 +147,10 @@ EXPECTED_SPRINTS = {
 # Usada apenas para VALIDAR o que a API entregou, nunca para preencher dado.
 EXPECTED_CHAMPIONS = {
     1995: ("michael_schumacher", "benetton"),
+    1996: ("damon_hill", "williams"),
+    1997: ("villeneuve", "williams"),
+    1998: ("hakkinen", "mclaren"),
+    1999: ("hakkinen", "ferrari"),
     2000: ("michael_schumacher", "ferrari"),
     2001: ("michael_schumacher", "ferrari"),
     2002: ("michael_schumacher", "ferrari"),

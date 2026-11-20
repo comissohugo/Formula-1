@@ -481,7 +481,7 @@ with tab_races:
                 "Q3": q["q3"].fillna("—"),
             }
         else:
-            # Sessão única (2000–2002): o tempo é o melhor da classificação,
+            # Sessão única (1995–2002): o tempo é o melhor da classificação,
             # não uma etapa Q1 de formato eliminatório.
             time_columns = {"Tempo": q["q1"].fillna("—")}
         q_table = pd.DataFrame(

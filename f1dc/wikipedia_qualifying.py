@@ -1,7 +1,7 @@
 """Completa a classificação (qualifying) antiga com a Wikipédia (en).
 
 A fonte primária (Jolpica/Ergast) não possui classificação completa em todas as
-etapas de 2000–2002. As páginas de cada Grande Prêmio na Wikipédia em inglês
+etapas de 1996–2002. As páginas de cada Grande Prêmio na Wikipédia em inglês
 trazem a tabela de qualifying com posição, piloto, equipe e tempo, citando os
 arquivos da FIA. Este módulo importa **apenas os GPs em que a fonte primária
 não tem nenhuma linha de classificação**.
@@ -58,10 +58,14 @@ PAGE_URL = "https://en.wikipedia.org/wiki/{season}_{race}"
 WIKIPEDIA_MARKER = "wikipedia.org"
 
 # Temporadas cujas páginas de GP usam o formato de tabela suportado por este
-# importador (posição, piloto, equipe e tempo; grid quando existir). 2000 usa
-# tabelas sem coluna de grid e predefinições {{sort}}/{{sortname}}; 2001 usa
-# ``Lap`` no cabeçalho da coluna de tempo.
-SUPPORTED_SEASONS = (2000, 2001, 2002)
+# importador (posição, piloto, equipe e tempo; grid quando existir). 1996 usa
+# tabelas com coluna de tempo; 1998 usa ``Lap Time``; 2000 usa tabelas sem
+# coluna de grid e predefinições {{sort}}/{{sortname}}; 2001 usa ``Lap``.
+SUPPORTED_SEASONS = (1996, 1997, 1998, 1999, 2000, 2001, 2002)
+
+# Rótulos de coluna de tempo encontrados nas páginas antigas: ``Time`` (2000),
+# ``Lap`` (2001) e ``Lap Time`` (1998).
+TIME_LABELS = ("time", "lap", "lap time")
 
 MIN_CLASSIFIED = 10
 
@@ -70,6 +74,39 @@ MIN_CLASSIFIED = 10
 # divergência vira aviso, sem bloquear o preenchimento dos demais GPs. Cada
 # exceção precisa de justificativa e fonte externa de conferência.
 PRIMARY_DIVERGENCE_EXCEPTIONS = {
+    (1997, 2): (
+        "Frentzen (P8): primária 1:16.971, Wikipédia 1:16.924. "
+        "Fonte primária mantida. "
+        "https://en.wikipedia.org/wiki/1997_Brazilian_Grand_Prix"
+    ),
+    (1997, 3): (
+        "Diniz (P22): primária 1:28.696, Wikipédia 1:28.969. "
+        "Fonte primária mantida. "
+        "https://en.wikipedia.org/wiki/1997_Argentine_Grand_Prix"
+    ),
+    (1997, 8): (
+        "P12/P13: primária Barrichello 12º e Nakano 13º (ambos 1:15.876); "
+        "Wikipédia inverte (Nakano 1:15.857, Barrichello 1:15.876). "
+        "Fonte primária mantida. "
+        "https://en.wikipedia.org/wiki/1997_French_Grand_Prix"
+    ),
+    (1997, 9): (
+        "P14–P22: primária registra Fontana em P22 sem tempo, deslocando "
+        "os demais uma posição; Wikipédia dá 1:23.790 a Fontana em P14. "
+        "Fonte primária mantida. "
+        "https://en.wikipedia.org/wiki/1997_British_Grand_Prix"
+    ),
+    (1998, 3): (
+        "Wurz (P8): primária 1:27.198, Wikipédia 1:27.196; Diniz (P18): "
+        "primária 1:29.617, Wikipédia 1:30.022. Fonte primária mantida. "
+        "https://en.wikipedia.org/wiki/1998_Argentine_Grand_Prix"
+    ),
+    (1999, 2): (
+        "P16–P21: primária registra Villeneuve em P21 sem tempo, deslocando "
+        "os demais uma posição; Wikipédia dá 1:19.377 a Villeneuve em P16. "
+        "Fonte primária mantida. "
+        "https://en.wikipedia.org/wiki/1999_Brazilian_Grand_Prix"
+    ),
     (2000, 3): (
         "Barrichello (P4): fonte primária 1:25.871 (repetido de Ralf "
         "Schumacher); Wikipédia e formula1.com registram 1:25.242. "
@@ -180,7 +217,7 @@ def parse_qualifying_table(wikitext: str) -> dict[str, Any]:
         if (
             "driver" in candidate_labels
             and "constructor" in candidate_labels
-            and any(label in ("time", "lap") for label in candidate_labels)
+            and any(label in TIME_LABELS for label in candidate_labels)
         ):
             table = candidate
             labels = candidate_labels
@@ -191,7 +228,7 @@ def parse_qualifying_table(wikitext: str) -> dict[str, Any]:
 
     driver_idx = labels.index("driver")
     constructor_idx = labels.index("constructor")
-    time_idx = labels.index("time") if "time" in labels else labels.index("lap")
+    time_idx = next(labels.index(label) for label in TIME_LABELS if label in labels)
     position_idx = 0
 
     rows: list[dict[str, Any]] = []
@@ -207,6 +244,8 @@ def parse_qualifying_table(wikitext: str) -> dict[str, Any]:
         position_text = _abbreviation(cells[position_idx]) or _clean_cell(
             cells[position_idx]
         )
+        # 1997 Bélgica usa ``6*`` para marcar nota de rodapé na posição.
+        position_text = position_text.rstrip("*")
         position_match = re.fullmatch(r"\d+", position_text)
         name = _driver_name(cells[driver_idx])
         if position_match is None:
@@ -236,10 +275,13 @@ def parse_qualifying_table(wikitext: str) -> dict[str, Any]:
     for row in rows:
         if not row["driver"]:
             raise ValueError(f"piloto ausente na posição {row['position']}")
-        if row["time"] is None:
-            raise ValueError(
-                f"tempo ausente para {row['driver']} (P{row['position']})"
-            )
+    # A pole (P1) precisa de tempo: é dela que derivamos o prêmio. Nas demais
+    # posições, um tempo em branco (ex.: Irvine em França 1996) é registrado
+    # como ausente — nunca como zero — e segue para a base como NULL.
+    if rows[0]["time"] is None:
+        raise ValueError(
+            f"tempo ausente para {rows[0]['driver']} (P1)"
+        )
     return {"rows": rows, "skipped": skipped}
 
 
@@ -392,8 +434,18 @@ def import_seasons(
                 if primary:
                     # Fonte primária manda: só conferimos, nunca sobrescrevemos.
                     expected = _primary_rows(conn, season, round_)
+                    # Linhas sem tempo são marcadores de DNQ/EX na primária
+                    # (ex.: 1996 Brasil P21/P22). Não competem com a ordem
+                    # dos pilotos que efetivamente classificaram.
+                    expected = {
+                        position: value
+                        for position, value in expected.items()
+                        if value[1] is not None
+                    }
                     actual = {}
                     for row in wiki_rows:
+                        if row["time"] is None:
+                            continue
                         driver_id = _resolve_driver(
                             row["driver"], lookup, by_last_name
                         )

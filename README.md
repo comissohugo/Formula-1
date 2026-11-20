@@ -1,4 +1,4 @@
-# 🏁 F1 Data Center — 2000 a 2026
+# 🏁 F1 Data Center — 1995 a 2026
 
 Dashboard histórico da Fórmula 1 em Python/Streamlit, com base local em SQLite e
 importação pela [Jolpica F1 API](https://api.jolpi.ca/ergast/f1/) (estrutura
@@ -10,7 +10,7 @@ manual de pontos.
 
 Para as temporadas antigas em que a fonte primária não traz pole position,
 volta mais rápida ou a classificação completa, esses dados são complementados
-pela **Wikipédia** (pt para premiações e en para o qualifying de 2000 a 2002),
+pela **Wikipédia** (pt para premiações e en para o qualifying de 1995 a 2002),
 com URL e data de importação. A fonte primária sempre tem prioridade.
 
 A temporada **2026 é importada em modo "em andamento"**: entram apenas as etapas
@@ -23,7 +23,7 @@ andamento até a última etapa.
 
 ## O que já está pronto
 
-- Importação de **2000 a 2025** (503 GPs encerrados) mais **2026 em andamento**
+- Importação de **1995 a 2025** (585 GPs encerrados) mais **2026 em andamento**
   (20 de 23 GPs concluídos até o momento).
 - Calendário, circuitos, pilotos e equipes.
 - Classificação completa (qualifying) quando disponível na fonte ou
@@ -32,11 +32,12 @@ andamento até a última etapa.
 - **Sprints separadas** dos GPs principais.
 - Classificação oficial de pilotos e construtores (final nas temporadas
   encerradas; atual em 2026), com pontos, vitórias, **pódios** e **poles**.
-- **Poles e voltas rápidas ausentes na fonte primária (2000–2003)**
+- **Poles e voltas rápidas ausentes na fonte primária (1995–2003)**
   complementadas pela Wikipédia (pt), com fonte e data registradas.
-- **Qualifying completo de 2000 a 2002**: 13 GPs de 2000, 16 de 2001 e 15 de
-  2002 complementados pela Wikipédia (en), com prioridade da fonte primária nos
-  GPs que ela já cobria.
+- **Qualifying completo de 1995 a 2002**: a primária cobre 1995 integralmente;
+  de 1996 a 1999 ela cobre 7/16, 10/17, 7/16 e 3/16 GPs, respectivamente, e o
+  restante veio da Wikipédia (en); em 2000–2002, 13/16/15 GPs foram
+  complementados. A fonte primária sempre tem prioridade nos GPs que cobre.
 - Dashboard com abas de Corridas, Campeonato, Pilotos, Equipes, Histórico,
   **Ranking** e Qualidade dos dados.
 - **Ranking acumulado do período** (top 10 por vitórias, pódios, corridas,
@@ -84,13 +85,13 @@ python -m venv .venv
 > complemente os dados com a Wikipédia:
 >
 > ```powershell
-> .\.venv\Scripts\python -m f1dc.wikipedia --seasons 2000,2001,2002,2003
+> .\.venv\Scripts\python -m f1dc.wikipedia --seasons 1995,1996,1997,1998,1999,2000,2001,2002,2003
 > ```
 >
-> Para completar o qualifying de 2000 a 2002 (GPs ausentes na fonte primária):
+> Para completar o qualifying de 1996 a 2002 (GPs ausentes na fonte primária):
 >
 > ```powershell
-> .\.venv\Scripts\python -m f1dc.wikipedia_qualifying --seasons 2000,2001,2002
+> .\.venv\Scripts\python -m f1dc.wikipedia_qualifying --seasons 1996,1997,1998,1999,2000,2001,2002
 > ```
 
 ### 4. Abrir o painel
@@ -101,8 +102,8 @@ python -m venv .venv
 
 O navegador abre em `http://localhost:8501`.
 
-> Também é possível atualizar os dados pelo botão **🔄 Atualizar dados da API**
-> na barra lateral do painel.
+> Também é possível atualizar os dados pelo botão **🔄 Atualizar 2026 da API**
+> na barra lateral do painel (ele só reimporta a temporada em andamento).
 
 ---
 
@@ -112,8 +113,8 @@ O navegador abre em `http://localhost:8501`.
 |---|---|
 | Importar tudo | `.\.venv\Scripts\python -m f1dc.ingest` |
 | Importar só algumas temporadas | `.\.venv\Scripts\python -m f1dc.ingest --seasons 2024,2025` |
-| Complementar poles/voltas rápidas | `.\.venv\Scripts\python -m f1dc.wikipedia --seasons 2000,2001,2002,2003` |
-| Completar o qualifying de 2000 a 2002 | `.\.venv\Scripts\python -m f1dc.wikipedia_qualifying --seasons 2000,2001,2002` |
+| Complementar poles/voltas rápidas | `.\.venv\Scripts\python -m f1dc.wikipedia --seasons 1995,1996,1997,1998,1999,2000,2001,2002,2003` |
+| Completar o qualifying de 1996 a 2002 | `.\.venv\Scripts\python -m f1dc.wikipedia_qualifying --seasons 1996,1997,1998,1999,2000,2001,2002` |
 | Atualizar depois de um GP | `.\.venv\Scripts\python -m f1dc.ingest --seasons 2026` |
 | Validar a base | `.\.venv\Scripts\python -m f1dc.validate` |
 | Rodar os testes | `.\.venv\Scripts\python -m pytest -q` |
@@ -169,11 +170,12 @@ Copy-Item data\f1.db $env:TEMP\f1_teste.db
 .\.venv\Scripts\python -m f1dc.ingest --seasons 2026 --db $env:TEMP\f1_teste.db
 ```
 
-> **Atenção:** reimportar **2000 a 2003** apaga o qualifying e as premiações
+> **Atenção:** reimportar **1995 a 2003** apaga o qualifying e as premiações
 > complementares daquelas temporadas. Nesse caso, depois do `f1dc.ingest` rode
-> também `f1dc.wikipedia_qualifying --seasons 2000,2001,2002` e
-> `f1dc.wikipedia --seasons 2000,2001,2002,2003`. Para 2026 isso não se aplica,
-> porque não há dados complementares da Wikipédia nessas temporadas.
+> também `f1dc.wikipedia_qualifying --seasons 1996,1997,1998,1999,2000,2001,2002`
+> e `f1dc.wikipedia --seasons 1995,1996,1997,1998,1999,2000,2001,2002,2003`.
+> Para 2026 isso não se aplica, porque não há dados complementares da Wikipédia
+> nessa temporada.
 
 ---
 
@@ -197,7 +199,7 @@ f1-data-center/
 │   ├── db.py              # esquema SQLite e upserts idempotentes
 │   ├── ingest.py          # importação por temporada (CLI)
 │   ├── wikipedia.py       # poles/voltas rápidas complementares (CLI)
-│   ├── wikipedia_qualifying.py  # qualifying de 2000–2002 complementar (CLI)
+│   ├── wikipedia_qualifying.py  # qualifying de 1995–2002 complementar (CLI)
 │   ├── validate.py        # checagens de qualidade (CLI)
 │   └── data.py            # agregações usadas pelo dashboard
 └── tests/                 # pytest
@@ -221,7 +223,7 @@ f1-data-center/
 5. **Pole ≠ P1 do grid.** A pole vem da classificação; o grid efetivo é exibido
    em coluna separada. Penalidades não são inferidas. Quando a fonte primária
    não tem a pole/volta rápida, a Wikipédia (pt) preenche a lacuna em tabela
-   separada, com URL e data. O qualifying completo de 2000 a 2002, ausente na
+   separada, com URL e data. O qualifying completo de 1996 a 2002, ausente na
    maior parte dos GPs, foi complementado pela Wikipédia (en) na própria tabela
    de classificação, com `source_url`/`fetched_at` por linha e sem tocar nos GPs
    da fonte primária.
@@ -231,18 +233,21 @@ f1-data-center/
 
 ## Limitações conhecidas
 
-- Em **2000** a fonte primária trazia qualifying completo em apenas 4 GPs; os
-  outros **13 GPs foram complementados pela Wikipédia (en)**. Em **2001** eram
-  1 GP na fonte primária e **16 GPs complementados**; em **2002**, 2 GPs e
-  **15 GPs complementados**. A fonte primária continua tendo prioridade nos GPs
-  que já cobria. Em **2000 R3** (San Marino) há uma divergência conhecida: a
+- Em **1995** o qualifying já vem completo da fonte primária. De **1996 a 1999**
+  a primária cobriu 7/16, 10/17, 7/16 e 3/16 GPs; os demais foram
+  **complementados pela Wikipédia (en)**. Em **2000** eram 4 GPs na primária e
+  **13 complementados**; em **2001**, 1 e **16**; em **2002**, 2 e **15**. A
+  fonte primária continua tendo prioridade nos GPs que já cobria. Há divergências
+  conhecidas documentadas em `f1dc/wikipedia_qualifying.py` (1997 R2/R3/R8/R9,
+  1998 R3 e 1999 R2, além de 2000 R3). Em **2000 R3** (San Marino) há uma
+  divergência conhecida: a
   fonte primária repete o tempo de Ralf Schumacher para Barrichello (1:25.871),
   enquanto a Wikipédia e a formula1.com registram 1:25.242; o valor da fonte
   primária foi mantido e documentado. Até **2003** a fonte também não traz volta
   mais rápida em todos os GPs; as poles e voltas rápidas ausentes nesse período
   foram complementadas pela Wikipédia (pt).
 - A API pode não trazer volta mais rápida em todos os GPs; nesses casos o painel
-  mostra "Não disponível". A única ausência real documentada fora de 2000–2003 é
+  mostra "Não disponível". A única ausência real documentada fora de 1995–2003 é
   Spa 2021 (corrida encerrada sob safety car após 1 volta).
 - Penalidades e decisões dos comissários não são inferidas nem exibidas além do
   que a API informa.
@@ -265,13 +270,15 @@ f1-data-center/
 
 - API: <https://api.jolpi.ca/ergast/f1/>
 - Documentação: <https://github.com/jolpica/jolpica-f1>
-- Complemento de poles/voltas rápidas (2000–2003):
+- Complemento de poles/voltas rápidas (1995–2003):
+  <https://pt.wikipedia.org/wiki/Campeonato_Mundial_de_F%C3%B3rmula_1_de_1995>,
   <https://pt.wikipedia.org/wiki/Campeonato_Mundial_de_F%C3%B3rmula_1_de_2000>,
   <https://pt.wikipedia.org/wiki/Campeonato_Mundial_de_F%C3%B3rmula_1_de_2001>,
   <https://pt.wikipedia.org/wiki/Campeonato_Mundial_de_F%C3%B3rmula_1_de_2002> e
   <https://pt.wikipedia.org/wiki/Campeonato_Mundial_de_F%C3%B3rmula_1_de_2003>
-- Complemento da classificação de 2000 a 2002: páginas de GP da Wikipédia em
-  inglês (por exemplo, <https://en.wikipedia.org/wiki/2000_Australian_Grand_Prix>,
+- Complemento da classificação de 1996 a 2002: páginas de GP da Wikipédia em
+  inglês (por exemplo, <https://en.wikipedia.org/wiki/1996_French_Grand_Prix>,
+  <https://en.wikipedia.org/wiki/2000_Australian_Grand_Prix>,
   <https://en.wikipedia.org/wiki/2001_Australian_Grand_Prix> e
   <https://en.wikipedia.org/wiki/2002_Australian_Grand_Prix>), que citam os
   arquivos da FIA.
