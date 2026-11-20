@@ -1,4 +1,4 @@
-"""F1 Data Center - dashboard histórico (2000-2026, com 2026 em andamento).
+"""F1 Data Center - dashboard histórico (1995-2026, com 2026 em andamento).
 
 Execute com:
     streamlit run app.py
@@ -775,7 +775,7 @@ with tab_drivers:
         career = data.driver_circuit_stats(frames, driver_id)
         favorite = data.favorite_circuit(frames, driver_id)
         if favorite is None:
-            st.info("Sem vitórias no período carregado (2000 a 2026).")
+            st.info(f"Sem vitórias no período carregado ({PERIOD_LABEL}).")
         else:
             wins_only = career[career["wins"] > 0].reset_index(drop=True)
             tied_count = len(favorite["others"]) + 1
@@ -1450,11 +1450,18 @@ with tab_ranking:
 
         st.divider()
         st.markdown("#### Maiores vencedores do século — top 10 (desde 2000)")
-        winners = data.period_top_winners(frames, limit=10)
+        # "Século" é, por definição do projeto, o recorte desde 2000 —
+        # mesmo com a base abrangendo 1995 em diante.
+        century_frames = {
+            name: (frame[frame["season"] >= 2000] if "season" in frame.columns else frame)
+            for name, frame in frames.items()
+        }
+        century_rankings = data.period_driver_rankings(century_frames)
+        winners = data.period_top_winners(century_frames, limit=10)
         if winners.empty:
             st.info("Sem vitórias registradas no período.")
         else:
-            info = rankings.set_index("driver_id")
+            info = century_rankings.set_index("driver_id")
             winners_table = pd.DataFrame(
                 {
                     "Pos.": range(1, len(winners) + 1),
@@ -1481,10 +1488,11 @@ with tab_ranking:
                     "vitória(s) em cada circuito."
                 )
             st.caption(
-                "Critério: os 10 pilotos com mais vitórias desde 2000 (início da "
-                "base), com desempate por pódios e corridas. O circuito é contado "
-                "por traçado, não pelo nome do GP. Vitórias em sprints não entram. "
-                "Como a base começa em 2000, resultados anteriores não são somados."
+                "Critério: os 10 pilotos com mais vitórias desde 2000 — recorte "
+                "'século' definido pelo painel —, com desempate por pódios e "
+                "corridas. O circuito é contado por traçado, não pelo nome do GP. "
+                f"Vitórias em sprints não entram. A base cobre {PERIOD_LABEL}, mas "
+                "este recorte não inclui 1995–1999."
             )
 
 # --------------------------------------------------------------------------
