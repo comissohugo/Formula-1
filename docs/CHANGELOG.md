@@ -1083,6 +1083,40 @@ validação da base.
 
 ------------------------------------------------------------------------
 
+## 2026-11-20 --- Atualização automática das etapas restantes de 2026
+
+-   **Decisão:** Programar as três etapas finais (Las Vegas, Qatar e Abu
+    Dhabi) no Agendador de Tarefas do Windows, com espera pelo resultado na
+    Jolpica em vez de horário fixo. O encerramento oficial de 2026 continua
+    manual, para não publicar campeão antes da conferência externa.
+-   **Arquivos alterados:** `scripts/update_season.py` (novo), `README.md`,
+    `docs/CHANGELOG.md`.
+-   **O que foi implementado:**
+    -   script idempotente que espera o resultado do GP na API (15 em 15
+        minutos, até 6 horas), recusa pular etapa anterior sem resultado,
+        reimporta 2026, valida a base, faz `wal_checkpoint(TRUNCATE)` e só
+        então commita/pusha `f1.db` + `validation_report.json`;
+    -   barreira extra: aborta se a importação reduzir o número de GPs;
+    -   log em `logs/update_season.log`;
+    -   tarefas `Atualiza2026-R21-LasVegas` (23/11 09:00),
+        `Atualiza2026-R22-Qatar` (29/11 16:00) e
+        `Atualiza2026-R23-AbuDhabi` (06/12 13:00), criadas com sucesso e
+        verificadas como `Pronto`.
+-   **Testes realizados:** `py_compile` do script, `python -m pytest -q`
+    (66 passando), dry-run de espera confirmando que o GP 21 ainda não está
+    na API e que o timeout não publica nada, consulta ao calendário 2026
+    confirmando R21/R22/R23, e `/query` das três tarefas no Agendador.
+-   **Problemas conhecidos:** `/rl HIGHEST` foi recusado (sem privilégio
+    administrativo), então as tarefas rodam no nível padrão do usuário —
+    suficiente porque banco, log e repositório estão no perfil dele. Se o PC
+    estiver desligado no disparo, a tarefa não executa depois: é preciso
+    rodar o script manualmente (comando no README).
+-   **Próxima ação:** conferir o log após cada GP; depois de Abu Dhabi,
+    remover 2026 de `IN_PROGRESS_SEASONS` e `CLINCHED_CHAMPIONS`, reimportar,
+    validar, atualizar docs/ZIP e publicar.
+
+------------------------------------------------------------------------
+
 ## Modelo para próximas atualizações
 
 ### AAAA-MM-DD --- Título da alteração

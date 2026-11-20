@@ -5,3 +5,4 @@ __pycache__/
 exports/
 data/*.db-wal
 data/*.db-shm
+logs/

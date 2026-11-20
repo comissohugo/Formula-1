@@ -116,6 +116,7 @@ O navegador abre em `http://localhost:8501`.
 | Complementar poles/voltas rápidas | `.\.venv\Scripts\python -m f1dc.wikipedia --seasons 1995,1996,1997,1998,1999,2000,2001,2002,2003` |
 | Completar o qualifying de 1996 a 2002 | `.\.venv\Scripts\python -m f1dc.wikipedia_qualifying --seasons 1996,1997,1998,1999,2000,2001,2002` |
 | Atualizar depois de um GP | `.\.venv\Scripts\python -m f1dc.ingest --seasons 2026` |
+| Atualizar + validar + publicar | `.\.venv\Scripts\python scripts\update_season.py --round 21` |
 | Validar a base | `.\.venv\Scripts\python -m f1dc.validate` |
 | Rodar os testes | `.\.venv\Scripts\python -m pytest -q` |
 | Abrir o painel | `.\.venv\Scripts\streamlit run app.py` |
@@ -177,6 +178,55 @@ Copy-Item data\f1.db $env:TEMP\f1_teste.db
 > Para 2026 isso não se aplica, porque não há dados complementares da Wikipédia
 > nessa temporada.
 
+### Atualização automática das etapas restantes de 2026
+
+As três etapas finais já estão agendadas no **Agendador de Tarefas do Windows**
+(pasta `F1DataCenter`), com o script `scripts/update_season.py`:
+
+| Tarefa | GP | Disparo |
+|---|---|---|
+| `Atualiza2026-R21-LasVegas` | R21 — Las Vegas | 23/11/2026 09:00 |
+| `Atualiza2026-R22-Qatar` | R22 — Qatar | 29/11/2026 16:00 |
+| `Atualiza2026-R23-AbuDhabi` | R23 — Abu Dhabi | 06/12/2026 13:00 |
+
+Cada tarefa:
+
+1. espera o resultado do GP aparecer na Jolpica (consulta a cada 15 minutos,
+   até 6 horas) — não assume horário fixo de término;
+2. recusa seguir em frente se a etapa anterior ainda estiver sem resultado
+   (evita lacuna na base);
+3. reimporta apenas 2026, valida a base inteira e faz
+   `PRAGMA wal_checkpoint(TRUNCATE)`;
+4. commita `data/f1.db` + `data/validation_report.json` e faz `push`, o que
+   dispara o redeploy no Streamlit Cloud;
+5. **não** remove 2026 de `IN_PROGRESS_SEASONS` — o encerramento oficial
+   continua sendo uma decisão manual, conferida com a fonte externa.
+
+O log fica em `logs/update_season.log`. Para acompanhar:
+
+```powershell
+Get-Content logs\update_season.log -Wait -Tail 20
+```
+
+Para ver, pausar ou remover as tarefas:
+
+```powershell
+schtasks /query /tn F1DataCenter
+schtasks /change /tn F1DataCenter\Atualiza2026-R21-LasVegas /disable
+schtasks /delete /tn F1DataCenter\Atualiza2026-R21-LasVegas /f
+```
+
+Se o PC estiver desligado no horário, a tarefa não dispara sozinha (o
+Agendador não tem "executar assim que possível" nesse caso). Nesse dia, rode
+manualmente:
+
+```powershell
+.\.venv\Scripts\python scripts\update_season.py --round 21
+```
+
+(substitua `--round 21` por 22 ou 23 conforme a etapa). O script é idempotente:
+se o resultado já estiver importado e nada mudou, ele encerra sem criar commit.
+
 ---
 
 ## Estrutura do projeto
@@ -192,6 +242,10 @@ f1-data-center/
 │   ├── PROJETO_F1.md      # documento central do projeto
 │   ├── CHANGELOG.md
 │   └── app_prototipo_original.py
+├── scripts/
+│   └── update_season.py   # atualização agendada + commit/push (CLI)
+├── logs/
+│   └── update_season.log  # log das atualizações automáticas
 ├── f1dc/
 │   ├── config.py          # temporadas, caminhos, expectativas
 │   ├── api.py             # cliente Jolpica (retry, rate limit, paginação)
