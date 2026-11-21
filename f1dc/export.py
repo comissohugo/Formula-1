@@ -197,7 +197,9 @@ def _readme(
             f"'{alias['primary_name']}'; exibimos '{alias['official_name']}' "
             "conforme a fonte oficial "
             f"({alias['source_url']}, conferido em {alias['verified_at']}). "
-            "O nome bruto permanece no banco."
+            "O nome oficial fica gravado no banco e é reaplicado nas "
+            "reimportações; a substituição só ocorre se a primária trouxer "
+            "exatamente o nome antigo nessa etapa."
         )
     lines.append("")
     return "\n".join(lines)

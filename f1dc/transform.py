@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from . import config
 from .api import dedupe
 
 # Status textuais que a Ergast/Jolpica usa para resultados não classificados.
@@ -89,10 +90,14 @@ def circuit_row(circuit: dict[str, Any]) -> dict[str, Any]:
 
 
 def race_row(race: dict[str, Any], has_sprint: bool, source_url: str, fetched_at: str) -> dict[str, Any]:
+    season = to_int(race.get("season"))
+    round_number = to_int(race.get("round"))
     return {
-        "season": to_int(race.get("season")),
-        "round": to_int(race.get("round")),
-        "race_name": race.get("raceName"),
+        "season": season,
+        "round": round_number,
+        "race_name": config.official_race_name(
+            season, round_number, race.get("raceName")
+        ),
         "circuit_id": (race.get("Circuit") or {}).get("circuitId"),
         "date": race.get("date"),
         "time": race.get("time"),

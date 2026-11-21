@@ -90,6 +90,23 @@ RACE_NAME_ALIASES = {
     },
 }
 
+
+def official_race_name(
+    season: int, round_number: int, primary_name: str | None
+) -> str | None:
+    """Nome oficial conferido para uma etapa, quando a primária diverge.
+
+    Usado na importação para gravar o nome corrigido já no banco. Assim o painel
+    mostra o nome certo mesmo antes do redeploy do código, e as reimportações
+    de 2026 não devolvem o nome antigo. Aplica-se somente se a primária trouxer
+    exatamente o ``primary_name`` esperado.
+    """
+    alias = RACE_NAME_ALIASES.get((season, round_number))
+    if alias and primary_name == alias["primary_name"]:
+        return alias["official_name"]
+    return primary_name
+
+
 # --- Caminhos -------------------------------------------------------------
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"

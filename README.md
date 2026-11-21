@@ -276,10 +276,12 @@ em `logs/finalize_season.log`.
 A Jolpica devolve `Barcelona Grand Prix` para a etapa de Catalunya de 2026,
 enquanto a [fonte oficial da F1](https://www.formula1.com/en/racing/2026/barcelona-catalunya)
 usa `Barcelona-Catalunya Grand Prix` (o nome `Spanish Grand Prix` passou para o
-Madring, R14). O banco mantém o nome bruto da primária; a exibição, o CSV do
-calendário e o ZIP usam o nome oficial, com URL e data da conferência. No painel,
-o detalhe do GP mostra um link para a página oficial. O alias só é aplicado se o
-nome bruto no banco continuar sendo exatamente o esperado.
+Madring, R14). A correção é gravada no próprio banco na importação e reaplicada
+nas reimportações de 2026, então o nome oficial aparece no painel, no CSV do
+calendário e no ZIP. A exibição também registra URL e data da conferência, e o
+detalhe do GP mostra um link para a página oficial. A substituição só acontece
+se a primária trouxer exatamente `Barcelona Grand Prix` na etapa 7; qualquer
+outro nome é preservado.
 
 ---
 

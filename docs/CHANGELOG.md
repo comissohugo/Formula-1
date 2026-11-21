@@ -1294,6 +1294,36 @@ validação da base.
 
 ------------------------------------------------------------------------
 
+## 2026-11-21 --- Grava o nome oficial de Barcelona no banco
+
+-   **Decisão:** a confirmação visual mostrou que o Streamlit Cloud ainda servia
+    o código antigo e o dropdown exibia `Barcelona Grand Prix`. Para que o nome
+    correto apareça independentemente do redeploy, a correção passou a ser
+    gravada no próprio SQLite e reaplicada nas reimportações de 2026.
+-   **Arquivos alterados:** `f1dc/config.py` (`official_race_name`),
+    `f1dc/transform.py`, `f1dc/data.py`, `f1dc/export.py`,
+    `tests/test_transform.py`, `tests/test_data.py`, `README.md`,
+    `docs/CHANGELOG.md`, `data/f1.db`.
+-   **O que foi implementado:**
+    -   `config.official_race_name()` substitui o nome da primária pelo oficial
+        somente em `(2026, R7)` e somente quando a primária trouxer
+        `Barcelona Grand Prix`. `transform.race_row()` usa essa função, então a
+        reimportação de 2026 não devolve o nome antigo.
+    -   `apply_race_name_aliases()` continua preenchendo `race_name_source`,
+        `race_name_source_url` e `race_name_verified_at`, agora tanto para o
+        banco antigo (nome bruto) quanto para o banco já corrigido. O
+        `LEIA-ME.txt` do ZIP foi ajustado para descrever a correção gravada no
+        banco, sem afirmar que o nome bruto permanece lá.
+    -   linha de `(2026, R7)` do banco publicado atualizada para
+        `Barcelona-Catalunya Grand Prix`, com `wal_checkpoint(TRUNCATE)`.
+-   **Testes realizados:** casos novos para `race_row()` e para a proveniência
+    com o nome já gravado; suíte completa e validação da base a registrar abaixo.
+-   **Problemas conhecidos:** se o processo do app estiver com cache antigo, o
+    nome gravado no banco exige uma nova sessão (ou reboot) para aparecer.
+-   **Próxima ação:** publicar, recarregar o app sem cache e conferir o dropdown.
+
+------------------------------------------------------------------------
+
 ## Modelo para próximas atualizações
 
 ### AAAA-MM-DD --- Título da alteração

@@ -28,6 +28,28 @@ def test_disqualification_detected_by_status_only():
     assert transform.is_classified("20", "Finished") is True
 
 
+def test_race_row_writes_official_name_for_aliased_round():
+    race = {
+        "season": "2026",
+        "round": "7",
+        "raceName": "Barcelona Grand Prix",
+        "Circuit": {"circuitId": "catalunya"},
+    }
+    row = transform.race_row(race, False, "url", "now")
+    assert row["race_name"] == "Barcelona-Catalunya Grand Prix"
+
+
+def test_race_row_keeps_other_names_untouched():
+    race = {
+        "season": "2026",
+        "round": "14",
+        "raceName": "Spanish Grand Prix",
+        "Circuit": {"circuitId": "madring"},
+    }
+    row = transform.race_row(race, False, "url", "now")
+    assert row["race_name"] == "Spanish Grand Prix"
+
+
 def test_race_result_row_without_fastest_lap():
     item = {
         "Driver": {"driverId": "norris", "givenName": "Lando", "familyName": "Norris"},

@@ -98,9 +98,11 @@ def apply_race_name_aliases(races: pd.DataFrame) -> pd.DataFrame:
 
     Não altera o banco: ``frames`` é usado apenas para exibição e exportação.
     A URL e a data da conferência viajam nas colunas ``race_name_source*``,
-    que também aparecem no CSV do calendário. O alias só é aplicado se o nome
-    bruto no banco continuar sendo exatamente o ``primary_name`` esperado —
-    assim uma mudança futura da primária não troca o nome de outro GP.
+    que também aparecem no CSV do calendário. O nome oficial pode vir do nome
+    bruto da primária (banco antigo) ou já estar gravado no banco pela
+    importação; nos dois casos a proveniência é preenchida. Qualquer outro
+    nome naquela etapa é preservado, para uma mudança futura da primária não
+    trocar o nome de outro GP.
     """
     result = races.copy()
     result["race_name_source"] = "Jolpica"
@@ -110,7 +112,9 @@ def apply_race_name_aliases(races: pd.DataFrame) -> pd.DataFrame:
         mask = (
             (result["season"] == season)
             & (result["round"] == round_number)
-            & (result["race_name"] == alias["primary_name"])
+            & result["race_name"].isin(
+                [alias["primary_name"], alias["official_name"]]
+            )
         )
         if not mask.any():
             continue
