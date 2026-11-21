@@ -7,10 +7,11 @@ matematicamente por Antonelli e Mercedes). As poles e voltas rápidas de
 1990–2003, ausentes na fonte primária, foram complementadas pela Wikipédia
 (pt), e o qualifying de 1990–2002 foi complementado pela Wikipédia (en), sempre
 com fonte e data registradas. A fonte primária mantém prioridade.
-O painel também mostra os **maiores vencedores desde 2000**, com o circuito
-onde cada piloto mais venceu (empates explícitos), as vitórias por circuito e
-os **circuitos fora do calendário atual**, calculados a partir do calendário
-importado.\
+O painel também mostra os **maiores vencedores por século** — século XX
+(1990–1999, com aviso de recorte incompleto) e século XXI (2000–2026) —, com o
+circuito onde cada piloto mais venceu (empates explícitos), as vitórias por
+circuito e os **circuitos fora do calendário atual**, calculados a partir do
+calendário importado.\
 **Idioma da interface:** português (Brasil).
 
 ## 1. Objetivo

@@ -45,9 +45,10 @@ andamento até a última etapa.
 - **Ranking acumulado do período** (top 10 por vitórias, pódios, corridas,
   poles, voltas rápidas, títulos e pontos), que cresce automaticamente quando
   novas temporadas são importadas.
-- **Maiores vencedores do século (desde 2000)**: top 10 por vitórias com o
-  circuito onde cada piloto mais venceu, aproveitamento (%) e empates
-  explicitados.
+- **Maiores vencedores por século**: dois top 10 na aba Ranking — século XX
+  (1990–1999) e século XXI (2000–2026) — com o circuito onde cada piloto mais
+  venceu, aproveitamento (%) e empates explicitados. O painel do século XX
+  avisa que o recorte está incompleto (faltam 1950–1989).
 - **Vitórias por circuito**: no perfil do piloto (tabela completa por traçado)
   e o top 5 de quem mais venceu em cada circuito, na aba Histórico.
 - **Circuitos fora do calendário atual**, calculados pelo calendário importado

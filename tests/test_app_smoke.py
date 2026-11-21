@@ -168,3 +168,19 @@ def test_app_2002_qualifying_complementar():
         "Tempo" in list(table.columns) and "Q1" not in list(table.columns)
         for table in tables
     ), [list(table.columns) for table in tables]
+
+
+@pytest.mark.skipif(
+    not _has_season(1990), reason="temporada 1990 ainda não importada"
+)
+def test_app_vencedores_por_seculo():
+    app = AppTest.from_file(
+        str(Path(config.PROJECT_ROOT) / "app.py"), default_timeout=180
+    ).run()
+    assert not app.exception, [str(e) for e in app.exception]
+    markdowns = [str(m.value) for m in app.markdown]
+    assert any("Maiores vencedores por século" in m for m in markdowns)
+    assert any("Século XX (1990–1999)" in m for m in markdowns)
+    assert any("Século XXI (2000–2026)" in m for m in markdowns)
+    warnings = [str(w.value) for w in app.warning]
+    assert any("faltam as temporadas 1950–1989" in w for w in warnings), warnings

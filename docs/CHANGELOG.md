@@ -1120,10 +1120,12 @@ validação da base.
 ## 2026-11-20 --- Extensão histórica para 1990–1994
 
 -   **Decisão:** atender ao pedido do usuário de ampliar a base agora,
-    incluindo 1990–1994. O recorte "século" continua sendo desde 2000, mesmo
-    com a base ampliada. Em 1994, o campeonato de construtores oficial é da
-    Williams (a Benetton ficou de fora), enquanto Schumacher é o campeão de
-    pilotos.
+    incluindo 1990–1994. Frageado sobre os "vencedores dos séculos XX e XXI",
+    o usuário escolheu manter o recorte disponível com aviso: painel do
+    século XX usando 1990–1999 e painel do século XXI usando 2000–2026, com
+    alerta explícito de que faltam 1950–1989 para um século XX completo. Em
+    1994, o campeonato de construtores oficial é da Williams (a Benetton ficou
+    de fora), enquanto Schumacher é o campeão de pilotos.
 -   **Arquivos alterados:** `f1dc/config.py` (temporadas, contagens,
     campeões, ajustes de pontos e exclusão de Benetton 1994),
     `f1dc/wikipedia.py`, `f1dc/wikipedia_qualifying.py`, `f1dc/validate.py`,
@@ -1149,15 +1151,22 @@ validação da base.
         na fonte primária e documentadas;
     -   ajuste oficial de pontos de pilotos em 1990 (descarte dos piores
         resultados: Prost 71 em vez de 73 e Piquet 43 em vez de 44), aplicado
-        apenas na reconciliação da validação.
+        apenas na reconciliação da validação;
+    -   painel "Maiores vencedores por século" na aba Ranking, com um top 10
+        para 1990–1999 (século XX, com aviso de recorte incompleto) e outro
+        para 2000–2026 (século XXI), ambos calculados pela mesma função de
+        ranking, com empates explícitos e download CSV separado.
 -   **Testes realizados:** `python -m f1dc.validate` APROVADO (19/19),
-    `python -m pytest -q` (70 passando), AppTest sem exceções e conferência
+    `python -m pytest -q` (71 passando), AppTest sem exceções e conferência
     dos campeões de 1990–1994 na base.
 -   **Problemas conhecidos:** a divergência de nome "Barcelona Grand Prix"
     (base) × "Barcelona-Catalunya Grand Prix" (oficial) segue pendente de
-    registro; o encerramento oficial de 2026 continua manual.
--   **Próxima ação:** regenerar o ZIP 1990–2026, fazer checkpoint do WAL,
-    commitar/publicar e verificar o Streamlit Cloud.
+    registro; o encerramento oficial de 2026 continua manual. Após o push,
+    o Streamlit Cloud ainda exibia o rótulo antigo (2000–2026) na primeira
+    conferência, indicando deploy/rebuild pendente.
+-   **Próxima ação:** confirmar que o Streamlit Cloud subiu a versão 1990–2026
+    com os dois painéis de século; se o serviço seguir com a versão antiga,
+    solicitar ao usuário o restart manual do app (com login).
 
 ------------------------------------------------------------------------
 

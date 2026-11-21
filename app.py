@@ -153,6 +153,78 @@ def csv_bytes(df: pd.DataFrame) -> bytes:
     return df.to_csv(index=False, sep=";", decimal=",").encode("utf-8-sig")
 
 
+def frames_for_seasons(
+    frames: dict[str, pd.DataFrame], start: int, end: int
+) -> dict[str, pd.DataFrame]:
+    """Filtra as tabelas que têm `season` para o intervalo [start, end].
+
+    Tabelas de dimensão (pilotos, equipes, circuitos) não têm `season` e
+    permanecem intactas: elas só são usadas para enriquecer os resultados.
+    """
+    return {
+        name: (
+            frame[(frame["season"] >= start) & (frame["season"] <= end)]
+            if "season" in frame.columns
+            else frame
+        )
+        for name, frame in frames.items()
+    }
+
+
+def render_century_winners(
+    frames: dict[str, pd.DataFrame],
+    label: str,
+    slug: str,
+    start: int,
+    end: int,
+    note: str,
+    warning: str | None = None,
+) -> None:
+    """Mostra o top 10 de vencedores de um recorte de século."""
+    st.markdown(f"##### {label}")
+    if warning:
+        st.warning(warning)
+    subset = frames_for_seasons(frames, start, end)
+    rankings = data.period_driver_rankings(subset)
+    winners = data.period_top_winners(subset, limit=10)
+    if winners.empty:
+        st.info("Sem vitórias registradas neste recorte.")
+        return
+    info = rankings.set_index("driver_id")
+    table = pd.DataFrame(
+        {
+            "Pos.": range(1, len(winners) + 1),
+            "Piloto": winners["full_name"],
+            "Títulos": winners["driver_id"].map(info["titles"]).astype(int),
+            "Vitórias": winners["wins"].astype(int),
+            "Corridas": winners["starts"].astype(int),
+            "% vitórias": winners["win_pct"].map(
+                lambda value: f"{value:.1f}".replace(".", ",") + "%"
+            ),
+            "Circuito onde mais venceu": [
+                f"{row['favorite']} — {row['favorite_wins']}"
+                + (" *" if row["tied"] else "")
+                for _, row in winners.iterrows()
+            ],
+            "Equipe(s)": winners["driver_id"].map(info["teams"]).fillna("—"),
+        }
+    )
+    st.dataframe(table, hide_index=True, width="stretch")
+    for _, row in winners[winners["tied"].map(bool)].iterrows():
+        st.caption(
+            f"\\* {row['full_name']}: empate com "
+            f"{', '.join(row['tied'])} — {row['favorite_wins']} "
+            "vitória(s) em cada circuito."
+        )
+    st.caption(note)
+    st.download_button(
+        f"Baixar top 10 — {label} (CSV)",
+        csv_bytes(table),
+        file_name=f"vencedores_{slug}.csv",
+        mime="text/csv",
+    )
+
+
 def driver_comparison_frame(
     driver_name: str,
     driver_stats: dict[str, Any],
@@ -1449,51 +1521,38 @@ with tab_ranking:
         )
 
         st.divider()
-        st.markdown("#### Maiores vencedores do século — top 10 (desde 2000)")
-        # "Século" é, por definição do projeto, o recorte desde 2000 —
-        # mesmo com a base abrangendo 1990 em diante.
-        century_frames = {
-            name: (frame[frame["season"] >= 2000] if "season" in frame.columns else frame)
-            for name, frame in frames.items()
-        }
-        century_rankings = data.period_driver_rankings(century_frames)
-        winners = data.period_top_winners(century_frames, limit=10)
-        if winners.empty:
-            st.info("Sem vitórias registradas no período.")
-        else:
-            info = century_rankings.set_index("driver_id")
-            winners_table = pd.DataFrame(
-                {
-                    "Pos.": range(1, len(winners) + 1),
-                    "Piloto": winners["full_name"],
-                    "Títulos": winners["driver_id"].map(info["titles"]).astype(int),
-                    "Vitórias": winners["wins"].astype(int),
-                    "Corridas": winners["starts"].astype(int),
-                    "% vitórias": winners["win_pct"].map(
-                        lambda value: f"{value:.1f}".replace(".", ",") + "%"
-                    ),
-                    "Circuito onde mais venceu": [
-                        f"{row['favorite']} — {row['favorite_wins']}"
-                        + (" *" if row["tied"] else "")
-                        for _, row in winners.iterrows()
-                    ],
-                    "Equipe(s)": winners["driver_id"].map(info["teams"]).fillna("—"),
-                }
-            )
-            st.dataframe(winners_table, hide_index=True, width="stretch")
-            for _, row in winners[winners["tied"].map(bool)].iterrows():
-                st.caption(
-                    f"\\* {row['full_name']}: empate com "
-                    f"{', '.join(row['tied'])} — {row['favorite_wins']} "
-                    "vitória(s) em cada circuito."
-                )
-            st.caption(
-                "Critério: os 10 pilotos com mais vitórias desde 2000 — recorte "
-                "'século' definido pelo painel —, com desempate por pódios e "
-                "corridas. O circuito é contado por traçado, não pelo nome do GP. "
-                f"Vitórias em sprints não entram. A base cobre {PERIOD_LABEL}, mas "
-                "este recorte não inclui 1990–1999."
-            )
+        st.markdown("#### Maiores vencedores por século — top 10")
+        st.caption(
+            "Dois recortes calculados a partir da base carregada: século XX "
+            "(1990–1999) e século XXI (2000–2026). Empates são exibidos "
+            "explicitamente; nunca são resolvidos por ordem arbitrária."
+        )
+        render_century_winners(
+            frames,
+            "Século XX (1990–1999)",
+            "seculo_xx_1990_1999",
+            1990,
+            1999,
+            "Critério: os 10 pilotos com mais vitórias entre 1990 e 1999, com "
+            "desempate por pódios e corridas. O circuito é contado por traçado, "
+            "não pelo nome do GP. Vitórias em sprints não entram.",
+            warning=(
+                "Recorte incompleto: a base começa em 1990, então faltam as "
+                "temporadas 1950–1989 do século XX. Esta lista mostra apenas "
+                "os vencedores de 1990–1999."
+            ),
+        )
+        render_century_winners(
+            frames,
+            "Século XXI (2000–2026)",
+            "seculo_xxi_2000_2026",
+            2000,
+            2026,
+            "Critério: os 10 pilotos com mais vitórias entre 2000 e 2026, com "
+            "desempate por pódios e corridas. O circuito é contado por traçado, "
+            "não pelo nome do GP. Vitórias em sprints não entram. 2026 está em "
+            "andamento e entra com as etapas já disputadas.",
+        )
 
 # --------------------------------------------------------------------------
 # aba qualidade
