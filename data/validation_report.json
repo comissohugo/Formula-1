@@ -1,15 +1,20 @@
 {
-  "generated_at": "2026-11-21T02:18:37+00:00",
+  "generated_at": "2026-11-21T15:22:45+00:00",
   "db_path": "C:\\Users\\Usuario\\Documents\\f1-data-center\\data\\f1.db",
   "ok": true,
   "checks": [
     {
       "id": "seasons",
-      "title": "Temporadas 1985-2026 importadas com a contagem de GPs esperada",
+      "title": "Temporadas 1980-2026 importadas com a contagem de GPs esperada",
       "ok": true,
-      "detail": "42 temporadas, 765 GPs no total (esperado 765). Ausentes: nenhuma. Divergentes: nenhuma. Em andamento: 2026: 20 de 23 GPs concluídos.",
+      "detail": "47 temporadas, 841 GPs no total (esperado 841). Ausentes: nenhuma. Divergentes: nenhuma. Em andamento: 2026: 20 de 23 GPs concluídos.",
       "data": {
         "found": {
+          "1980": 14,
+          "1981": 15,
+          "1982": 16,
+          "1983": 15,
+          "1984": 16,
           "1985": 16,
           "1986": 16,
           "1987": 16,
@@ -53,7 +58,7 @@
           "2025": 24,
           "2026": 20
         },
-        "total_races": 765,
+        "total_races": 841,
         "in_progress": {
           "2026": 20
         }
@@ -77,8 +82,1310 @@
       "id": "quali_without_race_result",
       "title": "Classificados que não constam no resultado da corrida (DNS/fonte)",
       "ok": true,
-      "detail": "246 caso(s). A fonte simplesmente não retorna o piloto no resultado; nenhuma posição é inventada.",
+      "detail": "432 caso(s). A fonte simplesmente não retorna o piloto no resultado; nenhuma posição é inventada.",
       "data": [
+        {
+          "season": 1980,
+          "round": 1,
+          "race_name": "Argentine Grand Prix",
+          "driver_id": "cheever",
+          "full_name": "Eddie Cheever"
+        },
+        {
+          "season": 1980,
+          "round": 1,
+          "race_name": "Argentine Grand Prix",
+          "driver_id": "david_kennedy",
+          "full_name": "David Kennedy"
+        },
+        {
+          "season": 1980,
+          "round": 1,
+          "race_name": "Argentine Grand Prix",
+          "driver_id": "johansson",
+          "full_name": "Stefan Johansson"
+        },
+        {
+          "season": 1980,
+          "round": 1,
+          "race_name": "Argentine Grand Prix",
+          "driver_id": "lammers",
+          "full_name": "Jan Lammers"
+        },
+        {
+          "season": 1980,
+          "round": 3,
+          "race_name": "South African Grand Prix",
+          "driver_id": "david_kennedy",
+          "full_name": "David Kennedy"
+        },
+        {
+          "season": 1980,
+          "round": 3,
+          "race_name": "South African Grand Prix",
+          "driver_id": "lammers",
+          "full_name": "Jan Lammers"
+        },
+        {
+          "season": 1980,
+          "round": 4,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "david_kennedy",
+          "full_name": "David Kennedy"
+        },
+        {
+          "season": 1980,
+          "round": 4,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "lees",
+          "full_name": "Geoff Lees"
+        },
+        {
+          "season": 1980,
+          "round": 4,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "stephen_south",
+          "full_name": "Stephen South"
+        },
+        {
+          "season": 1980,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "cheever",
+          "full_name": "Eddie Cheever"
+        },
+        {
+          "season": 1980,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "david_kennedy",
+          "full_name": "David Kennedy"
+        },
+        {
+          "season": 1980,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "lees",
+          "full_name": "Geoff Lees"
+        },
+        {
+          "season": 1980,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "cheever",
+          "full_name": "Eddie Cheever"
+        },
+        {
+          "season": 1980,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "david_kennedy",
+          "full_name": "David Kennedy"
+        },
+        {
+          "season": 1980,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "keke_rosberg",
+          "full_name": "Keke Rosberg"
+        },
+        {
+          "season": 1980,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "lees",
+          "full_name": "Geoff Lees"
+        },
+        {
+          "season": 1980,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "needell",
+          "full_name": "Tiff Needell"
+        },
+        {
+          "season": 1980,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "watson",
+          "full_name": "John Watson"
+        },
+        {
+          "season": 1980,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "zunino",
+          "full_name": "Ricardo Zunino"
+        },
+        {
+          "season": 1980,
+          "round": 7,
+          "race_name": "French Grand Prix",
+          "driver_id": "david_kennedy",
+          "full_name": "David Kennedy"
+        },
+        {
+          "season": 1980,
+          "round": 7,
+          "race_name": "French Grand Prix",
+          "driver_id": "lammers",
+          "full_name": "Jan Lammers"
+        },
+        {
+          "season": 1980,
+          "round": 7,
+          "race_name": "French Grand Prix",
+          "driver_id": "lees",
+          "full_name": "Geoff Lees"
+        },
+        {
+          "season": 1980,
+          "round": 8,
+          "race_name": "British Grand Prix",
+          "driver_id": "keke_rosberg",
+          "full_name": "Keke Rosberg"
+        },
+        {
+          "season": 1980,
+          "round": 8,
+          "race_name": "British Grand Prix",
+          "driver_id": "lammers",
+          "full_name": "Jan Lammers"
+        },
+        {
+          "season": 1980,
+          "round": 8,
+          "race_name": "British Grand Prix",
+          "driver_id": "wilson",
+          "full_name": "Justin Wilson"
+        },
+        {
+          "season": 1980,
+          "round": 9,
+          "race_name": "German Grand Prix",
+          "driver_id": "harald_ertl",
+          "full_name": "Harald Ertl"
+        },
+        {
+          "season": 1980,
+          "round": 9,
+          "race_name": "German Grand Prix",
+          "driver_id": "keegan",
+          "full_name": "Rupert Keegan"
+        },
+        {
+          "season": 1980,
+          "round": 10,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "lammers",
+          "full_name": "Jan Lammers"
+        },
+        {
+          "season": 1980,
+          "round": 10,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "mass",
+          "full_name": "Jochen Mass"
+        },
+        {
+          "season": 1980,
+          "round": 11,
+          "race_name": "Dutch Grand Prix",
+          "driver_id": "keegan",
+          "full_name": "Rupert Keegan"
+        },
+        {
+          "season": 1980,
+          "round": 11,
+          "race_name": "Dutch Grand Prix",
+          "driver_id": "keke_rosberg",
+          "full_name": "Keke Rosberg"
+        },
+        {
+          "season": 1980,
+          "round": 11,
+          "race_name": "Dutch Grand Prix",
+          "driver_id": "lammers",
+          "full_name": "Jan Lammers"
+        },
+        {
+          "season": 1980,
+          "round": 11,
+          "race_name": "Dutch Grand Prix",
+          "driver_id": "thackwell",
+          "full_name": "Mike Thackwell"
+        },
+        {
+          "season": 1980,
+          "round": 12,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "lammers",
+          "full_name": "Jan Lammers"
+        },
+        {
+          "season": 1980,
+          "round": 12,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "lees",
+          "full_name": "Geoff Lees"
+        },
+        {
+          "season": 1980,
+          "round": 12,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "manfred_winkelhock",
+          "full_name": "Manfred Winkelhock"
+        },
+        {
+          "season": 1980,
+          "round": 12,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "mansell",
+          "full_name": "Nigel Mansell"
+        },
+        {
+          "season": 1980,
+          "round": 13,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "keegan",
+          "full_name": "Rupert Keegan"
+        },
+        {
+          "season": 1980,
+          "round": 13,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "kevin_cogan",
+          "full_name": "Kevin Cogan"
+        },
+        {
+          "season": 1980,
+          "round": 13,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "scheckter",
+          "full_name": "Jody Scheckter"
+        },
+        {
+          "season": 1980,
+          "round": 13,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "surer",
+          "full_name": "Marc Surer"
+        },
+        {
+          "season": 1981,
+          "round": 1,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "daly",
+          "full_name": "Derek Daly"
+        },
+        {
+          "season": 1981,
+          "round": 1,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "guerra",
+          "full_name": "Miguel Ángel Guerra"
+        },
+        {
+          "season": 1981,
+          "round": 1,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "kevin_cogan",
+          "full_name": "Kevin Cogan"
+        },
+        {
+          "season": 1981,
+          "round": 1,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "salazar",
+          "full_name": "Eliseo Salazar"
+        },
+        {
+          "season": 1981,
+          "round": 1,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "stohr",
+          "full_name": "Siegfried Stohr"
+        },
+        {
+          "season": 1981,
+          "round": 2,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "daly",
+          "full_name": "Derek Daly"
+        },
+        {
+          "season": 1981,
+          "round": 2,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "gabbiani",
+          "full_name": "Beppe Gabbiani"
+        },
+        {
+          "season": 1981,
+          "round": 2,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "guerra",
+          "full_name": "Miguel Ángel Guerra"
+        },
+        {
+          "season": 1981,
+          "round": 2,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "jabouille",
+          "full_name": "Jean-Pierre Jabouille"
+        },
+        {
+          "season": 1981,
+          "round": 2,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "lammers",
+          "full_name": "Jan Lammers"
+        },
+        {
+          "season": 1981,
+          "round": 2,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "salazar",
+          "full_name": "Eliseo Salazar"
+        },
+        {
+          "season": 1981,
+          "round": 3,
+          "race_name": "Argentine Grand Prix",
+          "driver_id": "daly",
+          "full_name": "Derek Daly"
+        },
+        {
+          "season": 1981,
+          "round": 3,
+          "race_name": "Argentine Grand Prix",
+          "driver_id": "gabbiani",
+          "full_name": "Beppe Gabbiani"
+        },
+        {
+          "season": 1981,
+          "round": 3,
+          "race_name": "Argentine Grand Prix",
+          "driver_id": "guerra",
+          "full_name": "Miguel Ángel Guerra"
+        },
+        {
+          "season": 1981,
+          "round": 3,
+          "race_name": "Argentine Grand Prix",
+          "driver_id": "jabouille",
+          "full_name": "Jean-Pierre Jabouille"
+        },
+        {
+          "season": 1981,
+          "round": 3,
+          "race_name": "Argentine Grand Prix",
+          "driver_id": "salazar",
+          "full_name": "Eliseo Salazar"
+        },
+        {
+          "season": 1981,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "daly",
+          "full_name": "Derek Daly"
+        },
+        {
+          "season": 1981,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "henton",
+          "full_name": "Brian Henton"
+        },
+        {
+          "season": 1981,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "serra",
+          "full_name": "Chico Serra"
+        },
+        {
+          "season": 1981,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "stohr",
+          "full_name": "Siegfried Stohr"
+        },
+        {
+          "season": 1981,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "warwick",
+          "full_name": "Derek Warwick"
+        },
+        {
+          "season": 1981,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "arnoux",
+          "full_name": "René Arnoux"
+        },
+        {
+          "season": 1981,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "borgudd",
+          "full_name": "Slim Borgudd"
+        },
+        {
+          "season": 1981,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "henton",
+          "full_name": "Brian Henton"
+        },
+        {
+          "season": 1981,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "salazar",
+          "full_name": "Eliseo Salazar"
+        },
+        {
+          "season": 1981,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "tambay",
+          "full_name": "Patrick Tambay"
+        },
+        {
+          "season": 1981,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "warwick",
+          "full_name": "Derek Warwick"
+        },
+        {
+          "season": 1981,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "gabbiani",
+          "full_name": "Beppe Gabbiani"
+        },
+        {
+          "season": 1981,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "ghinzani",
+          "full_name": "Piercarlo Ghinzani"
+        },
+        {
+          "season": 1981,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "jabouille",
+          "full_name": "Jean-Pierre Jabouille"
+        },
+        {
+          "season": 1981,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "keke_rosberg",
+          "full_name": "Keke Rosberg"
+        },
+        {
+          "season": 1981,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "rebaque",
+          "full_name": "Hector Rebaque"
+        },
+        {
+          "season": 1981,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "serra",
+          "full_name": "Chico Serra"
+        },
+        {
+          "season": 1981,
+          "round": 7,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "alboreto",
+          "full_name": "Michele Alboreto"
+        },
+        {
+          "season": 1981,
+          "round": 7,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "borgudd",
+          "full_name": "Slim Borgudd"
+        },
+        {
+          "season": 1981,
+          "round": 7,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "gabbiani",
+          "full_name": "Beppe Gabbiani"
+        },
+        {
+          "season": 1981,
+          "round": 7,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "giorgio_francia",
+          "full_name": "Giorgio Francia"
+        },
+        {
+          "season": 1981,
+          "round": 7,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "henton",
+          "full_name": "Brian Henton"
+        },
+        {
+          "season": 1981,
+          "round": 7,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "warwick",
+          "full_name": "Derek Warwick"
+        },
+        {
+          "season": 1981,
+          "round": 8,
+          "race_name": "French Grand Prix",
+          "driver_id": "borgudd",
+          "full_name": "Slim Borgudd"
+        },
+        {
+          "season": 1981,
+          "round": 8,
+          "race_name": "French Grand Prix",
+          "driver_id": "gabbiani",
+          "full_name": "Beppe Gabbiani"
+        },
+        {
+          "season": 1981,
+          "round": 8,
+          "race_name": "French Grand Prix",
+          "driver_id": "henton",
+          "full_name": "Brian Henton"
+        },
+        {
+          "season": 1981,
+          "round": 8,
+          "race_name": "French Grand Prix",
+          "driver_id": "stohr",
+          "full_name": "Siegfried Stohr"
+        },
+        {
+          "season": 1981,
+          "round": 8,
+          "race_name": "French Grand Prix",
+          "driver_id": "warwick",
+          "full_name": "Derek Warwick"
+        },
+        {
+          "season": 1981,
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "driver_id": "gabbiani",
+          "full_name": "Beppe Gabbiani"
+        },
+        {
+          "season": 1981,
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "driver_id": "henton",
+          "full_name": "Brian Henton"
+        },
+        {
+          "season": 1981,
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "driver_id": "mansell",
+          "full_name": "Nigel Mansell"
+        },
+        {
+          "season": 1981,
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "driver_id": "salazar",
+          "full_name": "Eliseo Salazar"
+        },
+        {
+          "season": 1981,
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "driver_id": "serra",
+          "full_name": "Chico Serra"
+        },
+        {
+          "season": 1981,
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "driver_id": "warwick",
+          "full_name": "Derek Warwick"
+        },
+        {
+          "season": 1981,
+          "round": 11,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "cheever",
+          "full_name": "Eddie Cheever"
+        },
+        {
+          "season": 1981,
+          "round": 11,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "gabbiani",
+          "full_name": "Beppe Gabbiani"
+        },
+        {
+          "season": 1981,
+          "round": 11,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "henton",
+          "full_name": "Brian Henton"
+        },
+        {
+          "season": 1981,
+          "round": 11,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "warwick",
+          "full_name": "Derek Warwick"
+        },
+        {
+          "season": 1982,
+          "round": 3,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "baldi",
+          "full_name": "Mauro Baldi"
+        },
+        {
+          "season": 1982,
+          "round": 3,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "fabi",
+          "full_name": "Teo Fabi"
+        },
+        {
+          "season": 1982,
+          "round": 3,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "paletti",
+          "full_name": "Riccardo Paletti"
+        },
+        {
+          "season": 1982,
+          "round": 3,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "serra",
+          "full_name": "Chico Serra"
+        },
+        {
+          "season": 1982,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "guerrero",
+          "full_name": "Roberto Guerrero"
+        },
+        {
+          "season": 1982,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "lammers",
+          "full_name": "Jan Lammers"
+        },
+        {
+          "season": 1982,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "baldi",
+          "full_name": "Mauro Baldi"
+        },
+        {
+          "season": 1982,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "guerrero",
+          "full_name": "Roberto Guerrero"
+        },
+        {
+          "season": 1982,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "jarier",
+          "full_name": "Jean-Pierre Jarier"
+        },
+        {
+          "season": 1982,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "lammers",
+          "full_name": "Jan Lammers"
+        },
+        {
+          "season": 1982,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "mass",
+          "full_name": "Jochen Mass"
+        },
+        {
+          "season": 1982,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "warwick",
+          "full_name": "Derek Warwick"
+        },
+        {
+          "season": 1982,
+          "round": 7,
+          "race_name": "Detroit Grand Prix",
+          "driver_id": "emilio_de_villota",
+          "full_name": "Emilio de Villota"
+        },
+        {
+          "season": 1982,
+          "round": 7,
+          "race_name": "Detroit Grand Prix",
+          "driver_id": "lammers",
+          "full_name": "Jan Lammers"
+        },
+        {
+          "season": 1982,
+          "round": 7,
+          "race_name": "Detroit Grand Prix",
+          "driver_id": "piquet",
+          "full_name": "Nelson Piquet"
+        },
+        {
+          "season": 1982,
+          "round": 8,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "emilio_de_villota",
+          "full_name": "Emilio de Villota"
+        },
+        {
+          "season": 1982,
+          "round": 8,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "manfred_winkelhock",
+          "full_name": "Manfred Winkelhock"
+        },
+        {
+          "season": 1982,
+          "round": 8,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "serra",
+          "full_name": "Chico Serra"
+        },
+        {
+          "season": 1982,
+          "round": 9,
+          "race_name": "Dutch Grand Prix",
+          "driver_id": "cheever",
+          "full_name": "Eddie Cheever"
+        },
+        {
+          "season": 1982,
+          "round": 9,
+          "race_name": "Dutch Grand Prix",
+          "driver_id": "fabi",
+          "full_name": "Teo Fabi"
+        },
+        {
+          "season": 1982,
+          "round": 9,
+          "race_name": "Dutch Grand Prix",
+          "driver_id": "guerrero",
+          "full_name": "Roberto Guerrero"
+        },
+        {
+          "season": 1982,
+          "round": 9,
+          "race_name": "Dutch Grand Prix",
+          "driver_id": "moreno",
+          "full_name": "Roberto Moreno"
+        },
+        {
+          "season": 1982,
+          "round": 10,
+          "race_name": "British Grand Prix",
+          "driver_id": "boesel",
+          "full_name": "Raul Boesel"
+        },
+        {
+          "season": 1982,
+          "round": 10,
+          "race_name": "British Grand Prix",
+          "driver_id": "lammers",
+          "full_name": "Jan Lammers"
+        },
+        {
+          "season": 1982,
+          "round": 10,
+          "race_name": "British Grand Prix",
+          "driver_id": "manfred_winkelhock",
+          "full_name": "Manfred Winkelhock"
+        },
+        {
+          "season": 1982,
+          "round": 10,
+          "race_name": "British Grand Prix",
+          "driver_id": "salazar",
+          "full_name": "Eliseo Salazar"
+        },
+        {
+          "season": 1982,
+          "round": 11,
+          "race_name": "French Grand Prix",
+          "driver_id": "boesel",
+          "full_name": "Raul Boesel"
+        },
+        {
+          "season": 1982,
+          "round": 11,
+          "race_name": "French Grand Prix",
+          "driver_id": "guerrero",
+          "full_name": "Roberto Guerrero"
+        },
+        {
+          "season": 1982,
+          "round": 11,
+          "race_name": "French Grand Prix",
+          "driver_id": "lammers",
+          "full_name": "Jan Lammers"
+        },
+        {
+          "season": 1982,
+          "round": 11,
+          "race_name": "French Grand Prix",
+          "driver_id": "serra",
+          "full_name": "Chico Serra"
+        },
+        {
+          "season": 1982,
+          "round": 12,
+          "race_name": "German Grand Prix",
+          "driver_id": "byrne",
+          "full_name": "Tommy Byrne"
+        },
+        {
+          "season": 1982,
+          "round": 12,
+          "race_name": "German Grand Prix",
+          "driver_id": "fabi",
+          "full_name": "Teo Fabi"
+        },
+        {
+          "season": 1982,
+          "round": 12,
+          "race_name": "German Grand Prix",
+          "driver_id": "keegan",
+          "full_name": "Rupert Keegan"
+        },
+        {
+          "season": 1982,
+          "round": 13,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "boesel",
+          "full_name": "Raul Boesel"
+        },
+        {
+          "season": 1982,
+          "round": 13,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "jarier",
+          "full_name": "Jean-Pierre Jarier"
+        },
+        {
+          "season": 1982,
+          "round": 13,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "salazar",
+          "full_name": "Eliseo Salazar"
+        },
+        {
+          "season": 1982,
+          "round": 14,
+          "race_name": "Swiss Grand Prix",
+          "driver_id": "baldi",
+          "full_name": "Mauro Baldi"
+        },
+        {
+          "season": 1982,
+          "round": 14,
+          "race_name": "Swiss Grand Prix",
+          "driver_id": "byrne",
+          "full_name": "Tommy Byrne"
+        },
+        {
+          "season": 1982,
+          "round": 14,
+          "race_name": "Swiss Grand Prix",
+          "driver_id": "serra",
+          "full_name": "Chico Serra"
+        },
+        {
+          "season": 1982,
+          "round": 15,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "boesel",
+          "full_name": "Raul Boesel"
+        },
+        {
+          "season": 1982,
+          "round": 15,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "byrne",
+          "full_name": "Tommy Byrne"
+        },
+        {
+          "season": 1982,
+          "round": 15,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "keegan",
+          "full_name": "Rupert Keegan"
+        },
+        {
+          "season": 1982,
+          "round": 15,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "manfred_winkelhock",
+          "full_name": "Manfred Winkelhock"
+        },
+        {
+          "season": 1982,
+          "round": 16,
+          "race_name": "Caesars Palace Grand Prix",
+          "driver_id": "fabi",
+          "full_name": "Teo Fabi"
+        },
+        {
+          "season": 1982,
+          "round": 16,
+          "race_name": "Caesars Palace Grand Prix",
+          "driver_id": "salazar",
+          "full_name": "Eliseo Salazar"
+        },
+        {
+          "season": 1982,
+          "round": 16,
+          "race_name": "Caesars Palace Grand Prix",
+          "driver_id": "serra",
+          "full_name": "Chico Serra"
+        },
+        {
+          "season": 1983,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "ghinzani",
+          "full_name": "Piercarlo Ghinzani"
+        },
+        {
+          "season": 1983,
+          "round": 2,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "corrado_fabi",
+          "full_name": "Corrado Fabi"
+        },
+        {
+          "season": 1983,
+          "round": 2,
+          "race_name": "United States Grand Prix West",
+          "driver_id": "ghinzani",
+          "full_name": "Piercarlo Ghinzani"
+        },
+        {
+          "season": 1983,
+          "round": 3,
+          "race_name": "French Grand Prix",
+          "driver_id": "ghinzani",
+          "full_name": "Piercarlo Ghinzani"
+        },
+        {
+          "season": 1983,
+          "round": 3,
+          "race_name": "French Grand Prix",
+          "driver_id": "salazar",
+          "full_name": "Eliseo Salazar"
+        },
+        {
+          "season": 1983,
+          "round": 3,
+          "race_name": "French Grand Prix",
+          "driver_id": "schlesser",
+          "full_name": "Jean-Louis Schlesser"
+        },
+        {
+          "season": 1983,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "ghinzani",
+          "full_name": "Piercarlo Ghinzani"
+        },
+        {
+          "season": 1983,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "salazar",
+          "full_name": "Eliseo Salazar"
+        },
+        {
+          "season": 1983,
+          "round": 5,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "corrado_fabi",
+          "full_name": "Corrado Fabi"
+        },
+        {
+          "season": 1983,
+          "round": 5,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "ghinzani",
+          "full_name": "Piercarlo Ghinzani"
+        },
+        {
+          "season": 1983,
+          "round": 5,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "giacomelli",
+          "full_name": "Bruno Giacomelli"
+        },
+        {
+          "season": 1983,
+          "round": 5,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "lauda",
+          "full_name": "Niki Lauda"
+        },
+        {
+          "season": 1983,
+          "round": 5,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "salazar",
+          "full_name": "Eliseo Salazar"
+        },
+        {
+          "season": 1983,
+          "round": 5,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "watson",
+          "full_name": "John Watson"
+        },
+        {
+          "season": 1983,
+          "round": 6,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "ghinzani",
+          "full_name": "Piercarlo Ghinzani"
+        },
+        {
+          "season": 1983,
+          "round": 6,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "salazar",
+          "full_name": "Eliseo Salazar"
+        },
+        {
+          "season": 1983,
+          "round": 8,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "ghinzani",
+          "full_name": "Piercarlo Ghinzani"
+        },
+        {
+          "season": 1983,
+          "round": 8,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "villeneuve",
+          "full_name": "Jacques Villeneuve"
+        },
+        {
+          "season": 1983,
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "driver_id": "acheson",
+          "full_name": "Kenny Acheson"
+        },
+        {
+          "season": 1983,
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "driver_id": "cecotto",
+          "full_name": "Johnny Cecotto"
+        },
+        {
+          "season": 1983,
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "driver_id": "corrado_fabi",
+          "full_name": "Corrado Fabi"
+        },
+        {
+          "season": 1983,
+          "round": 11,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "acheson",
+          "full_name": "Kenny Acheson"
+        },
+        {
+          "season": 1983,
+          "round": 11,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "boesel",
+          "full_name": "Raul Boesel"
+        },
+        {
+          "season": 1983,
+          "round": 11,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "cecotto",
+          "full_name": "Johnny Cecotto"
+        },
+        {
+          "season": 1983,
+          "round": 12,
+          "race_name": "Dutch Grand Prix",
+          "driver_id": "acheson",
+          "full_name": "Kenny Acheson"
+        },
+        {
+          "season": 1983,
+          "round": 12,
+          "race_name": "Dutch Grand Prix",
+          "driver_id": "cecotto",
+          "full_name": "Johnny Cecotto"
+        },
+        {
+          "season": 1983,
+          "round": 12,
+          "race_name": "Dutch Grand Prix",
+          "driver_id": "ghinzani",
+          "full_name": "Piercarlo Ghinzani"
+        },
+        {
+          "season": 1983,
+          "round": 13,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "acheson",
+          "full_name": "Kenny Acheson"
+        },
+        {
+          "season": 1983,
+          "round": 13,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "boesel",
+          "full_name": "Raul Boesel"
+        },
+        {
+          "season": 1983,
+          "round": 13,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "laffite",
+          "full_name": "Jacques Laffite"
+        },
+        {
+          "season": 1983,
+          "round": 14,
+          "race_name": "European Grand Prix",
+          "driver_id": "acheson",
+          "full_name": "Kenny Acheson"
+        },
+        {
+          "season": 1983,
+          "round": 14,
+          "race_name": "European Grand Prix",
+          "driver_id": "corrado_fabi",
+          "full_name": "Corrado Fabi"
+        },
+        {
+          "season": 1983,
+          "round": 14,
+          "race_name": "European Grand Prix",
+          "driver_id": "laffite",
+          "full_name": "Jacques Laffite"
+        },
+        {
+          "season": 1984,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "ghinzani",
+          "full_name": "Piercarlo Ghinzani"
+        },
+        {
+          "season": 1984,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "senna",
+          "full_name": "Ayrton Senna"
+        },
+        {
+          "season": 1984,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "alliot",
+          "full_name": "Philippe Alliot"
+        },
+        {
+          "season": 1984,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "baldi",
+          "full_name": "Mauro Baldi"
+        },
+        {
+          "season": 1984,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "boutsen",
+          "full_name": "Thierry Boutsen"
+        },
+        {
+          "season": 1984,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "brundle",
+          "full_name": "Martin Brundle"
+        },
+        {
+          "season": 1984,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "cheever",
+          "full_name": "Eddie Cheever"
+        },
+        {
+          "season": 1984,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "palmer",
+          "full_name": "Jonathan Palmer"
+        },
+        {
+          "season": 1984,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "surer",
+          "full_name": "Marc Surer"
+        },
+        {
+          "season": 1984,
+          "round": 9,
+          "race_name": "Dallas Grand Prix",
+          "driver_id": "alliot",
+          "full_name": "Philippe Alliot"
+        },
+        {
+          "season": 1984,
+          "round": 12,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "johansson",
+          "full_name": "Stefan Johansson"
+        },
+        {
+          "season": 1984,
+          "round": 12,
+          "race_name": "Austrian Grand Prix",
+          "driver_id": "manfred_winkelhock",
+          "full_name": "Manfred Winkelhock"
+        },
         {
           "season": 1985,
           "round": 13,
@@ -1807,8 +3114,48 @@
       "id": "race_without_quali",
       "title": "Pilotos no resultado sem linha na classificação (fonte)",
       "ok": true,
-      "detail": "80 caso(s). Ausência real na classificação da fonte, mantida como ausente.",
+      "detail": "85 caso(s). Ausência real na classificação da fonte, mantida como ausente.",
       "data": [
+        {
+          "season": 1980,
+          "round": 11,
+          "race_name": "Dutch Grand Prix",
+          "driver_id": "mass",
+          "full_name": "Jochen Mass",
+          "status": "Withdrew"
+        },
+        {
+          "season": 1981,
+          "round": 2,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "londono",
+          "full_name": "Ricardo Londoño",
+          "status": "Withdrew"
+        },
+        {
+          "season": 1981,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "angelis",
+          "full_name": "Elio de Angelis",
+          "status": "Withdrew"
+        },
+        {
+          "season": 1981,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "mansell",
+          "full_name": "Nigel Mansell",
+          "status": "Withdrew"
+        },
+        {
+          "season": 1984,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "palmer",
+          "full_name": "Jonathan Palmer",
+          "status": "+3 Laps"
+        },
         {
           "season": 1985,
           "round": 13,
@@ -2455,8 +3802,372 @@
       "id": "qualifying_row_counts",
       "title": "Contagem de pilotos na classificação por GP (informativo)",
       "ok": true,
-      "detail": "107 GP(s) com contagem de classificação diferente da contagem de resultado. Pode ser ausência real na fonte.",
+      "detail": "159 GP(s) com contagem de classificação diferente da contagem de resultado. Pode ser ausência real na fonte.",
       "data": [
+        {
+          "season": 1980,
+          "round": 1,
+          "race_name": "Argentine Grand Prix",
+          "results": 24,
+          "quali": 28
+        },
+        {
+          "season": 1980,
+          "round": 3,
+          "race_name": "South African Grand Prix",
+          "results": 26,
+          "quali": 28
+        },
+        {
+          "season": 1980,
+          "round": 4,
+          "race_name": "United States Grand Prix West",
+          "results": 24,
+          "quali": 27
+        },
+        {
+          "season": 1980,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "results": 24,
+          "quali": 27
+        },
+        {
+          "season": 1980,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "results": 20,
+          "quali": 27
+        },
+        {
+          "season": 1980,
+          "round": 7,
+          "race_name": "French Grand Prix",
+          "results": 24,
+          "quali": 27
+        },
+        {
+          "season": 1980,
+          "round": 8,
+          "race_name": "British Grand Prix",
+          "results": 24,
+          "quali": 27
+        },
+        {
+          "season": 1980,
+          "round": 9,
+          "race_name": "German Grand Prix",
+          "results": 24,
+          "quali": 26
+        },
+        {
+          "season": 1980,
+          "round": 10,
+          "race_name": "Austrian Grand Prix",
+          "results": 24,
+          "quali": 26
+        },
+        {
+          "season": 1980,
+          "round": 11,
+          "race_name": "Dutch Grand Prix",
+          "results": 25,
+          "quali": 28
+        },
+        {
+          "season": 1980,
+          "round": 12,
+          "race_name": "Italian Grand Prix",
+          "results": 24,
+          "quali": 28
+        },
+        {
+          "season": 1980,
+          "round": 13,
+          "race_name": "Canadian Grand Prix",
+          "results": 24,
+          "quali": 28
+        },
+        {
+          "season": 1981,
+          "round": 1,
+          "race_name": "United States Grand Prix West",
+          "results": 24,
+          "quali": 29
+        },
+        {
+          "season": 1981,
+          "round": 2,
+          "race_name": "Brazilian Grand Prix",
+          "results": 25,
+          "quali": 30
+        },
+        {
+          "season": 1981,
+          "round": 3,
+          "race_name": "Argentine Grand Prix",
+          "results": 24,
+          "quali": 29
+        },
+        {
+          "season": 1981,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "results": 27,
+          "quali": 30
+        },
+        {
+          "season": 1981,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "results": 24,
+          "quali": 30
+        },
+        {
+          "season": 1981,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "results": 20,
+          "quali": 26
+        },
+        {
+          "season": 1981,
+          "round": 7,
+          "race_name": "Spanish Grand Prix",
+          "results": 24,
+          "quali": 30
+        },
+        {
+          "season": 1981,
+          "round": 8,
+          "race_name": "French Grand Prix",
+          "results": 24,
+          "quali": 29
+        },
+        {
+          "season": 1981,
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "results": 24,
+          "quali": 30
+        },
+        {
+          "season": 1981,
+          "round": 11,
+          "race_name": "Austrian Grand Prix",
+          "results": 24,
+          "quali": 28
+        },
+        {
+          "season": 1982,
+          "round": 3,
+          "race_name": "United States Grand Prix West",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1982,
+          "round": 5,
+          "race_name": "Belgian Grand Prix",
+          "results": 28,
+          "quali": 30
+        },
+        {
+          "season": 1982,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "results": 20,
+          "quali": 26
+        },
+        {
+          "season": 1982,
+          "round": 7,
+          "race_name": "Detroit Grand Prix",
+          "results": 26,
+          "quali": 29
+        },
+        {
+          "season": 1982,
+          "round": 8,
+          "race_name": "Canadian Grand Prix",
+          "results": 26,
+          "quali": 29
+        },
+        {
+          "season": 1982,
+          "round": 9,
+          "race_name": "Dutch Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1982,
+          "round": 10,
+          "race_name": "British Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1982,
+          "round": 11,
+          "race_name": "French Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1982,
+          "round": 12,
+          "race_name": "German Grand Prix",
+          "results": 26,
+          "quali": 29
+        },
+        {
+          "season": 1982,
+          "round": 13,
+          "race_name": "Austrian Grand Prix",
+          "results": 26,
+          "quali": 29
+        },
+        {
+          "season": 1982,
+          "round": 14,
+          "race_name": "Swiss Grand Prix",
+          "results": 26,
+          "quali": 29
+        },
+        {
+          "season": 1982,
+          "round": 15,
+          "race_name": "Italian Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1982,
+          "round": 16,
+          "race_name": "Caesars Palace Grand Prix",
+          "results": 27,
+          "quali": 30
+        },
+        {
+          "season": 1983,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "results": 26,
+          "quali": 27
+        },
+        {
+          "season": 1983,
+          "round": 2,
+          "race_name": "United States Grand Prix West",
+          "results": 26,
+          "quali": 28
+        },
+        {
+          "season": 1983,
+          "round": 3,
+          "race_name": "French Grand Prix",
+          "results": 26,
+          "quali": 29
+        },
+        {
+          "season": 1983,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "results": 26,
+          "quali": 28
+        },
+        {
+          "season": 1983,
+          "round": 5,
+          "race_name": "Monaco Grand Prix",
+          "results": 20,
+          "quali": 26
+        },
+        {
+          "season": 1983,
+          "round": 6,
+          "race_name": "Belgian Grand Prix",
+          "results": 26,
+          "quali": 28
+        },
+        {
+          "season": 1983,
+          "round": 8,
+          "race_name": "Canadian Grand Prix",
+          "results": 26,
+          "quali": 28
+        },
+        {
+          "season": 1983,
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "results": 26,
+          "quali": 29
+        },
+        {
+          "season": 1983,
+          "round": 11,
+          "race_name": "Austrian Grand Prix",
+          "results": 26,
+          "quali": 29
+        },
+        {
+          "season": 1983,
+          "round": 12,
+          "race_name": "Dutch Grand Prix",
+          "results": 26,
+          "quali": 29
+        },
+        {
+          "season": 1983,
+          "round": 13,
+          "race_name": "Italian Grand Prix",
+          "results": 26,
+          "quali": 29
+        },
+        {
+          "season": 1983,
+          "round": 14,
+          "race_name": "European Grand Prix",
+          "results": 26,
+          "quali": 29
+        },
+        {
+          "season": 1984,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "results": 27,
+          "quali": 26
+        },
+        {
+          "season": 1984,
+          "round": 4,
+          "race_name": "San Marino Grand Prix",
+          "results": 26,
+          "quali": 28
+        },
+        {
+          "season": 1984,
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "results": 20,
+          "quali": 27
+        },
+        {
+          "season": 1984,
+          "round": 9,
+          "race_name": "Dallas Grand Prix",
+          "results": 25,
+          "quali": 26
+        },
+        {
+          "season": 1984,
+          "round": 12,
+          "race_name": "Austrian Grand Prix",
+          "results": 26,
+          "quali": 28
+        },
         {
           "season": 1986,
           "round": 15,
@@ -3210,11 +4921,16 @@
     },
     {
       "id": "sprints",
-      "title": "Sprints separadas e completas (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 6, 6, 6 + em andamento)",
+      "title": "Sprints separadas e completas (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 6, 6, 6 + em andamento)",
       "ok": true,
-      "detail": "Sprints importadas por temporada: {1985: 0, 1986: 0, 1987: 0, 1988: 0, 1989: 0, 1990: 0, 1991: 0, 1992: 0, 1993: 0, 1994: 0, 1995: 0, 1996: 0, 1997: 0, 1998: 0, 1999: 0, 2000: 0, 2001: 0, 2002: 0, 2003: 0, 2004: 0, 2005: 0, 2006: 0, 2007: 0, 2008: 0, 2009: 0, 2010: 0, 2011: 0, 2012: 0, 2013: 0, 2014: 0, 2015: 0, 2016: 0, 2017: 0, 2018: 0, 2019: 0, 2020: 0, 2021: 3, 2022: 3, 2023: 6, 2024: 6, 2025: 6, 2026: 6}.",
+      "detail": "Sprints importadas por temporada: {1980: 0, 1981: 0, 1982: 0, 1983: 0, 1984: 0, 1985: 0, 1986: 0, 1987: 0, 1988: 0, 1989: 0, 1990: 0, 1991: 0, 1992: 0, 1993: 0, 1994: 0, 1995: 0, 1996: 0, 1997: 0, 1998: 0, 1999: 0, 2000: 0, 2001: 0, 2002: 0, 2003: 0, 2004: 0, 2005: 0, 2006: 0, 2007: 0, 2008: 0, 2009: 0, 2010: 0, 2011: 0, 2012: 0, 2013: 0, 2014: 0, 2015: 0, 2016: 0, 2017: 0, 2018: 0, 2019: 0, 2020: 0, 2021: 3, 2022: 3, 2023: 6, 2024: 6, 2025: 6, 2026: 6}.",
       "data": {
         "counts": {
+          "1980": 0,
+          "1981": 0,
+          "1982": 0,
+          "1983": 0,
+          "1984": 0,
           "1985": 0,
           "1986": 0,
           "1987": 0,
@@ -3264,9 +4980,29 @@
       "id": "champions",
       "title": "Campeões de pilotos e construtores conferem com a fonte externa (temporadas encerradas)",
       "ok": true,
-      "detail": "1985: prost / mclaren; 1986: prost / williams; 1987: piquet / williams; 1988: senna / mclaren; 1989: prost / mclaren; 1990: senna / mclaren; 1991: senna / mclaren; 1992: mansell / williams; 1993: prost / williams; 1994: michael_schumacher / williams; 1995: michael_schumacher / benetton; 1996: damon_hill / williams; 1997: villeneuve / williams; 1998: hakkinen / mclaren; 1999: hakkinen / ferrari; 2000: michael_schumacher / ferrari; 2001: michael_schumacher / ferrari; 2002: michael_schumacher / ferrari; 2003: michael_schumacher / ferrari; 2004: michael_schumacher / ferrari; 2005: alonso / renault; 2006: alonso / renault; 2007: raikkonen / ferrari; 2008: hamilton / ferrari; 2009: button / brawn; 2010: vettel / red_bull; 2011: vettel / red_bull; 2012: vettel / red_bull; 2013: vettel / red_bull; 2014: hamilton / mercedes; 2015: hamilton / mercedes; 2016: rosberg / mercedes; 2017: hamilton / mercedes; 2018: hamilton / mercedes; 2019: hamilton / mercedes; 2020: hamilton / mercedes; 2021: max_verstappen / mercedes; 2022: max_verstappen / red_bull; 2023: max_verstappen / red_bull; 2024: max_verstappen / mclaren; 2025: norris / mclaren; 2026: em andamento (líder atual: antonelli / mercedes; título matemático de pilotos: antonelli; título matemático de construtores: mercedes; temporada em andamento)",
+      "detail": "1980: jones / williams; 1981: piquet / williams; 1982: keke_rosberg / ferrari; 1983: piquet / ferrari; 1984: lauda / mclaren; 1985: prost / mclaren; 1986: prost / williams; 1987: piquet / williams; 1988: senna / mclaren; 1989: prost / mclaren; 1990: senna / mclaren; 1991: senna / mclaren; 1992: mansell / williams; 1993: prost / williams; 1994: michael_schumacher / williams; 1995: michael_schumacher / benetton; 1996: damon_hill / williams; 1997: villeneuve / williams; 1998: hakkinen / mclaren; 1999: hakkinen / ferrari; 2000: michael_schumacher / ferrari; 2001: michael_schumacher / ferrari; 2002: michael_schumacher / ferrari; 2003: michael_schumacher / ferrari; 2004: michael_schumacher / ferrari; 2005: alonso / renault; 2006: alonso / renault; 2007: raikkonen / ferrari; 2008: hamilton / ferrari; 2009: button / brawn; 2010: vettel / red_bull; 2011: vettel / red_bull; 2012: vettel / red_bull; 2013: vettel / red_bull; 2014: hamilton / mercedes; 2015: hamilton / mercedes; 2016: rosberg / mercedes; 2017: hamilton / mercedes; 2018: hamilton / mercedes; 2019: hamilton / mercedes; 2020: hamilton / mercedes; 2021: max_verstappen / mercedes; 2022: max_verstappen / red_bull; 2023: max_verstappen / red_bull; 2024: max_verstappen / mclaren; 2025: norris / mclaren; 2026: em andamento (líder atual: antonelli / mercedes; título matemático de pilotos: antonelli; título matemático de construtores: mercedes; temporada em andamento)",
       "data": {
         "found": {
+          "1980": [
+            "jones",
+            "williams"
+          ],
+          "1981": [
+            "piquet",
+            "williams"
+          ],
+          "1982": [
+            "keke_rosberg",
+            "ferrari"
+          ],
+          "1983": [
+            "piquet",
+            "ferrari"
+          ],
+          "1984": [
+            "lauda",
+            "mclaren"
+          ],
           "1985": [
             "prost",
             "mclaren"
@@ -3437,6 +5173,26 @@
           ]
         },
         "expected": {
+          "1980": [
+            "jones",
+            "williams"
+          ],
+          "1981": [
+            "piquet",
+            "williams"
+          ],
+          "1982": [
+            "keke_rosberg",
+            "ferrari"
+          ],
+          "1983": [
+            "piquet",
+            "ferrari"
+          ],
+          "1984": [
+            "lauda",
+            "mclaren"
+          ],
           "1985": [
             "prost",
             "mclaren"
@@ -3628,7 +5384,7 @@
       "id": "driver_points_reconciliation",
       "title": "Pontos de corrida + sprint batem com a classificação oficial de pilotos",
       "ok": true,
-      "detail": "Todos os pilotos conferem. Ajustes oficiais aplicados: 1985 prost (-3), 1986 mansell (-2), 1986 prost (-2), 1987 piquet (-3), 1988 prost (-18), 1988 senna (-4), 1989 prost (-5), 1990 piquet (-1), 1990 prost (-2).",
+      "detail": "Todos os pilotos conferem. Ajustes oficiais aplicados: 1980 jones (-4), 1980 reutemann (-7), 1985 prost (-3), 1986 mansell (-2), 1986 prost (-2), 1987 piquet (-3), 1988 prost (-18), 1988 senna (-4), 1989 prost (-5), 1990 piquet (-1), 1990 prost (-2).",
       "data": []
     },
     {
@@ -3645,6 +5401,11 @@
       "detail": "Todos os GPs possuem volta mais rápida, exceto 1 ausência(s) real(is) documentada(s) na fonte.",
       "data": {
         "por_temporada": {
+          "1980": 14,
+          "1981": 15,
+          "1982": 16,
+          "1983": 15,
+          "1984": 16,
           "1985": 16,
           "1986": 16,
           "1987": 16,
@@ -3704,8 +5465,8 @@
       "ok": true,
       "detail": "Todos os GPs possuem pole identificada.",
       "data": {
-        "poles": 765,
-        "races": 765,
+        "poles": 841,
+        "races": 841,
         "sem_pole": []
       }
     },
@@ -3713,11 +5474,11 @@
       "id": "complementary_conflicts",
       "title": "Dados complementares coincidem com a fonte primária",
       "ok": true,
-      "detail": "0 conflito(s) em 412 registro(s) complementares.",
+      "detail": "0 conflito(s) em 488 registro(s) complementares.",
       "data": {
         "pole_conflicts": 0,
         "fastest_lap_conflicts": 0,
-        "complementary_rows": 412
+        "complementary_rows": 488
       }
     },
     {
@@ -3760,8 +5521,13 @@
       "id": "winners_count",
       "title": "Um vencedor por GP (contagem de vitórias por temporada)",
       "ok": true,
-      "detail": "Vencedores por temporada: {1985: 16, 1986: 16, 1987: 16, 1988: 16, 1989: 16, 1990: 16, 1991: 16, 1992: 16, 1993: 16, 1994: 16, 1995: 17, 1996: 16, 1997: 17, 1998: 16, 1999: 16, 2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24, 2026: 20}. Esperado nas encerradas: {1985: 16, 1986: 16, 1987: 16, 1988: 16, 1989: 16, 1990: 16, 1991: 16, 1992: 16, 1993: 16, 1994: 16, 1995: 17, 1996: 16, 1997: 17, 1998: 16, 1999: 16, 2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24}; em andamento: {2026: 20}.",
+      "detail": "Vencedores por temporada: {1980: 14, 1981: 15, 1982: 16, 1983: 15, 1984: 16, 1985: 16, 1986: 16, 1987: 16, 1988: 16, 1989: 16, 1990: 16, 1991: 16, 1992: 16, 1993: 16, 1994: 16, 1995: 17, 1996: 16, 1997: 17, 1998: 16, 1999: 16, 2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24, 2026: 20}. Esperado nas encerradas: {1980: 14, 1981: 15, 1982: 16, 1983: 15, 1984: 16, 1985: 16, 1986: 16, 1987: 16, 1988: 16, 1989: 16, 1990: 16, 1991: 16, 1992: 16, 1993: 16, 1994: 16, 1995: 17, 1996: 16, 1997: 17, 1998: 16, 1999: 16, 2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24}; em andamento: {2026: 20}.",
       "data": {
+        "1980": 14,
+        "1981": 15,
+        "1982": 16,
+        "1983": 15,
+        "1984": 16,
         "1985": 16,
         "1986": 16,
         "1987": 16,
@@ -3831,6 +5597,1122 @@
       "round": 5,
       "race": "Monaco Grand Prix",
       "note": "Mick Schumacher não participou da classificação (acidente no treino livre) e largou do pit lane. 19 pilotos na classificação é o dado correto da fonte."
+    },
+    {
+      "season": 1980,
+      "round": 1,
+      "race": "Argentine Grand Prix",
+      "note": "Eddie Cheever fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 1,
+      "race": "Argentine Grand Prix",
+      "note": "David Kennedy fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 1,
+      "race": "Argentine Grand Prix",
+      "note": "Stefan Johansson fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 1,
+      "race": "Argentine Grand Prix",
+      "note": "Jan Lammers fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 3,
+      "race": "South African Grand Prix",
+      "note": "David Kennedy fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 3,
+      "race": "South African Grand Prix",
+      "note": "Jan Lammers fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 4,
+      "race": "United States Grand Prix West",
+      "note": "David Kennedy fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 4,
+      "race": "United States Grand Prix West",
+      "note": "Geoff Lees fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 4,
+      "race": "United States Grand Prix West",
+      "note": "Stephen South fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 5,
+      "race": "Belgian Grand Prix",
+      "note": "Eddie Cheever fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 5,
+      "race": "Belgian Grand Prix",
+      "note": "David Kennedy fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 5,
+      "race": "Belgian Grand Prix",
+      "note": "Geoff Lees fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Eddie Cheever fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "David Kennedy fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Keke Rosberg fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Geoff Lees fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Tiff Needell fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "John Watson fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Ricardo Zunino fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 7,
+      "race": "French Grand Prix",
+      "note": "David Kennedy fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 7,
+      "race": "French Grand Prix",
+      "note": "Jan Lammers fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 7,
+      "race": "French Grand Prix",
+      "note": "Geoff Lees fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 8,
+      "race": "British Grand Prix",
+      "note": "Keke Rosberg fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 8,
+      "race": "British Grand Prix",
+      "note": "Jan Lammers fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 8,
+      "race": "British Grand Prix",
+      "note": "Justin Wilson fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 9,
+      "race": "German Grand Prix",
+      "note": "Harald Ertl fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 9,
+      "race": "German Grand Prix",
+      "note": "Rupert Keegan fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 10,
+      "race": "Austrian Grand Prix",
+      "note": "Jan Lammers fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 10,
+      "race": "Austrian Grand Prix",
+      "note": "Jochen Mass fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 11,
+      "race": "Dutch Grand Prix",
+      "note": "Rupert Keegan fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 11,
+      "race": "Dutch Grand Prix",
+      "note": "Keke Rosberg fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 11,
+      "race": "Dutch Grand Prix",
+      "note": "Jan Lammers fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 11,
+      "race": "Dutch Grand Prix",
+      "note": "Mike Thackwell fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 12,
+      "race": "Italian Grand Prix",
+      "note": "Jan Lammers fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 12,
+      "race": "Italian Grand Prix",
+      "note": "Geoff Lees fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 12,
+      "race": "Italian Grand Prix",
+      "note": "Manfred Winkelhock fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 12,
+      "race": "Italian Grand Prix",
+      "note": "Nigel Mansell fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 13,
+      "race": "Canadian Grand Prix",
+      "note": "Rupert Keegan fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 13,
+      "race": "Canadian Grand Prix",
+      "note": "Kevin Cogan fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 13,
+      "race": "Canadian Grand Prix",
+      "note": "Jody Scheckter fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1980,
+      "round": 13,
+      "race": "Canadian Grand Prix",
+      "note": "Marc Surer fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 1,
+      "race": "United States Grand Prix West",
+      "note": "Derek Daly fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 1,
+      "race": "United States Grand Prix West",
+      "note": "Miguel Ángel Guerra fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 1,
+      "race": "United States Grand Prix West",
+      "note": "Kevin Cogan fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 1,
+      "race": "United States Grand Prix West",
+      "note": "Eliseo Salazar fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 1,
+      "race": "United States Grand Prix West",
+      "note": "Siegfried Stohr fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 2,
+      "race": "Brazilian Grand Prix",
+      "note": "Derek Daly fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 2,
+      "race": "Brazilian Grand Prix",
+      "note": "Beppe Gabbiani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 2,
+      "race": "Brazilian Grand Prix",
+      "note": "Miguel Ángel Guerra fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 2,
+      "race": "Brazilian Grand Prix",
+      "note": "Jean-Pierre Jabouille fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 2,
+      "race": "Brazilian Grand Prix",
+      "note": "Jan Lammers fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 2,
+      "race": "Brazilian Grand Prix",
+      "note": "Eliseo Salazar fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 3,
+      "race": "Argentine Grand Prix",
+      "note": "Derek Daly fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 3,
+      "race": "Argentine Grand Prix",
+      "note": "Beppe Gabbiani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 3,
+      "race": "Argentine Grand Prix",
+      "note": "Miguel Ángel Guerra fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 3,
+      "race": "Argentine Grand Prix",
+      "note": "Jean-Pierre Jabouille fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 3,
+      "race": "Argentine Grand Prix",
+      "note": "Eliseo Salazar fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 4,
+      "race": "San Marino Grand Prix",
+      "note": "Derek Daly fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 4,
+      "race": "San Marino Grand Prix",
+      "note": "Brian Henton fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 4,
+      "race": "San Marino Grand Prix",
+      "note": "Chico Serra fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 4,
+      "race": "San Marino Grand Prix",
+      "note": "Siegfried Stohr fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 4,
+      "race": "San Marino Grand Prix",
+      "note": "Derek Warwick fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 5,
+      "race": "Belgian Grand Prix",
+      "note": "René Arnoux fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 5,
+      "race": "Belgian Grand Prix",
+      "note": "Slim Borgudd fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 5,
+      "race": "Belgian Grand Prix",
+      "note": "Brian Henton fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 5,
+      "race": "Belgian Grand Prix",
+      "note": "Eliseo Salazar fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 5,
+      "race": "Belgian Grand Prix",
+      "note": "Patrick Tambay fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 5,
+      "race": "Belgian Grand Prix",
+      "note": "Derek Warwick fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Beppe Gabbiani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Piercarlo Ghinzani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Jean-Pierre Jabouille fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Keke Rosberg fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Hector Rebaque fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Chico Serra fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 7,
+      "race": "Spanish Grand Prix",
+      "note": "Michele Alboreto fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 7,
+      "race": "Spanish Grand Prix",
+      "note": "Slim Borgudd fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 7,
+      "race": "Spanish Grand Prix",
+      "note": "Beppe Gabbiani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 7,
+      "race": "Spanish Grand Prix",
+      "note": "Giorgio Francia fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 7,
+      "race": "Spanish Grand Prix",
+      "note": "Brian Henton fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 7,
+      "race": "Spanish Grand Prix",
+      "note": "Derek Warwick fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 8,
+      "race": "French Grand Prix",
+      "note": "Slim Borgudd fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 8,
+      "race": "French Grand Prix",
+      "note": "Beppe Gabbiani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 8,
+      "race": "French Grand Prix",
+      "note": "Brian Henton fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 8,
+      "race": "French Grand Prix",
+      "note": "Siegfried Stohr fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 8,
+      "race": "French Grand Prix",
+      "note": "Derek Warwick fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 9,
+      "race": "British Grand Prix",
+      "note": "Beppe Gabbiani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 9,
+      "race": "British Grand Prix",
+      "note": "Brian Henton fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 9,
+      "race": "British Grand Prix",
+      "note": "Nigel Mansell fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 9,
+      "race": "British Grand Prix",
+      "note": "Eliseo Salazar fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 9,
+      "race": "British Grand Prix",
+      "note": "Chico Serra fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 9,
+      "race": "British Grand Prix",
+      "note": "Derek Warwick fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 11,
+      "race": "Austrian Grand Prix",
+      "note": "Eddie Cheever fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 11,
+      "race": "Austrian Grand Prix",
+      "note": "Beppe Gabbiani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 11,
+      "race": "Austrian Grand Prix",
+      "note": "Brian Henton fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1981,
+      "round": 11,
+      "race": "Austrian Grand Prix",
+      "note": "Derek Warwick fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 3,
+      "race": "United States Grand Prix West",
+      "note": "Mauro Baldi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 3,
+      "race": "United States Grand Prix West",
+      "note": "Teo Fabi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 3,
+      "race": "United States Grand Prix West",
+      "note": "Riccardo Paletti fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 3,
+      "race": "United States Grand Prix West",
+      "note": "Chico Serra fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 5,
+      "race": "Belgian Grand Prix",
+      "note": "Roberto Guerrero fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 5,
+      "race": "Belgian Grand Prix",
+      "note": "Jan Lammers fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Mauro Baldi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Roberto Guerrero fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Jean-Pierre Jarier fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Jan Lammers fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Jochen Mass fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Derek Warwick fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 7,
+      "race": "Detroit Grand Prix",
+      "note": "Emilio de Villota fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 7,
+      "race": "Detroit Grand Prix",
+      "note": "Jan Lammers fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 7,
+      "race": "Detroit Grand Prix",
+      "note": "Nelson Piquet fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 8,
+      "race": "Canadian Grand Prix",
+      "note": "Emilio de Villota fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 8,
+      "race": "Canadian Grand Prix",
+      "note": "Manfred Winkelhock fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 8,
+      "race": "Canadian Grand Prix",
+      "note": "Chico Serra fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 9,
+      "race": "Dutch Grand Prix",
+      "note": "Eddie Cheever fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 9,
+      "race": "Dutch Grand Prix",
+      "note": "Teo Fabi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 9,
+      "race": "Dutch Grand Prix",
+      "note": "Roberto Guerrero fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 9,
+      "race": "Dutch Grand Prix",
+      "note": "Roberto Moreno fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 10,
+      "race": "British Grand Prix",
+      "note": "Raul Boesel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 10,
+      "race": "British Grand Prix",
+      "note": "Jan Lammers fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 10,
+      "race": "British Grand Prix",
+      "note": "Manfred Winkelhock fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 10,
+      "race": "British Grand Prix",
+      "note": "Eliseo Salazar fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 11,
+      "race": "French Grand Prix",
+      "note": "Raul Boesel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 11,
+      "race": "French Grand Prix",
+      "note": "Roberto Guerrero fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 11,
+      "race": "French Grand Prix",
+      "note": "Jan Lammers fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 11,
+      "race": "French Grand Prix",
+      "note": "Chico Serra fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 12,
+      "race": "German Grand Prix",
+      "note": "Tommy Byrne fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 12,
+      "race": "German Grand Prix",
+      "note": "Teo Fabi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 12,
+      "race": "German Grand Prix",
+      "note": "Rupert Keegan fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 13,
+      "race": "Austrian Grand Prix",
+      "note": "Raul Boesel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 13,
+      "race": "Austrian Grand Prix",
+      "note": "Jean-Pierre Jarier fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 13,
+      "race": "Austrian Grand Prix",
+      "note": "Eliseo Salazar fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 14,
+      "race": "Swiss Grand Prix",
+      "note": "Mauro Baldi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 14,
+      "race": "Swiss Grand Prix",
+      "note": "Tommy Byrne fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 14,
+      "race": "Swiss Grand Prix",
+      "note": "Chico Serra fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 15,
+      "race": "Italian Grand Prix",
+      "note": "Raul Boesel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 15,
+      "race": "Italian Grand Prix",
+      "note": "Tommy Byrne fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 15,
+      "race": "Italian Grand Prix",
+      "note": "Rupert Keegan fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 15,
+      "race": "Italian Grand Prix",
+      "note": "Manfred Winkelhock fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 16,
+      "race": "Caesars Palace Grand Prix",
+      "note": "Teo Fabi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 16,
+      "race": "Caesars Palace Grand Prix",
+      "note": "Eliseo Salazar fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1982,
+      "round": 16,
+      "race": "Caesars Palace Grand Prix",
+      "note": "Chico Serra fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 1,
+      "race": "Brazilian Grand Prix",
+      "note": "Piercarlo Ghinzani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 2,
+      "race": "United States Grand Prix West",
+      "note": "Corrado Fabi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 2,
+      "race": "United States Grand Prix West",
+      "note": "Piercarlo Ghinzani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 3,
+      "race": "French Grand Prix",
+      "note": "Piercarlo Ghinzani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 3,
+      "race": "French Grand Prix",
+      "note": "Eliseo Salazar fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 3,
+      "race": "French Grand Prix",
+      "note": "Jean-Louis Schlesser fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 4,
+      "race": "San Marino Grand Prix",
+      "note": "Piercarlo Ghinzani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 4,
+      "race": "San Marino Grand Prix",
+      "note": "Eliseo Salazar fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 5,
+      "race": "Monaco Grand Prix",
+      "note": "Corrado Fabi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 5,
+      "race": "Monaco Grand Prix",
+      "note": "Piercarlo Ghinzani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 5,
+      "race": "Monaco Grand Prix",
+      "note": "Bruno Giacomelli fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 5,
+      "race": "Monaco Grand Prix",
+      "note": "Niki Lauda fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 5,
+      "race": "Monaco Grand Prix",
+      "note": "Eliseo Salazar fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 5,
+      "race": "Monaco Grand Prix",
+      "note": "John Watson fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 6,
+      "race": "Belgian Grand Prix",
+      "note": "Piercarlo Ghinzani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 6,
+      "race": "Belgian Grand Prix",
+      "note": "Eliseo Salazar fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 8,
+      "race": "Canadian Grand Prix",
+      "note": "Piercarlo Ghinzani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 8,
+      "race": "Canadian Grand Prix",
+      "note": "Jacques Villeneuve fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 9,
+      "race": "British Grand Prix",
+      "note": "Kenny Acheson fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 9,
+      "race": "British Grand Prix",
+      "note": "Johnny Cecotto fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 9,
+      "race": "British Grand Prix",
+      "note": "Corrado Fabi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 11,
+      "race": "Austrian Grand Prix",
+      "note": "Kenny Acheson fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 11,
+      "race": "Austrian Grand Prix",
+      "note": "Raul Boesel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 11,
+      "race": "Austrian Grand Prix",
+      "note": "Johnny Cecotto fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 12,
+      "race": "Dutch Grand Prix",
+      "note": "Kenny Acheson fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 12,
+      "race": "Dutch Grand Prix",
+      "note": "Johnny Cecotto fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 12,
+      "race": "Dutch Grand Prix",
+      "note": "Piercarlo Ghinzani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 13,
+      "race": "Italian Grand Prix",
+      "note": "Kenny Acheson fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 13,
+      "race": "Italian Grand Prix",
+      "note": "Raul Boesel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 13,
+      "race": "Italian Grand Prix",
+      "note": "Jacques Laffite fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 14,
+      "race": "European Grand Prix",
+      "note": "Kenny Acheson fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 14,
+      "race": "European Grand Prix",
+      "note": "Corrado Fabi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1983,
+      "round": 14,
+      "race": "European Grand Prix",
+      "note": "Jacques Laffite fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1984,
+      "round": 4,
+      "race": "San Marino Grand Prix",
+      "note": "Piercarlo Ghinzani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1984,
+      "round": 4,
+      "race": "San Marino Grand Prix",
+      "note": "Ayrton Senna fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1984,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Philippe Alliot fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1984,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Mauro Baldi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1984,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Thierry Boutsen fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1984,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Martin Brundle fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1984,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Eddie Cheever fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1984,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Jonathan Palmer fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1984,
+      "round": 6,
+      "race": "Monaco Grand Prix",
+      "note": "Marc Surer fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1984,
+      "round": 9,
+      "race": "Dallas Grand Prix",
+      "note": "Philippe Alliot fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1984,
+      "round": 12,
+      "race": "Austrian Grand Prix",
+      "note": "Stefan Johansson fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1984,
+      "round": 12,
+      "race": "Austrian Grand Prix",
+      "note": "Manfred Winkelhock fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
     },
     {
       "season": 1985,
@@ -5307,6 +8189,12 @@
       "round": 9,
       "race": "Spanish Grand Prix",
       "note": "Lance Stroll fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1984,
+      "round": 1,
+      "race": "Brazilian Grand Prix",
+      "note": "Jonathan Palmer consta no resultado (status: +3 Laps) mas não na classificação da fonte."
     },
     {
       "season": 1987,

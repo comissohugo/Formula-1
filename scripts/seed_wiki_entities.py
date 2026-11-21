@@ -1,4 +1,4 @@
-"""Cadastra pilotos/equipes que só aparecem na Wikipédia (1989, 1990–1992).
+"""Cadastra pilotos/equipes que só aparecem na Wikipédia (1980–1992).
 
 A fonte primária (Jolpica) não registra classificação nesses anos e, por isso,
 não chegou a criar cadastro para pilotos que apenas tentaram a classificação.
@@ -46,6 +46,54 @@ DRIVERS = [
         "full_name": "Joachim Winkelhock",
         "nationality": "German",
         "url": "https://en.wikipedia.org/wiki/Joachim_Winkelhock",
+    },
+    {
+        "driver_id": "david_kennedy",
+        "given_name": "David",
+        "family_name": "Kennedy",
+        "full_name": "David Kennedy",
+        "nationality": "Irish",
+        "url": "https://en.wikipedia.org/wiki/David_Kennedy_(racing_driver)",
+    },
+    {
+        "driver_id": "harald_ertl",
+        "given_name": "Harald",
+        "family_name": "Ertl",
+        "full_name": "Harald Ertl",
+        "nationality": "Austrian",
+        "url": "https://en.wikipedia.org/wiki/Harald_Ertl",
+    },
+    {
+        "driver_id": "kevin_cogan",
+        "given_name": "Kevin",
+        "family_name": "Cogan",
+        "full_name": "Kevin Cogan",
+        "nationality": "American",
+        "url": "https://en.wikipedia.org/wiki/Kevin_Cogan",
+    },
+    {
+        "driver_id": "giorgio_francia",
+        "given_name": "Giorgio",
+        "family_name": "Francia",
+        "full_name": "Giorgio Francia",
+        "nationality": "Italian",
+        "url": "https://en.wikipedia.org/wiki/Giorgio_Francia",
+    },
+    {
+        "driver_id": "emilio_de_villota",
+        "given_name": "Emilio",
+        "family_name": "de Villota",
+        "full_name": "Emilio de Villota",
+        "nationality": "Spanish",
+        "url": "https://en.wikipedia.org/wiki/Emilio_de_Villota",
+    },
+    {
+        "driver_id": "stephen_south",
+        "given_name": "Stephen",
+        "family_name": "South",
+        "full_name": "Stephen South",
+        "nationality": "British",
+        "url": "https://en.wikipedia.org/wiki/Stephen_South",
     },
 ]
 

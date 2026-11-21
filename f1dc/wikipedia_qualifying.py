@@ -1,7 +1,7 @@
 """Completa a classificação (qualifying) antiga com a Wikipédia (en).
 
 A fonte primária (Jolpica/Ergast) não possui classificação completa em todas as
-etapas de 1985–2002. As páginas de cada Grande Prêmio na Wikipédia em inglês
+etapas de 1980–2002. As páginas de cada Grande Prêmio na Wikipédia em inglês
 trazem a tabela de qualifying com posição, piloto, equipe e tempo, citando os
 arquivos da FIA. Este módulo importa **apenas os GPs em que a fonte primária
 não tem nenhuma linha de classificação**.
@@ -60,9 +60,11 @@ WIKIPEDIA_MARKER = "wikipedia.org"
 # Temporadas cujas páginas de GP usam o formato de tabela suportado por este
 # importador (posição, piloto, equipe e tempo; grid quando existir). 1990–1994
 # usam duas sessões (Q1/Q2) e às vezes uma tabela de pré-classificação antes da
-# principal; 1996 usa coluna de tempo; 1998 usa ``Lap Time``; 2000 usa tabelas
+# principal. 1980–1984 usam ``Time`` ou duas sessões (Q1/Q2), com tempos de duas
+# ou três casas decimais; 1996 usa coluna de tempo; 1998 usa ``Lap Time``; 2000 usa tabelas
 # sem coluna de grid e predefinições {{sort}}/{{sortname}}; 2001 usa ``Lap``.
 SUPPORTED_SEASONS = (
+    1980, 1981, 1982, 1983, 1984,
     1985, 1986, 1987, 1988, 1989,
     1990, 1991, 1992, 1993, 1994,
     1996, 1997, 1998, 1999, 2000, 2001, 2002,
@@ -77,6 +79,10 @@ TIME_LABELS = (
     "q1", "q2", "q1 time", "q2 time",
     "friday time", "saturday time",
 )
+
+# Em 1980, algumas páginas (Holanda, Itália, Canadá) chamam a coluna de equipe
+# de ``Team`` em vez de ``Constructor``. Ambos são o mesmo dado na tabela.
+CONSTRUCTOR_LABELS = ("constructor", "team")
 
 MIN_CLASSIFIED = 10
 
@@ -206,7 +212,9 @@ def _driver_name(cell: str) -> str | None:
 
 def _lap_time(cell: str) -> str | None:
     text = _clean_cell(cell)
-    match = re.search(r"\b(\d+:\d{2}\.\d{3}|\d+\.\d{3})\b", text)
+    # 1980–1984 costuma usar apenas duas casas decimais (ex.: ``1:44.17``);
+    # as páginas mais recentes usam três. Ambas são válidas e viram texto.
+    match = re.search(r"\b(\d+:\d{2}\.\d{2,3}|\d+\.\d{2,3})\b", text)
     return match.group(1) if match else None
 
 
@@ -258,7 +266,7 @@ def parse_qualifying_table(wikitext: str) -> dict[str, Any]:
                     )
         if (
             "driver" in candidate_labels
-            and "constructor" in candidate_labels
+            and any(label in CONSTRUCTOR_LABELS for label in candidate_labels)
             and any(label in TIME_LABELS for label in candidate_labels)
         ):
             count = sum(
@@ -286,7 +294,10 @@ def parse_qualifying_table(wikitext: str) -> dict[str, Any]:
     data_start: int = best["data_start"]
 
     driver_idx = labels.index("driver")
-    constructor_idx = labels.index("constructor")
+    constructor_label = next(
+        label for label in CONSTRUCTOR_LABELS if label in labels
+    )
+    constructor_idx = labels.index(constructor_label)
     time_indices = [
         labels.index(label) for label in TIME_LABELS if label in labels
     ]

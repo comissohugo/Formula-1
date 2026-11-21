@@ -151,7 +151,7 @@ https://www.formula1.com/ - https://www.fia.com/
 ### Regras importantes
 
 1.  Não afirmar que a base está completa antes de importar e conferir os
-    resultados de GP de cada temporada (745 GPs encerrados de 1985 a 2025,
+    resultados de GP de cada temporada (821 GPs encerrados de 1980 a 2025,
     mais as etapas concluídas de 2026).
 2.  Preservar os registros completos, não somente o Top 10.
 3.  Não confundir pole position com primeiro colocado no grid efetivo.
@@ -312,7 +312,7 @@ inventar estatísticas nem preencher dados ausentes por suposição.
 ## 9. Definição de pronto da primeira versão
 
 A primeira versão histórica será considerada pronta quando: - as quarenta e
-uma temporadas encerradas (1985–2025) estiverem carregadas; - os 745 GPs
+seis temporadas encerradas (1980–2025) estiverem carregadas; - os 821 GPs
 encerrados estiverem identificados; - cada GP tiver resultado completo
 de corrida e pole identificada (classificação completa na fonte primária
 ou complementada com proveniência); - pole, vencedor, pódio, Top 10 e volta

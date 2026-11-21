@@ -1208,6 +1208,49 @@ validação da base.
 
 ------------------------------------------------------------------------
 
+## 2026-11-21 --- Extensão da base para 1980–1984
+
+-   **Decisão:** atender ao pedido do usuário ("80 a 84 agora?"), ampliando a
+    base de 1985–2026 para 1980–2026.
+-   **Arquivos alterados:** `f1dc/config.py`, `f1dc/wikipedia.py`,
+    `f1dc/wikipedia_qualifying.py`, `f1dc/export.py`, `f1dc/__init__.py`,
+    `app.py`, `README.md`, `docs/PROJETO_F1.md`,
+    `scripts/seed_wiki_entities.py`, `tests/test_app_smoke.py`,
+    `data/f1.db`, `data/validation_report.json` e o ZIP de exportação.
+-   **O que foi implementado:**
+    -   importação de 76 GPs (14, 15, 16, 15 e 16 por temporada) e 1.897
+        resultados de 1980–1984 via Jolpica, com standings oficiais e
+        campeões conferidos: Jones/Williams (80), Piquet/Williams (81),
+        Rosberg/Ferrari (82), Piquet/Ferrari (83) e Lauda/McLaren (84);
+    -   qualifying completo de 1980–1984 (2.078 linhas em 76 GPs)
+        complementado pela Wikipédia (en), com `source_url`/`fetched_at`
+        por linha, mantendo DNQ/EX/DNA sem posição inventada. A Jolpica não
+        retorna nenhuma linha de qualifying nesses anos;
+    -   parser do qualifying aceita `Team` como sinônimo de `Constructor`
+        (necessário em 3 GPs de 1980) e tempos com 2 ou 3 casas decimais;
+    -   76 voltas rápidas complementadas pela Wikipédia (pt), com
+        proveniência. As poles já vêm das classificações importadas;
+    -   cadastro mínimo de 9 pilotos que só aparecem no qualifying desses
+        anos (David Kennedy, Harald Ertl, Kevin Cogan, Giorgio Francia,
+        Emilio de Villota, Stephen South e outros) no script de seed;
+    -   ajustes oficiais de descartes de pontos em 1980 (Jones -4,
+        Reutemann -7 — regra dos 5 melhores resultados por metade do
+        campeonato), aplicados apenas na reconciliação da validação,
+        nunca nos resultados importados;
+    -   painel "Maiores vencedores por século — século XX" ampliado para
+        1980–1999, com aviso de recorte incompleto para 1950–1979;
+    -   textos de cobertura (README, PROJETO_F1, export) atualizados para
+        1980–2026 (821 GPs encerrados + etapas de 2026).
+-   **Testes realizados:** `python -m f1dc.validate` APROVADO (19/19),
+    `python -m pytest -q`, AppTest sem exceções.
+-   **Problemas conhecidos:** a divergência de nome "Barcelona Grand Prix"
+    (base) × "Barcelona-Catalunya Grand Prix" (oficial) segue pendente;
+    o encerramento oficial de 2026 continua manual.
+-   **Próxima ação:** publicar o commit e confirmar que o Streamlit Cloud
+    subiu a versão 1980–2026 com o painel do século XX atualizado.
+
+------------------------------------------------------------------------
+
 ## Modelo para próximas atualizações
 
 ### AAAA-MM-DD --- Título da alteração
