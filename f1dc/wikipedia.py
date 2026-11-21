@@ -172,7 +172,7 @@ def parse_grand_prix_table(wikitext: str) -> list[dict[str, Any]]:
         lines = [line.strip() for line in chunk.strip().splitlines() if line.strip()]
         if not lines:
             continue
-        # Em páginas recentes a rodada vem como ``! 1``; em 1990–1992 vem
+        # Em páginas recentes a rodada vem como ``! 1``; em 1985–1992 vem
         # como célula ``|align="center"| 1``.
         round_match = None
         for line in lines[:3]:
@@ -285,7 +285,7 @@ def _constructor_for(
     ).fetchone()
     if row:
         return str(row["constructor_id"])
-    # Alguns pilotos de 1990–1992 só tentaram a classificação: a fonte primária
+    # Alguns pilotos de 1985–1992 só tentaram a classificação: a fonte primária
     # não tem nenhum resultado para eles. Nesse caso a equipe vem da própria
     # tabela da Wikipédia, nunca de inferência sobre o piloto.
     if constructor_name:

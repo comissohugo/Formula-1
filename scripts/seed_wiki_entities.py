@@ -1,4 +1,4 @@
-"""Cadastra pilotos/equipes que só aparecem na Wikipédia (1990–1992).
+"""Cadastra pilotos/equipes que só aparecem na Wikipédia (1989, 1990–1992).
 
 A fonte primária (Jolpica) não registra classificação nesses anos e, por isso,
 não chegou a criar cadastro para pilotos que apenas tentaram a classificação.
@@ -38,6 +38,14 @@ DRIVERS = [
         "full_name": "Giovanna Amati",
         "nationality": "Italian",
         "url": "https://en.wikipedia.org/wiki/Giovanna_Amati",
+    },
+    {
+        "driver_id": "joachim_winkelhock",
+        "given_name": "Joachim",
+        "family_name": "Winkelhock",
+        "full_name": "Joachim Winkelhock",
+        "nationality": "German",
+        "url": "https://en.wikipedia.org/wiki/Joachim_Winkelhock",
     },
 ]
 

@@ -5,6 +5,11 @@ from pathlib import Path
 # --- Fonte de dados -------------------------------------------------------
 BASE_URL = "https://api.jolpi.ca/ergast/f1"
 SEASONS = (
+    1985,
+    1986,
+    1987,
+    1988,
+    1989,
     1990,
     1991,
     1992,
@@ -82,6 +87,11 @@ PAGE_SIZE = 100
 
 # --- Expectativas do projeto (documento central, seção 2) -----------------
 EXPECTED_RACES = {
+    1985: 16,
+    1986: 16,
+    1987: 16,
+    1988: 16,
+    1989: 16,
     1990: 16,
     1991: 16,
     1992: 16,
@@ -156,6 +166,11 @@ EXPECTED_SPRINTS = {
 # Conferência externa dos campeões (fontes oficiais).
 # Usada apenas para VALIDAR o que a API entregou, nunca para preencher dado.
 EXPECTED_CHAMPIONS = {
+    1985: ("prost", "mclaren"),
+    1986: ("prost", "williams"),
+    1987: ("piquet", "williams"),
+    1988: ("senna", "mclaren"),
+    1989: ("prost", "mclaren"),
     1990: ("senna", "mclaren"),
     1991: ("senna", "mclaren"),
     1992: ("mansell", "williams"),
@@ -204,12 +219,20 @@ CONSTRUCTOR_POINT_ADJUSTMENTS = {
     (2020, "racing_point"): -15.0,
 }
 
-# Ajustes oficiais de pontos de pilotos. Em 1990 só os 11 melhores resultados
-# contavam para o campeonato: Prost somou 73 pontos brutos, mas o standings
-# oficial registra 71; Piquet somou 44 brutos e ficou com 43 oficiais. A soma
-# dos resultados é mantida; o ajuste existe apenas para reconciliar com o
-# standings oficial, nunca para alterar os dados importados.
+# Ajustes oficiais de pontos de pilotos. Entre 1985 e 1990 vigorava a regra
+# dos melhores resultados (descartes): a soma bruta dos GPs difere do standings
+# oficial. Os pontos brutos seguem nos resultados; o ajuste existe apenas para
+# reconciliar a validação com o standings oficial, nunca para alterar dados.
+# 1990: só os 11 melhores resultados contavam — Prost 73 brutos / 71 oficiais,
+# Piquet 44 brutos / 43 oficiais.
 DRIVER_POINT_ADJUSTMENTS = {
+    (1985, "prost"): -3.0,
+    (1986, "prost"): -2.0,
+    (1986, "mansell"): -2.0,
+    (1987, "piquet"): -3.0,
+    (1988, "senna"): -4.0,
+    (1988, "prost"): -18.0,
+    (1989, "prost"): -5.0,
     (1990, "prost"): -2.0,
     (1990, "piquet"): -1.0,
 }

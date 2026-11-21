@@ -1,15 +1,20 @@
 {
-  "generated_at": "2026-11-20T21:49:11+00:00",
+  "generated_at": "2026-11-21T02:18:37+00:00",
   "db_path": "C:\\Users\\Usuario\\Documents\\f1-data-center\\data\\f1.db",
   "ok": true,
   "checks": [
     {
       "id": "seasons",
-      "title": "Temporadas 1990-2026 importadas com a contagem de GPs esperada",
+      "title": "Temporadas 1985-2026 importadas com a contagem de GPs esperada",
       "ok": true,
-      "detail": "37 temporadas, 685 GPs no total (esperado 685). Ausentes: nenhuma. Divergentes: nenhuma. Em andamento: 2026: 20 de 23 GPs concluídos.",
+      "detail": "42 temporadas, 765 GPs no total (esperado 765). Ausentes: nenhuma. Divergentes: nenhuma. Em andamento: 2026: 20 de 23 GPs concluídos.",
       "data": {
         "found": {
+          "1985": 16,
+          "1986": 16,
+          "1987": 16,
+          "1988": 16,
+          "1989": 16,
           "1990": 16,
           "1991": 16,
           "1992": 16,
@@ -48,7 +53,7 @@
           "2025": 24,
           "2026": 20
         },
-        "total_races": 685,
+        "total_races": 765,
         "in_progress": {
           "2026": 20
         }
@@ -72,8 +77,533 @@
       "id": "quali_without_race_result",
       "title": "Classificados que não constam no resultado da corrida (DNS/fonte)",
       "ok": true,
-      "detail": "171 caso(s). A fonte simplesmente não retorna o piloto no resultado; nenhuma posição é inventada.",
+      "detail": "246 caso(s). A fonte simplesmente não retorna o piloto no resultado; nenhuma posição é inventada.",
       "data": [
+        {
+          "season": 1985,
+          "round": 13,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "bellof",
+          "full_name": "Stefan Bellof"
+        },
+        {
+          "season": 1985,
+          "round": 13,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "cesaris",
+          "full_name": "Andrea de Cesaris"
+        },
+        {
+          "season": 1985,
+          "round": 13,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "lauda",
+          "full_name": "Niki Lauda"
+        },
+        {
+          "season": 1985,
+          "round": 13,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "manfred_winkelhock",
+          "full_name": "Manfred Winkelhock"
+        },
+        {
+          "season": 1985,
+          "round": 13,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "palmer",
+          "full_name": "Jonathan Palmer"
+        },
+        {
+          "season": 1986,
+          "round": 15,
+          "race_name": "Mexican Grand Prix",
+          "driver_id": "rothengatter",
+          "full_name": "Huub Rothengatter"
+        },
+        {
+          "season": 1988,
+          "round": 16,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "bailey",
+          "full_name": "Julian Bailey"
+        },
+        {
+          "season": 1988,
+          "round": 16,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "raphanel",
+          "full_name": "Pierre-Henri Raphanel"
+        },
+        {
+          "season": 1988,
+          "round": 16,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "schneider",
+          "full_name": "Bernd Schneider"
+        },
+        {
+          "season": 1988,
+          "round": 16,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "tarquini",
+          "full_name": "Gabriele Tarquini"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "caffi",
+          "full_name": "Alex Caffi"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "foitek",
+          "full_name": "Gregor Foitek"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "gachot",
+          "full_name": "Bertrand Gachot"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "ghinzani",
+          "full_name": "Piercarlo Ghinzani"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "joachim_winkelhock",
+          "full_name": "Joachim Winkelhock"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "johansson",
+          "full_name": "Stefan Johansson"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "raphanel",
+          "full_name": "Pierre-Henri Raphanel"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "suzuki",
+          "full_name": "Aguri Suzuki"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "weidler",
+          "full_name": "Volker Weidler"
+        },
+        {
+          "season": 1989,
+          "round": 2,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "alboreto",
+          "full_name": "Michele Alboreto"
+        },
+        {
+          "season": 1989,
+          "round": 2,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "arnoux",
+          "full_name": "René Arnoux"
+        },
+        {
+          "season": 1989,
+          "round": 2,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "danner",
+          "full_name": "Christian Danner"
+        },
+        {
+          "season": 1989,
+          "round": 2,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "moreno",
+          "full_name": "Roberto Moreno"
+        },
+        {
+          "season": 1989,
+          "round": 3,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "dalmas",
+          "full_name": "Yannick Dalmas"
+        },
+        {
+          "season": 1989,
+          "round": 3,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "danner",
+          "full_name": "Christian Danner"
+        },
+        {
+          "season": 1989,
+          "round": 3,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "satoru_nakajima",
+          "full_name": "Satoru Nakajima"
+        },
+        {
+          "season": 1989,
+          "round": 4,
+          "race_name": "Mexican Grand Prix",
+          "driver_id": "dalmas",
+          "full_name": "Yannick Dalmas"
+        },
+        {
+          "season": 1989,
+          "round": 4,
+          "race_name": "Mexican Grand Prix",
+          "driver_id": "gugelmin",
+          "full_name": "Maurício Gugelmin"
+        },
+        {
+          "season": 1989,
+          "round": 4,
+          "race_name": "Mexican Grand Prix",
+          "driver_id": "moreno",
+          "full_name": "Roberto Moreno"
+        },
+        {
+          "season": 1989,
+          "round": 4,
+          "race_name": "Mexican Grand Prix",
+          "driver_id": "sala",
+          "full_name": "Luis Pérez-Sala"
+        },
+        {
+          "season": 1989,
+          "round": 5,
+          "race_name": "United States Grand Prix",
+          "driver_id": "arnoux",
+          "full_name": "René Arnoux"
+        },
+        {
+          "season": 1989,
+          "round": 5,
+          "race_name": "United States Grand Prix",
+          "driver_id": "dalmas",
+          "full_name": "Yannick Dalmas"
+        },
+        {
+          "season": 1989,
+          "round": 5,
+          "race_name": "United States Grand Prix",
+          "driver_id": "grouillard",
+          "full_name": "Olivier Grouillard"
+        },
+        {
+          "season": 1989,
+          "round": 5,
+          "race_name": "United States Grand Prix",
+          "driver_id": "moreno",
+          "full_name": "Roberto Moreno"
+        },
+        {
+          "season": 1989,
+          "round": 6,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "dalmas",
+          "full_name": "Yannick Dalmas"
+        },
+        {
+          "season": 1989,
+          "round": 6,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "grouillard",
+          "full_name": "Olivier Grouillard"
+        },
+        {
+          "season": 1989,
+          "round": 6,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "herbert",
+          "full_name": "Johnny Herbert"
+        },
+        {
+          "season": 1989,
+          "round": 6,
+          "race_name": "Canadian Grand Prix",
+          "driver_id": "satoru_nakajima",
+          "full_name": "Satoru Nakajima"
+        },
+        {
+          "season": 1989,
+          "round": 7,
+          "race_name": "French Grand Prix",
+          "driver_id": "cesaris",
+          "full_name": "Andrea de Cesaris"
+        },
+        {
+          "season": 1989,
+          "round": 7,
+          "race_name": "French Grand Prix",
+          "driver_id": "danner",
+          "full_name": "Christian Danner"
+        },
+        {
+          "season": 1989,
+          "round": 7,
+          "race_name": "French Grand Prix",
+          "driver_id": "moreno",
+          "full_name": "Roberto Moreno"
+        },
+        {
+          "season": 1989,
+          "round": 7,
+          "race_name": "French Grand Prix",
+          "driver_id": "sala",
+          "full_name": "Luis Pérez-Sala"
+        },
+        {
+          "season": 1989,
+          "round": 8,
+          "race_name": "British Grand Prix",
+          "driver_id": "arnoux",
+          "full_name": "René Arnoux"
+        },
+        {
+          "season": 1989,
+          "round": 8,
+          "race_name": "British Grand Prix",
+          "driver_id": "cheever",
+          "full_name": "Eddie Cheever"
+        },
+        {
+          "season": 1989,
+          "round": 8,
+          "race_name": "British Grand Prix",
+          "driver_id": "danner",
+          "full_name": "Christian Danner"
+        },
+        {
+          "season": 1989,
+          "round": 8,
+          "race_name": "British Grand Prix",
+          "driver_id": "tarquini",
+          "full_name": "Gabriele Tarquini"
+        },
+        {
+          "season": 1989,
+          "round": 9,
+          "race_name": "German Grand Prix",
+          "driver_id": "danner",
+          "full_name": "Christian Danner"
+        },
+        {
+          "season": 1989,
+          "round": 9,
+          "race_name": "German Grand Prix",
+          "driver_id": "gachot",
+          "full_name": "Bertrand Gachot"
+        },
+        {
+          "season": 1989,
+          "round": 9,
+          "race_name": "German Grand Prix",
+          "driver_id": "sala",
+          "full_name": "Luis Pérez-Sala"
+        },
+        {
+          "season": 1989,
+          "round": 10,
+          "race_name": "Hungarian Grand Prix",
+          "driver_id": "arnoux",
+          "full_name": "René Arnoux"
+        },
+        {
+          "season": 1989,
+          "round": 10,
+          "race_name": "Hungarian Grand Prix",
+          "driver_id": "danner",
+          "full_name": "Christian Danner"
+        },
+        {
+          "season": 1989,
+          "round": 10,
+          "race_name": "Hungarian Grand Prix",
+          "driver_id": "grouillard",
+          "full_name": "Olivier Grouillard"
+        },
+        {
+          "season": 1989,
+          "round": 10,
+          "race_name": "Hungarian Grand Prix",
+          "driver_id": "weidler",
+          "full_name": "Volker Weidler"
+        },
+        {
+          "season": 1989,
+          "round": 11,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "danner",
+          "full_name": "Christian Danner"
+        },
+        {
+          "season": 1989,
+          "round": 11,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "piquet",
+          "full_name": "Nelson Piquet"
+        },
+        {
+          "season": 1989,
+          "round": 11,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "raphanel",
+          "full_name": "Pierre-Henri Raphanel"
+        },
+        {
+          "season": 1989,
+          "round": 11,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "satoru_nakajima",
+          "full_name": "Satoru Nakajima"
+        },
+        {
+          "season": 1989,
+          "round": 12,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "cheever",
+          "full_name": "Eddie Cheever"
+        },
+        {
+          "season": 1989,
+          "round": 12,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "danner",
+          "full_name": "Christian Danner"
+        },
+        {
+          "season": 1989,
+          "round": 12,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "raphanel",
+          "full_name": "Pierre-Henri Raphanel"
+        },
+        {
+          "season": 1989,
+          "round": 13,
+          "race_name": "Portuguese Grand Prix",
+          "driver_id": "danner",
+          "full_name": "Christian Danner"
+        },
+        {
+          "season": 1989,
+          "round": 13,
+          "race_name": "Portuguese Grand Prix",
+          "driver_id": "grouillard",
+          "full_name": "Olivier Grouillard"
+        },
+        {
+          "season": 1989,
+          "round": 13,
+          "race_name": "Portuguese Grand Prix",
+          "driver_id": "herbert",
+          "full_name": "Johnny Herbert"
+        },
+        {
+          "season": 1989,
+          "round": 13,
+          "race_name": "Portuguese Grand Prix",
+          "driver_id": "raphanel",
+          "full_name": "Pierre-Henri Raphanel"
+        },
+        {
+          "season": 1989,
+          "round": 14,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "arnoux",
+          "full_name": "René Arnoux"
+        },
+        {
+          "season": 1989,
+          "round": 14,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "foitek",
+          "full_name": "Gregor Foitek"
+        },
+        {
+          "season": 1989,
+          "round": 14,
+          "race_name": "Spanish Grand Prix",
+          "driver_id": "raphanel",
+          "full_name": "Pierre-Henri Raphanel"
+        },
+        {
+          "season": 1989,
+          "round": 15,
+          "race_name": "Japanese Grand Prix",
+          "driver_id": "alboreto",
+          "full_name": "Michele Alboreto"
+        },
+        {
+          "season": 1989,
+          "round": 15,
+          "race_name": "Japanese Grand Prix",
+          "driver_id": "arnoux",
+          "full_name": "René Arnoux"
+        },
+        {
+          "season": 1989,
+          "round": 15,
+          "race_name": "Japanese Grand Prix",
+          "driver_id": "gachot",
+          "full_name": "Bertrand Gachot"
+        },
+        {
+          "season": 1989,
+          "round": 15,
+          "race_name": "Japanese Grand Prix",
+          "driver_id": "raphanel",
+          "full_name": "Pierre-Henri Raphanel"
+        },
+        {
+          "season": 1989,
+          "round": 16,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "gachot",
+          "full_name": "Bertrand Gachot"
+        },
+        {
+          "season": 1989,
+          "round": 16,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "palmer",
+          "full_name": "Jonathan Palmer"
+        },
+        {
+          "season": 1989,
+          "round": 16,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "raphanel",
+          "full_name": "Pierre-Henri Raphanel"
+        },
+        {
+          "season": 1989,
+          "round": 16,
+          "race_name": "Australian Grand Prix",
+          "driver_id": "sala",
+          "full_name": "Luis Pérez-Sala"
+        },
         {
           "season": 1990,
           "round": 1,
@@ -1277,8 +1807,296 @@
       "id": "race_without_quali",
       "title": "Pilotos no resultado sem linha na classificação (fonte)",
       "ok": true,
-      "detail": "44 caso(s). Ausência real na classificação da fonte, mantida como ausente.",
+      "detail": "80 caso(s). Ausência real na classificação da fonte, mantida como ausente.",
       "data": [
+        {
+          "season": 1985,
+          "round": 13,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "alliot",
+          "full_name": "Philippe Alliot",
+          "status": "Accident"
+        },
+        {
+          "season": 1985,
+          "round": 13,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "danner",
+          "full_name": "Christian Danner",
+          "status": "Gearbox"
+        },
+        {
+          "season": 1985,
+          "round": 13,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "prost",
+          "full_name": "Alain Prost",
+          "status": "Finished"
+        },
+        {
+          "season": 1985,
+          "round": 13,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "rothengatter",
+          "full_name": "Huub Rothengatter",
+          "status": "Not classified"
+        },
+        {
+          "season": 1985,
+          "round": 13,
+          "race_name": "Belgian Grand Prix",
+          "driver_id": "streiff",
+          "full_name": "Philippe Streiff",
+          "status": "+1 Lap"
+        },
+        {
+          "season": 1987,
+          "round": 4,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "danner",
+          "full_name": "Christian Danner",
+          "status": "Excluded"
+        },
+        {
+          "season": 1987,
+          "round": 7,
+          "race_name": "British Grand Prix",
+          "driver_id": "ghinzani",
+          "full_name": "Piercarlo Ghinzani",
+          "status": "Excluded"
+        },
+        {
+          "season": 1988,
+          "round": 2,
+          "race_name": "San Marino Grand Prix",
+          "driver_id": "larini",
+          "full_name": "Nicola Larini",
+          "status": "Excluded"
+        },
+        {
+          "season": 1988,
+          "round": 3,
+          "race_name": "Monaco Grand Prix",
+          "driver_id": "modena",
+          "full_name": "Stefano Modena",
+          "status": "Excluded"
+        },
+        {
+          "season": 1988,
+          "round": 4,
+          "race_name": "Mexican Grand Prix",
+          "driver_id": "modena",
+          "full_name": "Stefano Modena",
+          "status": "Excluded"
+        },
+        {
+          "season": 1988,
+          "round": 6,
+          "race_name": "Detroit Grand Prix",
+          "driver_id": "capelli",
+          "full_name": "Ivan Capelli",
+          "status": "Injured"
+        },
+        {
+          "season": 1988,
+          "round": 7,
+          "race_name": "French Grand Prix",
+          "driver_id": "ghinzani",
+          "full_name": "Piercarlo Ghinzani",
+          "status": "Excluded"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "alboreto",
+          "full_name": "Michele Alboreto",
+          "status": "+2 Laps"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "alliot",
+          "full_name": "Philippe Alliot",
+          "status": "+3 Laps"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "berger",
+          "full_name": "Gerhard Berger",
+          "status": "Collision"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "boutsen",
+          "full_name": "Thierry Boutsen",
+          "status": "Engine"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "capelli",
+          "full_name": "Ivan Capelli",
+          "status": "Suspension"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "cesaris",
+          "full_name": "Andrea de Cesaris",
+          "status": "+4 Laps"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "cheever",
+          "full_name": "Eddie Cheever",
+          "status": "Collision"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "danner",
+          "full_name": "Christian Danner",
+          "status": "+5 Laps"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "grouillard",
+          "full_name": "Olivier Grouillard",
+          "status": "+1 Lap"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "gugelmin",
+          "full_name": "Maurício Gugelmin",
+          "status": "Finished"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "herbert",
+          "full_name": "Johnny Herbert",
+          "status": "Finished"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "mansell",
+          "full_name": "Nigel Mansell",
+          "status": "Finished"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "martini",
+          "full_name": "Pierluigi Martini",
+          "status": "Chassis"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "nannini",
+          "full_name": "Alessandro Nannini",
+          "status": "Finished"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "palmer",
+          "full_name": "Jonathan Palmer",
+          "status": "+1 Lap"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "patrese",
+          "full_name": "Riccardo Patrese",
+          "status": "Alternator"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "piquet",
+          "full_name": "Nelson Piquet",
+          "status": "Fuel system"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "prost",
+          "full_name": "Alain Prost",
+          "status": "Finished"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "sala",
+          "full_name": "Luis Pérez-Sala",
+          "status": "Collision"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "satoru_nakajima",
+          "full_name": "Satoru Nakajima",
+          "status": "+1 Lap"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "senna",
+          "full_name": "Ayrton Senna",
+          "status": "+2 Laps"
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "driver_id": "warwick",
+          "full_name": "Derek Warwick",
+          "status": "Finished"
+        },
+        {
+          "season": 1989,
+          "round": 9,
+          "race_name": "German Grand Prix",
+          "driver_id": "weidler",
+          "full_name": "Volker Weidler",
+          "status": "Disqualified"
+        },
+        {
+          "season": 1989,
+          "round": 12,
+          "race_name": "Italian Grand Prix",
+          "driver_id": "modena",
+          "full_name": "Stefano Modena",
+          "status": "Disqualified"
+        },
         {
           "season": 1990,
           "round": 1,
@@ -1637,8 +2455,183 @@
       "id": "qualifying_row_counts",
       "title": "Contagem de pilotos na classificação por GP (informativo)",
       "ok": true,
-      "detail": "82 GP(s) com contagem de classificação diferente da contagem de resultado. Pode ser ausência real na fonte.",
+      "detail": "107 GP(s) com contagem de classificação diferente da contagem de resultado. Pode ser ausência real na fonte.",
       "data": [
+        {
+          "season": 1986,
+          "round": 15,
+          "race_name": "Mexican Grand Prix",
+          "results": 25,
+          "quali": 26
+        },
+        {
+          "season": 1987,
+          "round": 4,
+          "race_name": "Monaco Grand Prix",
+          "results": 26,
+          "quali": 25
+        },
+        {
+          "season": 1987,
+          "round": 7,
+          "race_name": "British Grand Prix",
+          "results": 26,
+          "quali": 25
+        },
+        {
+          "season": 1988,
+          "round": 2,
+          "race_name": "San Marino Grand Prix",
+          "results": 27,
+          "quali": 26
+        },
+        {
+          "season": 1988,
+          "round": 3,
+          "race_name": "Monaco Grand Prix",
+          "results": 27,
+          "quali": 26
+        },
+        {
+          "season": 1988,
+          "round": 4,
+          "race_name": "Mexican Grand Prix",
+          "results": 27,
+          "quali": 26
+        },
+        {
+          "season": 1988,
+          "round": 6,
+          "race_name": "Detroit Grand Prix",
+          "results": 27,
+          "quali": 26
+        },
+        {
+          "season": 1988,
+          "round": 7,
+          "race_name": "French Grand Prix",
+          "results": 27,
+          "quali": 26
+        },
+        {
+          "season": 1988,
+          "round": 16,
+          "race_name": "Australian Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1989,
+          "round": 1,
+          "race_name": "Brazilian Grand Prix",
+          "results": 26,
+          "quali": 13
+        },
+        {
+          "season": 1989,
+          "round": 2,
+          "race_name": "San Marino Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1989,
+          "round": 3,
+          "race_name": "Monaco Grand Prix",
+          "results": 26,
+          "quali": 29
+        },
+        {
+          "season": 1989,
+          "round": 4,
+          "race_name": "Mexican Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1989,
+          "round": 5,
+          "race_name": "United States Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1989,
+          "round": 6,
+          "race_name": "Canadian Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1989,
+          "round": 7,
+          "race_name": "French Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1989,
+          "round": 8,
+          "race_name": "British Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1989,
+          "round": 9,
+          "race_name": "German Grand Prix",
+          "results": 27,
+          "quali": 29
+        },
+        {
+          "season": 1989,
+          "round": 10,
+          "race_name": "Hungarian Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1989,
+          "round": 11,
+          "race_name": "Belgian Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1989,
+          "round": 12,
+          "race_name": "Italian Grand Prix",
+          "results": 27,
+          "quali": 29
+        },
+        {
+          "season": 1989,
+          "round": 13,
+          "race_name": "Portuguese Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1989,
+          "round": 14,
+          "race_name": "Spanish Grand Prix",
+          "results": 26,
+          "quali": 29
+        },
+        {
+          "season": 1989,
+          "round": 15,
+          "race_name": "Japanese Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
+        {
+          "season": 1989,
+          "round": 16,
+          "race_name": "Australian Grand Prix",
+          "results": 26,
+          "quali": 30
+        },
         {
           "season": 1990,
           "round": 1,
@@ -2217,11 +3210,16 @@
     },
     {
       "id": "sprints",
-      "title": "Sprints separadas e completas (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 6, 6, 6 + em andamento)",
+      "title": "Sprints separadas e completas (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 6, 6, 6 + em andamento)",
       "ok": true,
-      "detail": "Sprints importadas por temporada: {1990: 0, 1991: 0, 1992: 0, 1993: 0, 1994: 0, 1995: 0, 1996: 0, 1997: 0, 1998: 0, 1999: 0, 2000: 0, 2001: 0, 2002: 0, 2003: 0, 2004: 0, 2005: 0, 2006: 0, 2007: 0, 2008: 0, 2009: 0, 2010: 0, 2011: 0, 2012: 0, 2013: 0, 2014: 0, 2015: 0, 2016: 0, 2017: 0, 2018: 0, 2019: 0, 2020: 0, 2021: 3, 2022: 3, 2023: 6, 2024: 6, 2025: 6, 2026: 6}.",
+      "detail": "Sprints importadas por temporada: {1985: 0, 1986: 0, 1987: 0, 1988: 0, 1989: 0, 1990: 0, 1991: 0, 1992: 0, 1993: 0, 1994: 0, 1995: 0, 1996: 0, 1997: 0, 1998: 0, 1999: 0, 2000: 0, 2001: 0, 2002: 0, 2003: 0, 2004: 0, 2005: 0, 2006: 0, 2007: 0, 2008: 0, 2009: 0, 2010: 0, 2011: 0, 2012: 0, 2013: 0, 2014: 0, 2015: 0, 2016: 0, 2017: 0, 2018: 0, 2019: 0, 2020: 0, 2021: 3, 2022: 3, 2023: 6, 2024: 6, 2025: 6, 2026: 6}.",
       "data": {
         "counts": {
+          "1985": 0,
+          "1986": 0,
+          "1987": 0,
+          "1988": 0,
+          "1989": 0,
           "1990": 0,
           "1991": 0,
           "1992": 0,
@@ -2266,9 +3264,29 @@
       "id": "champions",
       "title": "Campeões de pilotos e construtores conferem com a fonte externa (temporadas encerradas)",
       "ok": true,
-      "detail": "1990: senna / mclaren; 1991: senna / mclaren; 1992: mansell / williams; 1993: prost / williams; 1994: michael_schumacher / williams; 1995: michael_schumacher / benetton; 1996: damon_hill / williams; 1997: villeneuve / williams; 1998: hakkinen / mclaren; 1999: hakkinen / ferrari; 2000: michael_schumacher / ferrari; 2001: michael_schumacher / ferrari; 2002: michael_schumacher / ferrari; 2003: michael_schumacher / ferrari; 2004: michael_schumacher / ferrari; 2005: alonso / renault; 2006: alonso / renault; 2007: raikkonen / ferrari; 2008: hamilton / ferrari; 2009: button / brawn; 2010: vettel / red_bull; 2011: vettel / red_bull; 2012: vettel / red_bull; 2013: vettel / red_bull; 2014: hamilton / mercedes; 2015: hamilton / mercedes; 2016: rosberg / mercedes; 2017: hamilton / mercedes; 2018: hamilton / mercedes; 2019: hamilton / mercedes; 2020: hamilton / mercedes; 2021: max_verstappen / mercedes; 2022: max_verstappen / red_bull; 2023: max_verstappen / red_bull; 2024: max_verstappen / mclaren; 2025: norris / mclaren; 2026: em andamento (líder atual: antonelli / mercedes; título matemático de pilotos: antonelli; título matemático de construtores: mercedes; temporada em andamento)",
+      "detail": "1985: prost / mclaren; 1986: prost / williams; 1987: piquet / williams; 1988: senna / mclaren; 1989: prost / mclaren; 1990: senna / mclaren; 1991: senna / mclaren; 1992: mansell / williams; 1993: prost / williams; 1994: michael_schumacher / williams; 1995: michael_schumacher / benetton; 1996: damon_hill / williams; 1997: villeneuve / williams; 1998: hakkinen / mclaren; 1999: hakkinen / ferrari; 2000: michael_schumacher / ferrari; 2001: michael_schumacher / ferrari; 2002: michael_schumacher / ferrari; 2003: michael_schumacher / ferrari; 2004: michael_schumacher / ferrari; 2005: alonso / renault; 2006: alonso / renault; 2007: raikkonen / ferrari; 2008: hamilton / ferrari; 2009: button / brawn; 2010: vettel / red_bull; 2011: vettel / red_bull; 2012: vettel / red_bull; 2013: vettel / red_bull; 2014: hamilton / mercedes; 2015: hamilton / mercedes; 2016: rosberg / mercedes; 2017: hamilton / mercedes; 2018: hamilton / mercedes; 2019: hamilton / mercedes; 2020: hamilton / mercedes; 2021: max_verstappen / mercedes; 2022: max_verstappen / red_bull; 2023: max_verstappen / red_bull; 2024: max_verstappen / mclaren; 2025: norris / mclaren; 2026: em andamento (líder atual: antonelli / mercedes; título matemático de pilotos: antonelli; título matemático de construtores: mercedes; temporada em andamento)",
       "data": {
         "found": {
+          "1985": [
+            "prost",
+            "mclaren"
+          ],
+          "1986": [
+            "prost",
+            "williams"
+          ],
+          "1987": [
+            "piquet",
+            "williams"
+          ],
+          "1988": [
+            "senna",
+            "mclaren"
+          ],
+          "1989": [
+            "prost",
+            "mclaren"
+          ],
           "1990": [
             "senna",
             "mclaren"
@@ -2419,6 +3437,26 @@
           ]
         },
         "expected": {
+          "1985": [
+            "prost",
+            "mclaren"
+          ],
+          "1986": [
+            "prost",
+            "williams"
+          ],
+          "1987": [
+            "piquet",
+            "williams"
+          ],
+          "1988": [
+            "senna",
+            "mclaren"
+          ],
+          "1989": [
+            "prost",
+            "mclaren"
+          ],
           "1990": [
             "senna",
             "mclaren"
@@ -2590,7 +3628,7 @@
       "id": "driver_points_reconciliation",
       "title": "Pontos de corrida + sprint batem com a classificação oficial de pilotos",
       "ok": true,
-      "detail": "Todos os pilotos conferem. Ajustes oficiais aplicados: 1990 piquet (-1), 1990 prost (-2).",
+      "detail": "Todos os pilotos conferem. Ajustes oficiais aplicados: 1985 prost (-3), 1986 mansell (-2), 1986 prost (-2), 1987 piquet (-3), 1988 prost (-18), 1988 senna (-4), 1989 prost (-5), 1990 piquet (-1), 1990 prost (-2).",
       "data": []
     },
     {
@@ -2607,6 +3645,11 @@
       "detail": "Todos os GPs possuem volta mais rápida, exceto 1 ausência(s) real(is) documentada(s) na fonte.",
       "data": {
         "por_temporada": {
+          "1985": 16,
+          "1986": 16,
+          "1987": 16,
+          "1988": 16,
+          "1989": 16,
           "1990": 16,
           "1991": 16,
           "1992": 16,
@@ -2661,8 +3704,8 @@
       "ok": true,
       "detail": "Todos os GPs possuem pole identificada.",
       "data": {
-        "poles": 685,
-        "races": 685,
+        "poles": 765,
+        "races": 765,
         "sem_pole": []
       }
     },
@@ -2670,11 +3713,11 @@
       "id": "complementary_conflicts",
       "title": "Dados complementares coincidem com a fonte primária",
       "ok": true,
-      "detail": "0 conflito(s) em 332 registro(s) complementares.",
+      "detail": "0 conflito(s) em 412 registro(s) complementares.",
       "data": {
         "pole_conflicts": 0,
         "fastest_lap_conflicts": 0,
-        "complementary_rows": 332
+        "complementary_rows": 412
       }
     },
     {
@@ -2717,8 +3760,13 @@
       "id": "winners_count",
       "title": "Um vencedor por GP (contagem de vitórias por temporada)",
       "ok": true,
-      "detail": "Vencedores por temporada: {1990: 16, 1991: 16, 1992: 16, 1993: 16, 1994: 16, 1995: 17, 1996: 16, 1997: 17, 1998: 16, 1999: 16, 2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24, 2026: 20}. Esperado nas encerradas: {1990: 16, 1991: 16, 1992: 16, 1993: 16, 1994: 16, 1995: 17, 1996: 16, 1997: 17, 1998: 16, 1999: 16, 2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24}; em andamento: {2026: 20}.",
+      "detail": "Vencedores por temporada: {1985: 16, 1986: 16, 1987: 16, 1988: 16, 1989: 16, 1990: 16, 1991: 16, 1992: 16, 1993: 16, 1994: 16, 1995: 17, 1996: 16, 1997: 17, 1998: 16, 1999: 16, 2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24, 2026: 20}. Esperado nas encerradas: {1985: 16, 1986: 16, 1987: 16, 1988: 16, 1989: 16, 1990: 16, 1991: 16, 1992: 16, 1993: 16, 1994: 16, 1995: 17, 1996: 16, 1997: 17, 1998: 16, 1999: 16, 2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24}; em andamento: {2026: 20}.",
       "data": {
+        "1985": 16,
+        "1986": 16,
+        "1987": 16,
+        "1988": 16,
+        "1989": 16,
         "1990": 16,
         "1991": 16,
         "1992": 16,
@@ -2783,6 +3831,456 @@
       "round": 5,
       "race": "Monaco Grand Prix",
       "note": "Mick Schumacher não participou da classificação (acidente no treino livre) e largou do pit lane. 19 pilotos na classificação é o dado correto da fonte."
+    },
+    {
+      "season": 1985,
+      "round": 13,
+      "race": "Belgian Grand Prix",
+      "note": "Stefan Bellof fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1985,
+      "round": 13,
+      "race": "Belgian Grand Prix",
+      "note": "Andrea de Cesaris fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1985,
+      "round": 13,
+      "race": "Belgian Grand Prix",
+      "note": "Niki Lauda fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1985,
+      "round": 13,
+      "race": "Belgian Grand Prix",
+      "note": "Manfred Winkelhock fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1985,
+      "round": 13,
+      "race": "Belgian Grand Prix",
+      "note": "Jonathan Palmer fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1986,
+      "round": 15,
+      "race": "Mexican Grand Prix",
+      "note": "Huub Rothengatter fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1988,
+      "round": 16,
+      "race": "Australian Grand Prix",
+      "note": "Julian Bailey fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1988,
+      "round": 16,
+      "race": "Australian Grand Prix",
+      "note": "Pierre-Henri Raphanel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1988,
+      "round": 16,
+      "race": "Australian Grand Prix",
+      "note": "Bernd Schneider fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1988,
+      "round": 16,
+      "race": "Australian Grand Prix",
+      "note": "Gabriele Tarquini fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 1,
+      "race": "Brazilian Grand Prix",
+      "note": "Alex Caffi fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 1,
+      "race": "Brazilian Grand Prix",
+      "note": "Gregor Foitek fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 1,
+      "race": "Brazilian Grand Prix",
+      "note": "Bertrand Gachot fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 1,
+      "race": "Brazilian Grand Prix",
+      "note": "Piercarlo Ghinzani fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 1,
+      "race": "Brazilian Grand Prix",
+      "note": "Joachim Winkelhock fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 1,
+      "race": "Brazilian Grand Prix",
+      "note": "Stefan Johansson fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 1,
+      "race": "Brazilian Grand Prix",
+      "note": "Pierre-Henri Raphanel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 1,
+      "race": "Brazilian Grand Prix",
+      "note": "Aguri Suzuki fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 1,
+      "race": "Brazilian Grand Prix",
+      "note": "Volker Weidler fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 2,
+      "race": "San Marino Grand Prix",
+      "note": "Michele Alboreto fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 2,
+      "race": "San Marino Grand Prix",
+      "note": "René Arnoux fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 2,
+      "race": "San Marino Grand Prix",
+      "note": "Christian Danner fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 2,
+      "race": "San Marino Grand Prix",
+      "note": "Roberto Moreno fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 3,
+      "race": "Monaco Grand Prix",
+      "note": "Yannick Dalmas fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 3,
+      "race": "Monaco Grand Prix",
+      "note": "Christian Danner fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 3,
+      "race": "Monaco Grand Prix",
+      "note": "Satoru Nakajima fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 4,
+      "race": "Mexican Grand Prix",
+      "note": "Yannick Dalmas fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 4,
+      "race": "Mexican Grand Prix",
+      "note": "Maurício Gugelmin fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 4,
+      "race": "Mexican Grand Prix",
+      "note": "Roberto Moreno fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 4,
+      "race": "Mexican Grand Prix",
+      "note": "Luis Pérez-Sala fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 5,
+      "race": "United States Grand Prix",
+      "note": "René Arnoux fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 5,
+      "race": "United States Grand Prix",
+      "note": "Yannick Dalmas fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 5,
+      "race": "United States Grand Prix",
+      "note": "Olivier Grouillard fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 5,
+      "race": "United States Grand Prix",
+      "note": "Roberto Moreno fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 6,
+      "race": "Canadian Grand Prix",
+      "note": "Yannick Dalmas fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 6,
+      "race": "Canadian Grand Prix",
+      "note": "Olivier Grouillard fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 6,
+      "race": "Canadian Grand Prix",
+      "note": "Johnny Herbert fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 6,
+      "race": "Canadian Grand Prix",
+      "note": "Satoru Nakajima fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 7,
+      "race": "French Grand Prix",
+      "note": "Andrea de Cesaris fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 7,
+      "race": "French Grand Prix",
+      "note": "Christian Danner fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 7,
+      "race": "French Grand Prix",
+      "note": "Roberto Moreno fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 7,
+      "race": "French Grand Prix",
+      "note": "Luis Pérez-Sala fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 8,
+      "race": "British Grand Prix",
+      "note": "René Arnoux fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 8,
+      "race": "British Grand Prix",
+      "note": "Eddie Cheever fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 8,
+      "race": "British Grand Prix",
+      "note": "Christian Danner fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 8,
+      "race": "British Grand Prix",
+      "note": "Gabriele Tarquini fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 9,
+      "race": "German Grand Prix",
+      "note": "Christian Danner fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 9,
+      "race": "German Grand Prix",
+      "note": "Bertrand Gachot fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 9,
+      "race": "German Grand Prix",
+      "note": "Luis Pérez-Sala fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 10,
+      "race": "Hungarian Grand Prix",
+      "note": "René Arnoux fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 10,
+      "race": "Hungarian Grand Prix",
+      "note": "Christian Danner fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 10,
+      "race": "Hungarian Grand Prix",
+      "note": "Olivier Grouillard fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 10,
+      "race": "Hungarian Grand Prix",
+      "note": "Volker Weidler fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 11,
+      "race": "Belgian Grand Prix",
+      "note": "Christian Danner fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 11,
+      "race": "Belgian Grand Prix",
+      "note": "Nelson Piquet fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 11,
+      "race": "Belgian Grand Prix",
+      "note": "Pierre-Henri Raphanel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 11,
+      "race": "Belgian Grand Prix",
+      "note": "Satoru Nakajima fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 12,
+      "race": "Italian Grand Prix",
+      "note": "Eddie Cheever fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 12,
+      "race": "Italian Grand Prix",
+      "note": "Christian Danner fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 12,
+      "race": "Italian Grand Prix",
+      "note": "Pierre-Henri Raphanel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 13,
+      "race": "Portuguese Grand Prix",
+      "note": "Christian Danner fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 13,
+      "race": "Portuguese Grand Prix",
+      "note": "Olivier Grouillard fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 13,
+      "race": "Portuguese Grand Prix",
+      "note": "Johnny Herbert fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 13,
+      "race": "Portuguese Grand Prix",
+      "note": "Pierre-Henri Raphanel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 14,
+      "race": "Spanish Grand Prix",
+      "note": "René Arnoux fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 14,
+      "race": "Spanish Grand Prix",
+      "note": "Gregor Foitek fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 14,
+      "race": "Spanish Grand Prix",
+      "note": "Pierre-Henri Raphanel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 15,
+      "race": "Japanese Grand Prix",
+      "note": "Michele Alboreto fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 15,
+      "race": "Japanese Grand Prix",
+      "note": "René Arnoux fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 15,
+      "race": "Japanese Grand Prix",
+      "note": "Bertrand Gachot fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 15,
+      "race": "Japanese Grand Prix",
+      "note": "Pierre-Henri Raphanel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 16,
+      "race": "Australian Grand Prix",
+      "note": "Bertrand Gachot fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 16,
+      "race": "Australian Grand Prix",
+      "note": "Jonathan Palmer fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 16,
+      "race": "Australian Grand Prix",
+      "note": "Pierre-Henri Raphanel fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1989,
+      "round": 16,
+      "race": "Australian Grand Prix",
+      "note": "Luis Pérez-Sala fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
     },
     {
       "season": 1990,
@@ -3809,6 +5307,48 @@
       "round": 9,
       "race": "Spanish Grand Prix",
       "note": "Lance Stroll fez a classificação mas não consta no resultado da corrida (DNS ou ausência na fonte). Nenhuma posição foi inventada."
+    },
+    {
+      "season": 1987,
+      "round": 4,
+      "race": "Monaco Grand Prix",
+      "note": "Christian Danner consta no resultado (status: Excluded) mas não na classificação da fonte."
+    },
+    {
+      "season": 1987,
+      "round": 7,
+      "race": "British Grand Prix",
+      "note": "Piercarlo Ghinzani consta no resultado (status: Excluded) mas não na classificação da fonte."
+    },
+    {
+      "season": 1988,
+      "round": 2,
+      "race": "San Marino Grand Prix",
+      "note": "Nicola Larini consta no resultado (status: Excluded) mas não na classificação da fonte."
+    },
+    {
+      "season": 1988,
+      "round": 3,
+      "race": "Monaco Grand Prix",
+      "note": "Stefano Modena consta no resultado (status: Excluded) mas não na classificação da fonte."
+    },
+    {
+      "season": 1988,
+      "round": 4,
+      "race": "Mexican Grand Prix",
+      "note": "Stefano Modena consta no resultado (status: Excluded) mas não na classificação da fonte."
+    },
+    {
+      "season": 1988,
+      "round": 6,
+      "race": "Detroit Grand Prix",
+      "note": "Ivan Capelli consta no resultado (status: Injured) mas não na classificação da fonte."
+    },
+    {
+      "season": 1988,
+      "round": 7,
+      "race": "French Grand Prix",
+      "note": "Piercarlo Ghinzani consta no resultado (status: Excluded) mas não na classificação da fonte."
     },
     {
       "season": 1993,

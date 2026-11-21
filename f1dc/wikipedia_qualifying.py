@@ -1,7 +1,7 @@
 """Completa a classificação (qualifying) antiga com a Wikipédia (en).
 
 A fonte primária (Jolpica/Ergast) não possui classificação completa em todas as
-etapas de 1990–2002. As páginas de cada Grande Prêmio na Wikipédia em inglês
+etapas de 1985–2002. As páginas de cada Grande Prêmio na Wikipédia em inglês
 trazem a tabela de qualifying com posição, piloto, equipe e tempo, citando os
 arquivos da FIA. Este módulo importa **apenas os GPs em que a fonte primária
 não tem nenhuma linha de classificação**.
@@ -63,6 +63,7 @@ WIKIPEDIA_MARKER = "wikipedia.org"
 # principal; 1996 usa coluna de tempo; 1998 usa ``Lap Time``; 2000 usa tabelas
 # sem coluna de grid e predefinições {{sort}}/{{sortname}}; 2001 usa ``Lap``.
 SUPPORTED_SEASONS = (
+    1985, 1986, 1987, 1988, 1989,
     1990, 1991, 1992, 1993, 1994,
     1996, 1997, 1998, 1999, 2000, 2001, 2002,
 )

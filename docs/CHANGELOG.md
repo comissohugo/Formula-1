@@ -1170,6 +1170,44 @@ validação da base.
 
 ------------------------------------------------------------------------
 
+## 2026-11-20 --- Extensão da base para 1985–1989
+
+-   **Decisão:** atender ao pedido do usuário ("qualquer coisa ja faz de 85 a
+    89.."), ampliando a base de 1990–2026 para 1985–2026.
+-   **Arquivos alterados:** `f1dc/config.py`, `f1dc/wikipedia.py`,
+    `f1dc/wikipedia_qualifying.py`, `f1dc/export.py`, `f1dc/__init__.py`,
+    `app.py`, `README.md`, `docs/PROJETO_F1.md`,
+    `scripts/seed_wiki_entities.py`, `tests/test_app_smoke.py`,
+    `data/f1.db`, `data/validation_report.json` e o ZIP de exportação.
+-   **O que foi implementado:**
+    -   importação de 80 GPs (16 por temporada) e 2.061 resultados de
+        1985–1989 via Jolpica, com standings oficiais e campeões conferidos:
+        Prost/McLaren (85), Prost/Williams (86), Piquet/Williams (87),
+        Senna/McLaren (88) e Prost/McLaren (89);
+    -   qualifying completo de 1985–1989 (2.100 linhas em 80 GPs)
+        complementado pela Wikipédia (en), com `source_url`/`fetched_at`
+        por linha, mantendo DNQ/EX sem posição inventada;
+    -   poles e 80 voltas rápidas complementadas pela Wikipédia (pt),
+        também com proveniência;
+    -   cadastro mínimo de Joachim Winkelhock (que só aparece no
+        qualifying de 1989 na Wikipédia) no script de seed;
+    -   ajustes oficiais de descartes de pontos em 1985–1989 (regra dos
+        melhores resultados, vigente até 1990), aplicados apenas na
+        reconciliação da validação, nunca nos resultados importados;
+    -   painel "Maiores vencedores por século — século XX" ampliado para
+        1985–1999, com aviso de recorte incompleto para 1950–1984;
+    -   textos de cobertura (README, PROJETO_F1, export) atualizados para
+        1985–2026 (745 GPs encerrados + etapas de 2026).
+-   **Testes realizados:** `python -m f1dc.validate` APROVADO (19/19),
+    `python -m pytest -q`, AppTest sem exceções.
+-   **Problemas conhecidos:** a divergência de nome "Barcelona Grand Prix"
+    (base) × "Barcelona-Catalunya Grand Prix" (oficial) segue pendente;
+    o encerramento oficial de 2026 continua manual.
+-   **Próxima ação:** publicar o commit e confirmar que o Streamlit Cloud
+    subiu a versão 1985–2026 com o painel do século XX atualizado.
+
+------------------------------------------------------------------------
+
 ## Modelo para próximas atualizações
 
 ### AAAA-MM-DD --- Título da alteração

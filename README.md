@@ -1,4 +1,4 @@
-# 🏁 F1 Data Center — 1990 a 2026
+# 🏁 F1 Data Center — 1985 a 2026
 
 Dashboard histórico da Fórmula 1 em Python/Streamlit, com base local em SQLite e
 importação pela [Jolpica F1 API](https://api.jolpi.ca/ergast/f1/) (estrutura
@@ -10,7 +10,7 @@ manual de pontos.
 
 Para as temporadas antigas em que a fonte primária não traz pole position,
 volta mais rápida ou a classificação completa, esses dados são complementados
-pela **Wikipédia** (pt para premiações e en para o qualifying de 1990 a 2002),
+pela **Wikipédia** (pt para premiações e en para o qualifying de 1985 a 2002),
 com URL e data de importação. A fonte primária sempre tem prioridade.
 
 A temporada **2026 é importada em modo "em andamento"**: entram apenas as etapas
@@ -23,7 +23,7 @@ andamento até a última etapa.
 
 ## O que já está pronto
 
-- Importação de **1990 a 2025** (665 GPs encerrados) mais **2026 em andamento**
+- Importação de **1985 a 2025** (745 GPs encerrados) mais **2026 em andamento**
   (20 de 23 GPs concluídos até o momento).
 - Calendário, circuitos, pilotos e equipes.
 - Classificação completa (qualifying) quando disponível na fonte ou
@@ -32,10 +32,10 @@ andamento até a última etapa.
 - **Sprints separadas** dos GPs principais.
 - Classificação oficial de pilotos e construtores (final nas temporadas
   encerradas; atual em 2026), com pontos, vitórias, **pódios** e **poles**.
-- **Poles e voltas rápidas ausentes na fonte primária (1990–2003)**
+- **Poles e voltas rápidas ausentes na fonte primária (1985–2003)**
   complementadas pela Wikipédia (pt), com fonte e data registradas.
-- **Qualifying completo de 1990 a 2002**: a primária não traz nenhuma linha em
-  1990–1993 e cobre 15/16 GPs em 1994; cobre 17/17 em 1995, 7/16 em 1996,
+- **Qualifying completo de 1985 a 2002**: a primária não traz nenhuma linha em
+  1985–1993 e cobre 15/16 GPs em 1994; cobre 17/17 em 1995, 7/16 em 1996,
   10/17 em 1997, 7/16 em 1998, 3/16 em 1999, 4/17 em 2000, 1/17 em 2001 e
   2/17 em 2002. Todo o restante veio da Wikipédia (en), com `source_url` e
   `fetched_at` por linha. A fonte primária sempre tem prioridade nos GPs que
@@ -46,9 +46,9 @@ andamento até a última etapa.
   poles, voltas rápidas, títulos e pontos), que cresce automaticamente quando
   novas temporadas são importadas.
 - **Maiores vencedores por século**: dois top 10 na aba Ranking — século XX
-  (1990–1999) e século XXI (2000–2026) — com o circuito onde cada piloto mais
+  (1985–1999) e século XXI (2000–2026) — com o circuito onde cada piloto mais
   venceu, aproveitamento (%) e empates explicitados. O painel do século XX
-  avisa que o recorte está incompleto (faltam 1950–1989).
+  avisa que o recorte está incompleto (faltam 1950–1984).
 - **Vitórias por circuito**: no perfil do piloto (tabela completa por traçado)
   e o top 5 de quem mais venceu em cada circuito, na aba Histórico.
 - **Circuitos fora do calendário atual**, calculados pelo calendário importado

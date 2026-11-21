@@ -150,7 +150,7 @@ def _readme(
         "calendario.csv ............... GPs, circuitos e datas",
         "resultados_corridas.csv ...... resultado completo de cada corrida",
         "classificacao.csv ............ classificação (qualifying; tempo único "
-        "em 1990–2002)",
+        "em 1985–2002)",
         "premios_complementares.csv ... pole/volta rápida de fonte complementar "
         "(Wikipédia)",
         "sprints.csv .................. resultados das sprints (separadas dos GPs)",
@@ -175,7 +175,7 @@ def _readme(
         "  pode ser complementada pela Wikipédia (pt) na tabela",
         "  session_awards, com URL e data de importação. A fonte primária",
         "  sempre tem prioridade; nada é preenchido por suposição.",
-        "- O qualifying de 1990 a 2002, ausente na primária em 1990–1993 e na",
+        "- O qualifying de 1985 a 2002, ausente na primária em 1985–1993 e na",
         "  maior parte dos GPs de 1996–2002, foi complementado pela Wikipédia",
         "  (en) na própria tabela de classificação, com source_url e",
         "  fetched_at por linha. Em 1994 a primária cobre 15 de 16 GPs. Os GPs",
