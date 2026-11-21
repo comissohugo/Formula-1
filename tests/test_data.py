@@ -527,3 +527,56 @@ def test_inactive_circuits_defaults_to_last_season_and_handles_empty():
     )
     assert vazio.empty
     assert "seasons_absent" in vazio.columns
+
+
+def test_race_name_alias_uses_official_name_and_keeps_provenience(monkeypatch):
+    alias = {
+        (2026, 7): {
+            "primary_name": "Barcelona Grand Prix",
+            "official_name": "Barcelona-Catalunya Grand Prix",
+            "source_url": "https://www.formula1.com/en/racing/2026/barcelona-catalunya",
+            "verified_at": "2026-11-21",
+        }
+    }
+    monkeypatch.setattr(data.config, "RACE_NAME_ALIASES", alias)
+    races = pd.DataFrame(
+        {
+            "season": [2026, 2026],
+            "round": [7, 14],
+            "race_name": ["Barcelona Grand Prix", "Spanish Grand Prix"],
+        }
+    )
+
+    result = data.apply_race_name_aliases(races)
+
+    barcelona = result[result["round"] == 7].iloc[0]
+    assert barcelona["race_name"] == "Barcelona-Catalunya Grand Prix"
+    assert barcelona["race_name_source"] == "official"
+    assert barcelona["race_name_source_url"] == alias[(2026, 7)]["source_url"]
+    assert barcelona["race_name_verified_at"] == "2026-11-21"
+
+    madrid = result[result["round"] == 14].iloc[0]
+    assert madrid["race_name"] == "Spanish Grand Prix"
+    assert madrid["race_name_source"] == "Jolpica"
+    assert pd.isna(madrid["race_name_source_url"])
+    assert races.loc[0, "race_name"] == "Barcelona Grand Prix"  # sem mutar a entrada
+
+
+def test_race_name_alias_ignores_unexpected_primary_name(monkeypatch):
+    alias = {
+        (2026, 7): {
+            "primary_name": "Barcelona Grand Prix",
+            "official_name": "Barcelona-Catalunya Grand Prix",
+            "source_url": "https://example.com",
+            "verified_at": "2026-11-21",
+        }
+    }
+    monkeypatch.setattr(data.config, "RACE_NAME_ALIASES", alias)
+    races = pd.DataFrame(
+        {"season": [2026], "round": [7], "race_name": ["Outro Nome na Primária"]}
+    )
+
+    result = data.apply_race_name_aliases(races)
+
+    assert result.loc[0, "race_name"] == "Outro Nome na Primária"
+    assert result.loc[0, "race_name_source"] == "Jolpica"

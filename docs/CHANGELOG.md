@@ -1251,6 +1251,49 @@ validação da base.
 
 ------------------------------------------------------------------------
 
+## 2026-11-21 --- Arruma as duas pendências: nome de GP e fechamento de 2026
+
+-   **Decisão:** atendendo ao pedido "da pra arrumar essas pendencias?", o
+    usuário escolheu (1) alias na exibição para a divergência do nome do GP
+    de Barcelona e (2) script + agendamento para o encerramento oficial de
+    2026. Nenhum dado foi inventado: o nome bruto continua no banco e o
+    fechamento só acontece depois que a fonte primária tiver os dados finais.
+-   **Arquivos alterados:** `f1dc/config.py` (`RACE_NAME_ALIASES`),
+    `f1dc/data.py`, `f1dc/export.py`, `app.py`,
+    `scripts/finalize_season.py` (novo), `tests/test_data.py`,
+    `tests/test_finalize_season.py` (novo), `README.md`, `docs/CHANGELOG.md`.
+-   **O que foi implementado:**
+    -   alias de `(2026, R7)` para `Barcelona-Catalunya Grand Prix`, com URL
+        oficial e data de conferência aplicados apenas em `frames` (painel e
+        exportação). O CSV do calendário ganhou `race_name_source`,
+        `race_name_source_url` e `race_name_verified_at`; o detalhe do GP no
+        painel mostra o link da fonte oficial. O alias só é aplicado quando o
+        nome bruto no banco é exatamente `Barcelona Grand Prix`.
+    -   `scripts/finalize_season.py` com `--check-only`: confere na Jolpica as
+        23 etapas, as 6 sprints, o resultado da R23 e standings finais no R23,
+        além de confrontar os campeões com os títulos matemáticos já
+        registrados. Só então altera `config.py` (2026 sai de "em andamento" e
+        entra nas expectativas de temporada encerrada), reimporta, valida, faz
+        `wal_checkpoint(TRUNCATE)`, commita e faz push. Backup/rollback protegem
+        a base se algo falhar antes do commit; se o push falhar depois dele, o
+        script mantém os arquivos e avisa.
+    -   tarefa `F1DataCenter\Fecha2026` criada para 07/12/2026 13:00, com
+        comando e horário verificados por `/query /xml`.
+-   **Testes realizados:** `py_compile` dos arquivos alterados,
+    `python -m pytest -q` (76 passando), `--check-only` contra a API real
+    (bloqueou corretamente: standings ainda no R21 e sem resultado na R23),
+    comparação do `config.py` resultante no teste unitário e verificação da
+    tarefa no Agendador.
+-   **Problemas conhecidos:** em 21/11 a temporada ainda tem 20 de 23 GPs no
+    banco; o fechamento depende da publicação dos resultados finais na API. As
+    tarefas do Agendador não disparam se o PC estiver desligado no horário. A
+    conferência visual no Streamlit Cloud segue bloqueada por redirect/403.
+-   **Próxima ação:** acompanhar as tarefas R21–R23, conferir o log de
+    `finalize_season.py` em 07/12, regenerar o ZIP com a temporada encerrada e
+    pedir ao usuário que confirme visualmente o deploy.
+
+------------------------------------------------------------------------
+
 ## Modelo para próximas atualizações
 
 ### AAAA-MM-DD --- Título da alteração

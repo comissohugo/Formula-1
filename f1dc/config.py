@@ -76,6 +76,20 @@ CLINCHED_CHAMPIONS = {
     2026: {"driver": "antonelli", "constructor": "mercedes"},
 }
 
+# Divergências de nome entre a fonte primária (Jolpica) e a fonte oficial.
+# O banco mantém o nome bruto da primária; estes aliases são aplicados apenas
+# na exibição e na exportação, com URL e data da conferência. Em 2026 a etapa
+# de Catalunya foi renomeada para "Barcelona-Catalunya Grand Prix" porque o
+# "Spanish Grand Prix" passou para o Madring (R14).
+RACE_NAME_ALIASES = {
+    (2026, 7): {
+        "primary_name": "Barcelona Grand Prix",
+        "official_name": "Barcelona-Catalunya Grand Prix",
+        "source_url": "https://www.formula1.com/en/racing/2026/barcelona-catalunya",
+        "verified_at": "2026-11-21",
+    },
+}
+
 # --- Caminhos -------------------------------------------------------------
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"

@@ -86,9 +86,39 @@ def load_frames(db_path: str | Path = config.DB_PATH) -> dict[str, pd.DataFrame]
             "country": "circuit_country",
         }
     )
-    frames["races"] = frames["races"].merge(circuits, on="circuit_id", how="left")
+    frames["races"] = apply_race_name_aliases(
+        frames["races"].merge(circuits, on="circuit_id", how="left")
+    )
 
     return frames
+
+
+def apply_race_name_aliases(races: pd.DataFrame) -> pd.DataFrame:
+    """Usa o nome oficial conferido onde a primária diverge (ex.: 2026 R7).
+
+    Não altera o banco: ``frames`` é usado apenas para exibição e exportação.
+    A URL e a data da conferência viajam nas colunas ``race_name_source*``,
+    que também aparecem no CSV do calendário. O alias só é aplicado se o nome
+    bruto no banco continuar sendo exatamente o ``primary_name`` esperado —
+    assim uma mudança futura da primária não troca o nome de outro GP.
+    """
+    result = races.copy()
+    result["race_name_source"] = "Jolpica"
+    result["race_name_source_url"] = None
+    result["race_name_verified_at"] = None
+    for (season, round_number), alias in config.RACE_NAME_ALIASES.items():
+        mask = (
+            (result["season"] == season)
+            & (result["round"] == round_number)
+            & (result["race_name"] == alias["primary_name"])
+        )
+        if not mask.any():
+            continue
+        result.loc[mask, "race_name"] = alias["official_name"]
+        result.loc[mask, "race_name_source"] = "official"
+        result.loc[mask, "race_name_source_url"] = alias["source_url"]
+        result.loc[mask, "race_name_verified_at"] = alias["verified_at"]
+    return result
 
 
 def season_races(frames: dict[str, pd.DataFrame], season: int) -> pd.DataFrame:

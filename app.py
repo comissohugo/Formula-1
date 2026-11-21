@@ -485,6 +485,12 @@ with tab_races:
         f"{race.get('circuit_name', '—')} · {race.get('circuit_locality', '—')}, "
         f"{race.get('circuit_country', '—')} · {race['date']}{sprint_badge}"
     )
+    if race.get("race_name_source") == "official":
+        st.caption(
+            f"Nome conferido na fonte oficial em "
+            f"{race.get('race_name_verified_at') or '—'}: "
+            f"[página do GP]({race.get('race_name_source_url') or '#'})"
+        )
 
     result = season_results[season_results["round"] == round_].copy()
     quali = season_quali[season_quali["round"] == round_].copy()

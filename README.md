@@ -241,6 +241,46 @@ manualmente:
 (substitua `--round 21` por 22 ou 23 conforme a etapa). O script é idempotente:
 se o resultado já estiver importado e nada mudou, ele encerra sem criar commit.
 
+### Encerramento oficial de 2026
+
+O fechamento da temporada também foi automatizado, com a tarefa
+`Fecha2026` (pasta `F1DataCenter`), disparo em **07/12/2026 13:00** — um dia
+depois de Abu Dhabi. Ela executa `scripts/finalize_season.py`, que **só publica
+quando a Jolpica já traz**:
+
+- as 23 etapas e as 6 sprints do calendário;
+- o resultado da última etapa (R23);
+- os standings finais no R23, com os mesmos campeões já registrados como
+  matemáticos (Antonelli e Mercedes).
+
+Se faltar qualquer um desses itens, ele aborta antes de tocar no banco. Antes
+de alterar arquivos, exige working tree limpa; faz backup de `config.py`, do
+banco e do relatório, reimporta 2026 já como temporada encerrada, valida, faz
+`wal_checkpoint(TRUNCATE)`, commita e faz push. Se alguma etapa falhar antes do
+commit, restaura os originais e não publica nada. Se o push falhar **depois**
+do commit local, ele mantém os arquivos e avisa para não perder trabalho.
+
+Para conferir sem alterar nada:
+
+```powershell
+.\.venv\Scripts\python scripts\finalize_season.py --check-only
+Get-Content logs\finalize_season.log -Tail 20
+```
+
+Se o PC estiver desligado em 07/12, rode o script sem `--check-only`
+manualmente, depois de conferir o log das atualizações de R21–R23. O log fica
+em `logs/finalize_season.log`.
+
+### Nome oficial de Barcelona em 2026
+
+A Jolpica devolve `Barcelona Grand Prix` para a etapa de Catalunya de 2026,
+enquanto a [fonte oficial da F1](https://www.formula1.com/en/racing/2026/barcelona-catalunya)
+usa `Barcelona-Catalunya Grand Prix` (o nome `Spanish Grand Prix` passou para o
+Madring, R14). O banco mantém o nome bruto da primária; a exibição, o CSV do
+calendário e o ZIP usam o nome oficial, com URL e data da conferência. No painel,
+o detalhe do GP mostra um link para a página oficial. O alias só é aplicado se o
+nome bruto no banco continuar sendo exatamente o esperado.
+
 ---
 
 ## Estrutura do projeto

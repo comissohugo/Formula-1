@@ -188,8 +188,18 @@ def _readme(
         "  f1dc.ingest --seasons <ano> e em seguida f1dc.validate. Etapas que",
         "  ainda não aconteceram são ignoradas com aviso e a importação não",
         "  duplica registros.",
-        "",
     ]
+    for (season, round_number), alias in getattr(
+        config, "RACE_NAME_ALIASES", {}
+    ).items():
+        lines.append(
+            f"- {season} R{round_number}: a primária traz "
+            f"'{alias['primary_name']}'; exibimos '{alias['official_name']}' "
+            "conforme a fonte oficial "
+            f"({alias['source_url']}, conferido em {alias['verified_at']}). "
+            "O nome bruto permanece no banco."
+        )
+    lines.append("")
     return "\n".join(lines)
 
 
