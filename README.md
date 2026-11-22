@@ -24,7 +24,7 @@ andamento até a última etapa.
 ## O que já está pronto
 
 - Importação de **1980 a 2025** (821 GPs encerrados) mais **2026 em andamento**
-  (20 de 23 GPs concluídos até o momento).
+  (21 de 23 GPs concluídos até o momento).
 - Calendário, circuitos, pilotos e equipes.
 - Classificação completa (qualifying) quando disponível na fonte ou
   complementada, e corrida completa (grid, voltas, pontos, status, tempo,

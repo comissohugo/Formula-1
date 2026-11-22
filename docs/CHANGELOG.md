@@ -1324,6 +1324,37 @@ validação da base.
 
 ------------------------------------------------------------------------
 
+## 2026-11-22 --- Importa Las Vegas (R21) de 2026
+
+-   **Decisão:** o usuário avisou que a corrida de Las Vegas já tinha ocorrido.
+    A Jolpica já trazia o resultado e os standings no R21, então a importação
+    foi feita imediatamente, sem esperar a tarefa agendada para 23/11. Isso
+    evita também uma segunda rodada de requisições no dia seguinte.
+-   **Arquivos alterados:** `data/f1.db`, `data/validation_report.json`,
+    `README.md`, `docs/CHANGELOG.md`.
+-   **O que foi implementado:**
+    -   `f1dc.ingest --seasons 2026`: 21 GPs gravados, 462 resultados, 457
+        classificações e 132 linhas de sprint, com 55 requisições HTTP e status
+        `ok`. R22 (Qatar) e R23 (Abu Dhabi) seguem sem resultado na fonte e
+        foram ignoradas, como previsto para temporada em andamento.
+    -   R21: vencedor Max Verstappen (Red Bull), pole de Andrea Kimi Antonelli
+        (P1 do qualifying, distinto do grid efetivo) e volta rápida de Liam
+        Lawson — todos lidos da primária, sem inferência de penalidades.
+    -   tarefa `Atualiza2026-R21-LasVegas` removida do Agendador por ter se
+        tornado redundante. Permanecem `Atualiza2026-R22-Qatar`,
+        `Atualiza2026-R23-AbuDhabi` e `Fecha2026`.
+    -   o nome oficial de Barcelona continuou gravado no banco após a
+        reimportação, confirmando a correção feita em 21/11.
+-   **Testes realizados:** validação da base `APROVADO` (19/19 checagens),
+    `pytest -q` com **79 passed**, `wal_checkpoint(TRUNCATE)` com `(0, 0, 0)`
+    e ZIP regenerado.
+-   **Problemas conhecidos:** 2026 segue em andamento com 21 de 23 GPs; o
+    fechamento depende da publicação dos resultados finais de R23 na API.
+-   **Próxima ação:** acompanhar R22 (29/11) e R23 (06/12) e conferir o
+    `Fecha2026` em 07/12.
+
+------------------------------------------------------------------------
+
 ## Modelo para próximas atualizações
 
 ### AAAA-MM-DD --- Título da alteração

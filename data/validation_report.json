@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T19:28:17+00:00",
+  "generated_at": "2026-11-22T14:28:26+00:00",
   "db_path": "C:\\Users\\Usuario\\Documents\\f1-data-center\\data\\f1.db",
   "ok": true,
   "checks": [
@@ -7,7 +7,7 @@
       "id": "seasons",
       "title": "Temporadas 1980-2026 importadas com a contagem de GPs esperada",
       "ok": true,
-      "detail": "47 temporadas, 841 GPs no total (esperado 841). Ausentes: nenhuma. Divergentes: nenhuma. Em andamento: 2026: 20 de 23 GPs concluídos.",
+      "detail": "47 temporadas, 842 GPs no total (esperado 842). Ausentes: nenhuma. Divergentes: nenhuma. Em andamento: 2026: 21 de 23 GPs concluídos.",
       "data": {
         "found": {
           "1980": 14,
@@ -56,11 +56,11 @@
           "2023": 22,
           "2024": 24,
           "2025": 24,
-          "2026": 20
+          "2026": 21
         },
-        "total_races": 841,
+        "total_races": 842,
         "in_progress": {
-          "2026": 20
+          "2026": 21
         }
       }
     },
@@ -5367,7 +5367,7 @@
       "id": "clinched_champions",
       "title": "Títulos matemáticos em temporadas em andamento conferidos",
       "ok": true,
-      "detail": "2026: pilotos antonelli com 111.0 ponto(s) de vantagem (máximo restante 75); construtores mercedes com 142.0 ponto(s) de vantagem (máximo restante 129); 3 corrida(s) e 0 sprint(s) restantes; temporada em andamento",
+      "detail": "2026: pilotos antonelli com 98.0 ponto(s) de vantagem (máximo restante 50); construtores mercedes com 149.0 ponto(s) de vantagem (máximo restante 86); 2 corrida(s) e 0 sprint(s) restantes; temporada em andamento",
       "data": {
         "configured": {
           "2026": {
@@ -5447,7 +5447,7 @@
           "2023": 22,
           "2024": 24,
           "2025": 24,
-          "2026": 20
+          "2026": 21
         },
         "sem_volta_rapida": [],
         "ausencias_documentadas": [
@@ -5465,8 +5465,8 @@
       "ok": true,
       "detail": "Todos os GPs possuem pole identificada.",
       "data": {
-        "poles": 841,
-        "races": 841,
+        "poles": 842,
+        "races": 842,
         "sem_pole": []
       }
     },
@@ -5521,7 +5521,7 @@
       "id": "winners_count",
       "title": "Um vencedor por GP (contagem de vitórias por temporada)",
       "ok": true,
-      "detail": "Vencedores por temporada: {1980: 14, 1981: 15, 1982: 16, 1983: 15, 1984: 16, 1985: 16, 1986: 16, 1987: 16, 1988: 16, 1989: 16, 1990: 16, 1991: 16, 1992: 16, 1993: 16, 1994: 16, 1995: 17, 1996: 16, 1997: 17, 1998: 16, 1999: 16, 2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24, 2026: 20}. Esperado nas encerradas: {1980: 14, 1981: 15, 1982: 16, 1983: 15, 1984: 16, 1985: 16, 1986: 16, 1987: 16, 1988: 16, 1989: 16, 1990: 16, 1991: 16, 1992: 16, 1993: 16, 1994: 16, 1995: 17, 1996: 16, 1997: 17, 1998: 16, 1999: 16, 2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24}; em andamento: {2026: 20}.",
+      "detail": "Vencedores por temporada: {1980: 14, 1981: 15, 1982: 16, 1983: 15, 1984: 16, 1985: 16, 1986: 16, 1987: 16, 1988: 16, 1989: 16, 1990: 16, 1991: 16, 1992: 16, 1993: 16, 1994: 16, 1995: 17, 1996: 16, 1997: 17, 1998: 16, 1999: 16, 2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24, 2026: 21}. Esperado nas encerradas: {1980: 14, 1981: 15, 1982: 16, 1983: 15, 1984: 16, 1985: 16, 1986: 16, 1987: 16, 1988: 16, 1989: 16, 1990: 16, 1991: 16, 1992: 16, 1993: 16, 1994: 16, 1995: 17, 1996: 16, 1997: 17, 1998: 16, 1999: 16, 2000: 17, 2001: 17, 2002: 17, 2003: 16, 2004: 18, 2005: 19, 2006: 18, 2007: 17, 2008: 18, 2009: 17, 2010: 19, 2011: 19, 2012: 20, 2013: 19, 2014: 19, 2015: 19, 2016: 21, 2017: 20, 2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24}; em andamento: {2026: 21}.",
       "data": {
         "1980": 14,
         "1981": 15,
@@ -5569,7 +5569,7 @@
         "2023": 22,
         "2024": 24,
         "2025": 24,
-        "2026": 20
+        "2026": 21
       }
     }
   ],
@@ -5578,7 +5578,7 @@
       "season": 2026,
       "round": null,
       "race": "Temporada 2026 em andamento",
-      "note": "20 de 23 GPs concluídos; apenas etapas com resultado na fonte entram no banco. A classificação atual (não final) é liderada por Andrea Kimi Antonelli / Mercedes. O título de pilotos já está garantido matematicamente por Andrea Kimi Antonelli. O título de construtores já está garantido matematicamente por Mercedes. A temporada continua em andamento; a classificação exibida é a posição atual, não a final."
+      "note": "21 de 23 GPs concluídos; apenas etapas com resultado na fonte entram no banco. A classificação atual (não final) é liderada por Andrea Kimi Antonelli / Mercedes. O título de pilotos já está garantido matematicamente por Andrea Kimi Antonelli. O título de construtores já está garantido matematicamente por Mercedes. A temporada continua em andamento; a classificação exibida é a posição atual, não a final."
     },
     {
       "season": 2020,
