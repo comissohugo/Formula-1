@@ -1402,6 +1402,49 @@ validação da base.
 
 ------------------------------------------------------------------------
 
+## 2026-11-24 --- Extensão final da base para 1970–1974
+
+-   **Decisão:** atender ao pedido final do usuário ("vamos fszer eles, pra
+    encerrar, de 1970 a 1974") e encerrar a expansão histórica com cobertura
+    1970–2026, mantendo 2026 em andamento.
+-   **Arquivos alterados:** `f1dc/config.py`, `f1dc/wikipedia_qualifying.py`,
+    `f1dc/wikipedia.py`, `f1dc/export.py`, `f1dc/__init__.py`, `app.py`,
+    `README.md`, `docs/PROJETO_F1.md`, `scripts/seed_wiki_entities.py`,
+    `tests/test_app_smoke.py`, `data/f1.db`, `data/validation_report.json` e o
+    ZIP de exportação.
+-   **O que foi implementado:**
+    -   importação via Jolpica de 66 GPs (13, 11, 12, 15 e 15 por temporada),
+        1.573 resultados, standings oficiais e campeões conferidos:
+        Rindt/Team Lotus (70), Stewart/Tyrrell (71), Emerson Fittipaldi/Team
+        Lotus (72), Stewart/Team Lotus (73) e Emerson Fittipaldi/McLaren (74);
+    -   qualifying completo de 1970–1974 (1.642 linhas em 66 GPs) pela
+        Wikipédia (en), com `source_url`/`fetched_at` por linha. O parser passou
+        a aceitar lacunas de posição em linhas DNQ/EX (por exemplo, 1970
+        Espanha), sem inventar posição. As poles P1 foram conferidas pelo
+        infobox da Wikipédia (en) em 1970–1971;
+    -   66 voltas rápidas complementares com proveniência: infobox do GP na
+        Wikipédia (en) em 1970–1971 e tabela da Wikipédia (pt) em 1972–1974.
+        As poles já vêm do P1 do qualifying importado;
+    -   cadastro mínimo de pilotos que só aparecem no qualifying antigo (William
+        Ferguson e Carlo Facetti) e o alias `iso`/`iso marlboro` →
+        `iso_marlboro`;
+    -   ajustes oficiais de reconciliação dos construtores de 1970–1974, todos
+        negativos e calculados contra o standings oficial da Jolpica. Nenhum
+        resultado importado foi alterado;
+    -   painel "Maiores vencedores por século — século XX" ampliado para
+        1970–1999, com aviso de recorte incompleto para 1950–1969;
+    -   textos de cobertura (README, PROJETO_F1, export) atualizados para
+        1970–2026 (965 GPs encerrados + etapas de 2026).
+-   **Testes realizados:** validação da base `APROVADO` (19/19 checagens),
+    `pytest -q` com **79 passed**, `py_compile` e `wal_checkpoint(TRUNCATE)`
+    com `(0, 0, 0)`.
+-   **Problemas conhecidos:** 2026 segue em andamento com 21 de 23 GPs; o
+    fechamento depende da publicação dos resultados finais de R23 na API.
+-   **Próxima ação:** publicar o commit e confirmar o Streamlit Cloud; depois
+    acompanhar R22 (29/11), R23 (06/12) e `Fecha2026` (07/12).
+
+------------------------------------------------------------------------
+
 ## Modelo para próximas atualizações
 
 ### AAAA-MM-DD --- Título da alteração

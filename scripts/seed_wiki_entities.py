@@ -1,4 +1,4 @@
-"""Cadastra pilotos/equipes que só aparecem na Wikipédia (1975–1992).
+"""Cadastra pilotos/equipes que só aparecem na Wikipédia (1970–1992).
 
 A fonte primária (Jolpica) não registra classificação nesses anos e, por isso,
 não chegou a criar cadastro para pilotos que apenas tentaram a classificação.
@@ -169,6 +169,25 @@ DRIVERS = [
         "full_name": "Gimax",
         "nationality": "Italian",
         "url": "https://en.wikipedia.org/wiki/Gimax",
+    },
+    # 1970–1974: pilotos que tentaram a classificação e por isso não aparecem
+    # nos resultados da primária. Nacionalidade e nome vêm dos artigos da
+    # Wikipédia (en) citados em ``url``, sem qualquer estatística inferida.
+    {
+        "driver_id": "william_ferguson",
+        "given_name": "William",
+        "family_name": "Ferguson",
+        "full_name": "William Ferguson",
+        "nationality": "South African",
+        "url": "https://en.wikipedia.org/wiki/William_Ferguson_(racing_driver)",
+    },
+    {
+        "driver_id": "carlo_facetti",
+        "given_name": "Carlo",
+        "family_name": "Facetti",
+        "full_name": "Carlo Facetti",
+        "nationality": "Italian",
+        "url": "https://en.wikipedia.org/wiki/Carlo_Facetti",
     },
 ]
 

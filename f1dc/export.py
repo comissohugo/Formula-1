@@ -150,7 +150,7 @@ def _readme(
         "calendario.csv ............... GPs, circuitos e datas",
         "resultados_corridas.csv ...... resultado completo de cada corrida",
         "classificacao.csv ............ classificação (qualifying; tempo único "
-        "em 1975–2002)",
+        "em 1970–2002)",
         "premios_complementares.csv ... pole/volta rápida de fonte complementar "
         "(Wikipédia)",
         "sprints.csv .................. resultados das sprints (separadas dos GPs)",
@@ -172,10 +172,11 @@ def _readme(
         "  quando já estão matematicamente garantidos.",
         "- Penalidades não são inferidas; apenas os status fornecidos são exibidos.",
         "- Quando a fonte primária não traz pole ou volta mais rápida, a lacuna",
-        "  pode ser complementada pela Wikipédia (pt) na tabela",
+        "  pode ser complementada pela Wikipédia (pt, 1972–2003) ou pelo infobox",
+        "  do GP na Wikipédia (en, voltas rápidas de 1970–1971), na tabela",
         "  session_awards, com URL e data de importação. A fonte primária",
         "  sempre tem prioridade; nada é preenchido por suposição.",
-        "- O qualifying de 1975 a 2002, ausente na primária em 1975–1993 e na",
+        "- O qualifying de 1970 a 2002, ausente na primária em 1970–1993 e na",
         "  maior parte dos GPs de 1996–2002, foi complementado pela Wikipédia",
         "  (en) na própria tabela de classificação, com source_url e",
         "  fetched_at por linha. Em 1994 a primária cobre 15 de 16 GPs. Os GPs",

@@ -1,14 +1,15 @@
 # F1 DATA CENTER --- Documento central do projeto
 
-**Versão:** 2.3\
-**Status:** base 1975–2025 importada e validada; temporada 2026 em andamento
+**Versão:** 2.4\
+**Status:** base 1970–2025 importada e validada; temporada 2026 em andamento
 (etapas concluídas importadas; títulos de pilotos e construtores já garantidos
 matematicamente por Antonelli e Mercedes). As poles e voltas rápidas de
-1975–2003, ausentes na fonte primária, foram complementadas pela Wikipédia
-(pt), e o qualifying de 1975–2002 foi complementado pela Wikipédia (en), sempre
-com fonte e data registradas. A fonte primária mantém prioridade.
+1970–2003, ausentes na fonte primária, foram complementadas com proveniência
+(Wikipédia pt em 1972–2003 e infobox do GP na Wikipédia en nas voltas rápidas
+de 1970–1971), e o qualifying de 1970–2002 foi complementado pela Wikipédia
+(en), sempre com fonte e data registradas. A fonte primária mantém prioridade.
 O painel também mostra os **maiores vencedores por século** — século XX
-(1975–1999, com aviso de recorte incompleto) e século XXI (2000–2026) —, com o
+(1970–1999, com aviso de recorte incompleto) e século XXI (2000–2026) —, com o
 circuito onde cada piloto mais venceu (empates explícitos), as vitórias por
 circuito e os **circuitos fora do calendário atual**, calculados a partir do
 calendário importado.\
@@ -17,7 +18,7 @@ calendário importado.\
 ## 1. Objetivo
 
 Construir um dashboard interativo de estatísticas históricas da Fórmula
-1, cobrindo as temporadas de **1990 a 2025** (encerradas) e a temporada
+1, cobrindo as temporadas de **1970 a 2025** (encerradas) e a temporada
 **2026 em andamento**. O painel deve permitir navegar por temporada,
 Grande Prêmio, piloto e equipe, consultar resultados completos e comparar
 desempenhos.
@@ -151,7 +152,7 @@ https://www.formula1.com/ - https://www.fia.com/
 ### Regras importantes
 
 1.  Não afirmar que a base está completa antes de importar e conferir os
-    resultados de GP de cada temporada (899 GPs encerrados de 1975 a 2025,
+    resultados de GP de cada temporada (965 GPs encerrados de 1970 a 2025,
     mais as etapas concluídas de 2026).
 2.  Preservar os registros completos, não somente o Top 10.
 3.  Não confundir pole position com primeiro colocado no grid efetivo.
@@ -181,9 +182,10 @@ https://www.formula1.com/ - https://www.fia.com/
     como Abu Dhabi 2014 em dobro, vêm da fonte oficial.
 14. Quando a fonte primária não trouxer pole, volta mais rápida ou a
     classificação completa, a lacuna pode ser complementada por fonte
-    alternativa confiável (Wikipédia em português para premiações e em
-    inglês para o qualifying de 1975 a 2002), guardando URL e data. A fonte
-    primária sempre tem prioridade e nenhum dado é preenchido por suposição.
+    alternativa confiável (Wikipédia em português para premiações de 1972 a
+    2003, em inglês para o qualifying de 1970 a 2002 e para as voltas rápidas
+    de 1970 e 1971), guardando URL e data. A fonte primária sempre tem
+    prioridade e nenhum dado é preenchido por suposição.
 
 ## 4. Modelo de dados sugerido
 
@@ -197,7 +199,7 @@ Separar entidades em tabelas ou arquivos normalizados:
 -   `drivers`: identificador, nome, código, número, nacionalidade.
 -   `constructors`: identificador, nome, nacionalidade.
 -   `qualifying_results`: temporada, rodada, piloto, equipe, posição,
-    Q1, Q2, Q3 (em 1975–2002, o tempo da sessão única fica em Q1 e Q2/Q3
+    Q1, Q2, Q3 (em 1970–2002, o tempo da sessão única fica em Q1 e Q2/Q3
     ficam nulos), URL e data da fonte.
 -   `race_results`: temporada, rodada, piloto, equipe, posição, posição
     textual, grid, voltas, pontos, status, tempo.
@@ -256,7 +258,7 @@ com sucesso e a checagem de qualidade seja concluída.
 
 1.  Consultar a documentação atual da API.
 2.  Implementar paginação correta para cada endpoint.
-3.  Importar temporadas de 1990 a 2025 e as etapas concluídas de 2026.
+3.  Importar temporadas de 1970 a 2025 e as etapas concluídas de 2026.
 4.  Salvar os dados localmente (preferencialmente CSV/Parquet ou
     SQLite).
 5.  Permitir atualização sem duplicar registros.
@@ -264,11 +266,9 @@ com sucesso e a checagem de qualidade seja concluída.
 
 ### Fase C --- Validação
 
-1.  Conferir quantidade de GPs por temporada encerrada: 16 em 1990, 1991,
-    1992, 1993, 1994, 1996, 1998, 1999 e 2003; 17 em 1995, 1997, 2000,
-    2001 e 2002; 18 em 2004; 19 em 2005; depois 18, 17, 18, 17, 19,
-    19, 20, 19, 19, 19, 21, 20, 21, 21, 17, 22, 22, 22, 24 e 24; em 2026,
-    conferir apenas as etapas concluídas contra o calendário.
+1.  Conferir quantidade de GPs por temporada encerrada conforme
+    `EXPECTED_RACES` em `f1dc/config.py` (1970–2025); em 2026, conferir
+    apenas as etapas concluídas contra o calendário.
 2.  Conferir se cada GP possui resultados e classificação quando
     aplicável.
 3.  Validar campeões e standings oficiais (nas temporadas encerradas).
@@ -312,7 +312,7 @@ inventar estatísticas nem preencher dados ausentes por suposição.
 ## 9. Definição de pronto da primeira versão
 
 A primeira versão histórica será considerada pronta quando: - as cinquenta e
-uma temporadas encerradas (1975–2025) estiverem carregadas; - os 899 GPs
+seis temporadas encerradas (1970–2025) estiverem carregadas; - os 965 GPs
 encerrados estiverem identificados; - cada GP tiver resultado completo
 de corrida e pole identificada (classificação completa na fonte primária
 ou complementada com proveniência); - pole, vencedor, pódio, Top 10 e volta

@@ -4,7 +4,7 @@ A fonte primária (Jolpica/Ergast) não possui classificação completa em todas
 etapas de 1980–2002. As páginas de cada Grande Prêmio na Wikipédia em inglês
 trazem a tabela de qualifying com posição, piloto, equipe e tempo, citando os
 arquivos da FIA. Este módulo importa **apenas os GPs em que a fonte primária
-não tem nenhuma linha de classificação**. A cobertura vai de 1975 a 2002.
+não tem nenhuma linha de classificação**. A cobertura vai de 1970 a 2002.
 
 Regras de integridade:
 
@@ -60,10 +60,12 @@ WIKIPEDIA_MARKER = "wikipedia.org"
 # Temporadas cujas páginas de GP usam o formato de tabela suportado por este
 # importador (posição, piloto, equipe e tempo; grid quando existir). 1990–1994
 # usam duas sessões (Q1/Q2) e às vezes uma tabela de pré-classificação antes da
-# principal. 1975–1984 usam ``Time`` ou duas sessões (Q1/Q2), com tempos de duas
-# ou três casas decimais; 1996 usa coluna de tempo; 1998 usa ``Lap Time``; 2000 usa tabelas
+# principal. 1970–1984 usam ``Time``/``Time gap`` ou duas sessões (Q1/Q2), com
+# tempos de uma a três casas decimais e lacunas de DNQ no meio da tabela;
+# 1996 usa coluna de tempo; 1998 usa ``Lap Time``; 2000 usa tabelas
 # sem coluna de grid e predefinições {{sort}}/{{sortname}}; 2001 usa ``Lap``.
 SUPPORTED_SEASONS = (
+    1970, 1971, 1972, 1973, 1974,
     1975, 1976, 1977, 1978, 1979,
     1980, 1981, 1982, 1983, 1984,
     1985, 1986, 1987, 1988, 1989,
@@ -376,8 +378,13 @@ def parse_qualifying_table(wikitext: str) -> dict[str, Any]:
     positions = [row["position"] for row in rows]
     if len(set(positions)) != len(positions):
         raise ValueError("posições duplicadas na tabela de classificação")
-    if sorted(positions) != list(range(1, len(rows) + 1)):
-        raise ValueError(f"posições não sequenciais: {sorted(positions)[:5]}...")
+    # Em páginas antigas, linhas DNQ/EX aparecem no meio da tabela e são
+    # ignoradas (sem posição inventada), deixando lacunas legítimas — por
+    # exemplo, 1970 Espanha vai de P11 a P14. Exigimos apenas que a tabela
+    # comece em P1, esteja em ordem crescente e não ultrapasse um limite
+    # plausível; as lacunas nunca são preenchidas por suposição.
+    if positions != sorted(positions) or positions[0] != 1 or positions[-1] > 60:
+        raise ValueError(f"posições fora da faixa esperada: {positions[:8]}...")
     if len(rows) < MIN_CLASSIFIED:
         raise ValueError(f"apenas {len(rows)} pilotos classificados")
     for row in rows:

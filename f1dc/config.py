@@ -5,6 +5,11 @@ from pathlib import Path
 # --- Fonte de dados -------------------------------------------------------
 BASE_URL = "https://api.jolpi.ca/ergast/f1"
 SEASONS = (
+    1970,
+    1971,
+    1972,
+    1973,
+    1974,
     1975,
     1976,
     1977,
@@ -128,6 +133,11 @@ PAGE_SIZE = 100
 
 # --- Expectativas do projeto (documento central, seção 2) -----------------
 EXPECTED_RACES = {
+    1970: 13,
+    1971: 11,
+    1972: 12,
+    1973: 15,
+    1974: 15,
     1975: 14,
     1976: 16,
     1977: 17,
@@ -181,6 +191,11 @@ EXPECTED_RACES = {
     2025: 24,
 }
 EXPECTED_SPRINTS = {
+    1970: 0,
+    1971: 0,
+    1972: 0,
+    1973: 0,
+    1974: 0,
     1975: 0,
     1976: 0,
     1977: 0,
@@ -222,6 +237,11 @@ EXPECTED_SPRINTS = {
 # Conferência externa dos campeões (fontes oficiais).
 # Usada apenas para VALIDAR o que a API entregou, nunca para preencher dado.
 EXPECTED_CHAMPIONS = {
+    1970: ("rindt", "team_lotus"),
+    1971: ("stewart", "tyrrell"),
+    1972: ("emerson_fittipaldi", "team_lotus"),
+    1973: ("stewart", "team_lotus"),
+    1974: ("emerson_fittipaldi", "mclaren"),
     1975: ("lauda", "ferrari"),
     1976: ("hunt", "ferrari"),
     1977: ("lauda", "ferrari"),
@@ -307,6 +327,39 @@ CONSTRUCTOR_POINT_ADJUSTMENTS = {
     (1978, "brabham"): -16.0,
     (1978, "tyrrell"): -3.0,
     (1978, "mclaren"): -1.0,
+    # 1970–1974: o standings oficial de construtores não credita todos os
+    # resultados brutos da equipe (vigência da regra do melhor carro e dos
+    # descartes, além de pilotos que trocaram de equipe durante a temporada).
+    # Os valores abaixo são apenas a diferença contábil até o standings da
+    # Jolpica; nenhum resultado de corrida é modificado.
+    (1970, "team_lotus"): -11.0,
+    (1970, "ferrari"): -21.0,
+    (1970, "march"): -7.0,
+    (1970, "mclaren-ford"): -1.0,
+    (1970, "brm"): -2.0,
+    (1970, "matra"): -1.0,
+    (1971, "tyrrell"): -15.0,
+    (1971, "brm"): -6.0,
+    (1971, "march-ford"): -3.0,
+    (1971, "ferrari"): -11.0,
+    (1971, "lotus-ford"): -4.0,
+    (1971, "mclaren"): -3.0,
+    (1971, "matra"): -1.0,
+    (1971, "surtees"): -1.0,
+    (1971, "brabham"): -2.0,
+    (1972, "tyrrell"): -9.0,
+    (1972, "mclaren"): -17.0,
+    (1972, "ferrari"): -14.0,
+    (1973, "team_lotus"): -16.0,
+    (1973, "tyrrell"): -38.0,
+    (1973, "mclaren"): -10.0,
+    (1973, "ferrari"): -2.0,
+    (1973, "brm"): -1.0,
+    (1974, "mclaren"): -15.0,
+    (1974, "ferrari"): -25.0,
+    (1974, "tyrrell"): -8.0,
+    (1974, "team_lotus"): -5.0,
+    (1974, "brabham"): -11.0,
 }
 
 # Ajustes oficiais de pontos de pilotos. A regra dos melhores resultados

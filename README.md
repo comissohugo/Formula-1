@@ -1,4 +1,4 @@
-# 🏁 F1 Data Center — 1975 a 2026
+# 🏁 F1 Data Center — 1970 a 2026
 
 Dashboard histórico da Fórmula 1 em Python/Streamlit, com base local em SQLite e
 importação pela [Jolpica F1 API](https://api.jolpi.ca/ergast/f1/) (estrutura
@@ -10,8 +10,9 @@ manual de pontos.
 
 Para as temporadas antigas em que a fonte primária não traz pole position,
 volta mais rápida ou a classificação completa, esses dados são complementados
-pela **Wikipédia** (pt para premiações e en para o qualifying de 1975 a 2002),
-com URL e data de importação. A fonte primária sempre tem prioridade.
+pela **Wikipédia** (pt para premiações de 1972 a 2003, en para o qualifying de
+1970 a 2002 e para as voltas rápidas de 1970 e 1971), com URL e data de
+importação. A fonte primária sempre tem prioridade.
 
 A temporada **2026 é importada em modo "em andamento"**: entram apenas as etapas
 já concluídas e a classificação mostrada é a posição atual. Títulos só aparecem
@@ -23,7 +24,7 @@ andamento até a última etapa.
 
 ## O que já está pronto
 
-- Importação de **1975 a 2025** (899 GPs encerrados) mais **2026 em andamento**
+- Importação de **1970 a 2025** (965 GPs encerrados) mais **2026 em andamento**
   (21 de 23 GPs concluídos até o momento).
 - Calendário, circuitos, pilotos e equipes.
 - Classificação completa (qualifying) quando disponível na fonte ou
@@ -32,10 +33,12 @@ andamento até a última etapa.
 - **Sprints separadas** dos GPs principais.
 - Classificação oficial de pilotos e construtores (final nas temporadas
   encerradas; atual em 2026), com pontos, vitórias, **pódios** e **poles**.
-- **Poles e voltas rápidas ausentes na fonte primária (1975–2003)**
-  complementadas pela Wikipédia (pt), com fonte e data registradas.
-- **Qualifying completo de 1975 a 2002**: a primária não traz nenhuma linha em
-  1975–1993 e cobre 15/16 GPs em 1994; cobre 17/17 em 1995, 7/16 em 1996,
+- **Poles e voltas rápidas ausentes na fonte primária (1970–2003)**
+  complementadas com proveniência: 1972–2003 pela Wikipédia (pt) e 1970–1971
+  pelo infobox do GP na Wikipédia (en). As poles de 1970–1971 vêm do P1 do
+  qualifying importado.
+- **Qualifying completo de 1970 a 2002**: a primária não traz nenhuma linha em
+  1970–1993 e cobre 15/16 GPs em 1994; cobre 17/17 em 1995, 7/16 em 1996,
   10/17 em 1997, 7/16 em 1998, 3/16 em 1999, 4/17 em 2000, 1/17 em 2001 e
   2/17 em 2002. Todo o restante veio da Wikipédia (en), com `source_url` e
   `fetched_at` por linha. A fonte primária sempre tem prioridade nos GPs que
@@ -46,9 +49,9 @@ andamento até a última etapa.
   poles, voltas rápidas, títulos e pontos), que cresce automaticamente quando
   novas temporadas são importadas.
 - **Maiores vencedores por século**: dois top 10 na aba Ranking — século XX
-  (1975–1999) e século XXI (2000–2026) — com o circuito onde cada piloto mais
+  (1970–1999) e século XXI (2000–2026) — com o circuito onde cada piloto mais
   venceu, aproveitamento (%) e empates explicitados. O painel do século XX
-  avisa que o recorte está incompleto (faltam 1950–1974).
+  avisa que o recorte está incompleto (faltam 1950–1969).
 - **Vitórias por circuito**: no perfil do piloto (tabela completa por traçado)
   e o top 5 de quem mais venceu em cada circuito, na aba Histórico.
 - **Circuitos fora do calendário atual**, calculados pelo calendário importado
@@ -88,10 +91,10 @@ python -m venv .venv
 > complemente os dados com a Wikipédia:
 >
 > ```powershell
-> .\.venv\Scripts\python -m f1dc.wikipedia --seasons 1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003
+> .\.venv\Scripts\python -m f1dc.wikipedia --seasons 1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003
 > ```
 >
-> Para 1975–1992, alguns pilotos que apenas tentaram a classificação não têm
+> Para 1970–1992, alguns pilotos que apenas tentaram a classificação não têm
 > cadastro na fonte primária. Antes do complemento de qualifying, rode uma vez
 > o script que cadastra apenas nome, nacionalidade e URL desses pilotos e das
 > equipes Coloni e Apollon (as linhas de qualifying gravadas depois mantêm
@@ -101,10 +104,10 @@ python -m venv .venv
 > .\.venv\Scripts\python scripts\seed_wiki_entities.py
 > ```
 >
-> Para completar o qualifying de 1975 a 2002 (GPs ausentes na fonte primária):
+> Para completar o qualifying de 1970 a 2002 (GPs ausentes na fonte primária):
 >
 > ```powershell
-> .\.venv\Scripts\python -m f1dc.wikipedia_qualifying --seasons 1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1990,1991,1992,1993,1994,1996,1997,1998,1999,2000,2001,2002
+> .\.venv\Scripts\python -m f1dc.wikipedia_qualifying --seasons 1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1990,1991,1992,1993,1994,1996,1997,1998,1999,2000,2001,2002
 > ```
 
 ### 4. Abrir o painel
@@ -127,8 +130,8 @@ O navegador abre em `http://localhost:8501`.
 | Importar tudo | `.\.venv\Scripts\python -m f1dc.ingest` |
 | Importar só algumas temporadas | `.\.venv\Scripts\python -m f1dc.ingest --seasons 2024,2025` |
 | Cadastrar pilotos/equipes exclusivos da Wikipédia | `.\.venv\Scripts\python scripts\seed_wiki_entities.py` |
-| Complementar poles/voltas rápidas | `.\.venv\Scripts\python -m f1dc.wikipedia --seasons 1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003` |
-| Completar o qualifying de 1975 a 2002 | `.\.venv\Scripts\python -m f1dc.wikipedia_qualifying --seasons 1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1990,1991,1992,1993,1994,1996,1997,1998,1999,2000,2001,2002` |
+| Complementar poles/voltas rápidas | `.\.venv\Scripts\python -m f1dc.wikipedia --seasons 1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003` |
+| Completar o qualifying de 1970 a 2002 | `.\.venv\Scripts\python -m f1dc.wikipedia_qualifying --seasons 1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1990,1991,1992,1993,1994,1996,1997,1998,1999,2000,2001,2002` |
 | Atualizar depois de um GP | `.\.venv\Scripts\python -m f1dc.ingest --seasons 2026` |
 | Atualizar + validar + publicar | `.\.venv\Scripts\python scripts\update_season.py --round 21` |
 | Validar a base | `.\.venv\Scripts\python -m f1dc.validate` |
@@ -185,11 +188,11 @@ Copy-Item data\f1.db $env:TEMP\f1_teste.db
 .\.venv\Scripts\python -m f1dc.ingest --seasons 2026 --db $env:TEMP\f1_teste.db
 ```
 
-> **Atenção:** reimportar **1975 a 2003** apaga o qualifying e as premiações
+> **Atenção:** reimportar **1970 a 2003** apaga o qualifying e as premiações
 > complementares daquelas temporadas. Nesse caso, depois do `f1dc.ingest` rode
 > `scripts\seed_wiki_entities.py`,
-> `f1dc.wikipedia_qualifying --seasons 1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1990,1991,1992,1993,1994,1996,1997,1998,1999,2000,2001,2002`
-> e `f1dc.wikipedia --seasons 1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003`.
+> `f1dc.wikipedia_qualifying --seasons 1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1990,1991,1992,1993,1994,1996,1997,1998,1999,2000,2001,2002`
+> e `f1dc.wikipedia --seasons 1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003`.
 > Para 2026 isso não se aplica, porque não há dados complementares da Wikipédia
 > nessa temporada.
 
@@ -311,7 +314,7 @@ f1-data-center/
 │   ├── db.py              # esquema SQLite e upserts idempotentes
 │   ├── ingest.py          # importação por temporada (CLI)
 │   ├── wikipedia.py       # poles/voltas rápidas complementares (CLI)
-│   ├── wikipedia_qualifying.py  # qualifying de 1975–2002 complementar (CLI)
+│   ├── wikipedia_qualifying.py  # qualifying de 1970–2002 complementar (CLI)
 │   ├── validate.py        # checagens de qualidade (CLI)
 │   └── data.py            # agregações usadas pelo dashboard
 └── tests/                 # pytest
@@ -334,9 +337,10 @@ f1-data-center/
    indevido.
 5. **Pole ≠ P1 do grid.** A pole vem da classificação; o grid efetivo é exibido
    em coluna separada. Penalidades não são inferidas. Quando a fonte primária
-   não tem a pole/volta rápida, a Wikipédia (pt) preenche a lacuna em tabela
-   separada, com URL e data. O qualifying de 1975 a 2002, ausente na primária
-   em 1975–1993 e na maior parte dos GPs de 1996–2002, foi complementado pela
+   não tem a pole/volta rápida, a Wikipédia (pt, 1972–2003) ou o infobox do GP
+   na Wikipédia (en, voltas rápidas de 1970–1971) preenche a lacuna em tabela
+   separada, com URL e data. O qualifying de 1970 a 2002, ausente na primária
+   em 1970–1993 e na maior parte dos GPs de 1996–2002, foi complementado pela
    Wikipédia (en) na própria tabela de classificação, com
    `source_url`/`fetched_at` por linha e sem tocar nos GPs da fonte primária.
    Em 1994 a primária cobre 15 de 16 GPs; o GP restante foi complementado e as
@@ -347,7 +351,7 @@ f1-data-center/
 
 ## Limitações conhecidas
 
-- Em **1975–1993** a fonte primária não traz nenhuma linha de qualifying; todos
+- Em **1970–1993** a fonte primária não traz nenhuma linha de qualifying; todos
   os GPs de cada ano foram complementados pela Wikipédia (en). Em **1994** a
   primária cobre 15 GPs e o restante foi complementado. Em **1995** o qualifying
   já vem completo da fonte primária. De **1996 a 1999** a primária cobriu 7/16,
@@ -362,9 +366,10 @@ f1-data-center/
   enquanto a Wikipédia e a formula1.com registram 1:25.242; o valor da fonte
   primária foi mantido e documentado. Até **2003** a fonte também não traz volta
   mais rápida em todos os GPs; as poles e voltas rápidas ausentes nesse período
-  foram complementadas pela Wikipédia (pt).
+  foram complementadas com proveniência (Wikipédia pt em 1972–2003; infobox do
+  GP na Wikipédia en para as voltas rápidas de 1970–1971).
 - A API pode não trazer volta mais rápida em todos os GPs; nesses casos o painel
-  mostra "Não disponível". A única ausência real documentada fora de 1975–2003 é
+  mostra "Não disponível". A única ausência real documentada fora de 1970–2003 é
   Spa 2021 (corrida encerrada sob safety car após 1 volta).
 - Penalidades e decisões dos comissários não são inferidas nem exibidas além do
   que a API informa.
@@ -379,7 +384,7 @@ f1-data-center/
   Scheckter tem 60 pontos brutos e 51 oficiais, e Villeneuve 53 brutos e 47
   oficiais; em **1980** só os 5 melhores de cada metade contavam (Jones 71 brutos
   / 67 oficiais, Reutemann 49 / 42) e em **1990** só os 11 melhores (Prost 73 /
-  71, Piquet 44 / 43). De **1975 a 1978** o campeonato de construtores só
+  71, Piquet 44 / 43). De **1970 a 1978** o campeonato de construtores só
   creditava o melhor carro de cada equipe em cada GP, com descarte dos piores
   resultados. Os pontos brutos continuam nos resultados; a validação aplica o
   ajuste oficial de reconciliação sem alterar dado importado.
@@ -395,7 +400,8 @@ f1-data-center/
 
 - API: <https://api.jolpi.ca/ergast/f1/>
 - Documentação: <https://github.com/jolpica/jolpica-f1>
-- Complemento de poles/voltas rápidas (1975–2003):
+- Complemento de poles/voltas rápidas (1972–2003):
+  <https://pt.wikipedia.org/wiki/Campeonato_Mundial_de_F%C3%B3rmula_1_de_1972>,
   <https://pt.wikipedia.org/wiki/Campeonato_Mundial_de_F%C3%B3rmula_1_de_1975>,
   <https://pt.wikipedia.org/wiki/Campeonato_Mundial_de_F%C3%B3rmula_1_de_1980>,
   <https://pt.wikipedia.org/wiki/Campeonato_Mundial_de_F%C3%B3rmula_1_de_1990>,
@@ -404,12 +410,17 @@ f1-data-center/
   <https://pt.wikipedia.org/wiki/Campeonato_Mundial_de_F%C3%B3rmula_1_de_2001>,
   <https://pt.wikipedia.org/wiki/Campeonato_Mundial_de_F%C3%B3rmula_1_de_2002> e
   <https://pt.wikipedia.org/wiki/Campeonato_Mundial_de_F%C3%B3rmula_1_de_2003>
-- Complemento da classificação de 1975 a 2002: páginas de GP da Wikipédia em
-  inglês (por exemplo, <https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix>,
+- Complemento da classificação de 1970 a 2002: páginas de GP da Wikipédia em
+  inglês (por exemplo, <https://en.wikipedia.org/wiki/1970_Spanish_Grand_Prix>,
+  <https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix>,
   <https://en.wikipedia.org/wiki/1980_Dutch_Grand_Prix>,
   <https://en.wikipedia.org/wiki/1996_French_Grand_Prix>,
   <https://en.wikipedia.org/wiki/2000_Australian_Grand_Prix>,
   <https://en.wikipedia.org/wiki/2001_Australian_Grand_Prix> e
   <https://en.wikipedia.org/wiki/2002_Australian_Grand_Prix>), que citam os
   arquivos da FIA.
+- Voltas rápidas de 1970 e 1971: infobox das páginas de GP da Wikipédia em
+  inglês (por exemplo, <https://en.wikipedia.org/wiki/1970_South_African_Grand_Prix>
+  e <https://en.wikipedia.org/wiki/1971_South_African_Grand_Prix>). As poles
+  desses anos vêm do P1 do qualifying importado.
 - Conferência externa: <https://www.formula1.com/> e <https://www.fia.com/>
