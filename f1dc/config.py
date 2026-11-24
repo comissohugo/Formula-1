@@ -5,6 +5,11 @@ from pathlib import Path
 # --- Fonte de dados -------------------------------------------------------
 BASE_URL = "https://api.jolpi.ca/ergast/f1"
 SEASONS = (
+    1975,
+    1976,
+    1977,
+    1978,
+    1979,
     1980,
     1981,
     1982,
@@ -123,6 +128,11 @@ PAGE_SIZE = 100
 
 # --- Expectativas do projeto (documento central, seção 2) -----------------
 EXPECTED_RACES = {
+    1975: 14,
+    1976: 16,
+    1977: 17,
+    1978: 16,
+    1979: 15,
     1980: 14,
     1981: 15,
     1982: 16,
@@ -171,6 +181,11 @@ EXPECTED_RACES = {
     2025: 24,
 }
 EXPECTED_SPRINTS = {
+    1975: 0,
+    1976: 0,
+    1977: 0,
+    1978: 0,
+    1979: 0,
     1995: 0,
     1996: 0,
     1997: 0,
@@ -207,6 +222,11 @@ EXPECTED_SPRINTS = {
 # Conferência externa dos campeões (fontes oficiais).
 # Usada apenas para VALIDAR o que a API entregou, nunca para preencher dado.
 EXPECTED_CHAMPIONS = {
+    1975: ("lauda", "ferrari"),
+    1976: ("hunt", "ferrari"),
+    1977: ("lauda", "ferrari"),
+    1978: ("mario_andretti", "team_lotus"),
+    1979: ("scheckter", "ferrari"),
     1980: ("jones", "williams"),
     1981: ("piquet", "williams"),
     1982: ("keke_rosberg", "ferrari"),
@@ -263,17 +283,52 @@ EXPECTED_CHAMPIONS = {
 # pontos; apenas a equipe foi penalizada no campeonato.
 CONSTRUCTOR_POINT_ADJUSTMENTS = {
     (2020, "racing_point"): -15.0,
+    # 1975–1978: o campeonato de construtores só creditava o melhor carro de
+    # cada equipe em cada GP (os pontos dos demais carros seguem registrados nos
+    # resultados, mas não contavam para a taça) e aplicava descarte dos piores
+    # resultados. Os valores abaixo são a diferença contábil entre a soma bruta
+    # e o standings oficial da Jolpica — não alteram nenhum resultado importado.
+    (1975, "ferrari"): -17.0,
+    (1975, "brabham"): -7.0,
+    (1975, "mclaren"): -12.0,
+    (1975, "tyrrell"): -7.0,
+    (1975, "march"): -1.5,
+    (1976, "ferrari"): -16.0,
+    (1976, "mclaren"): -14.0,
+    (1976, "tyrrell"): -17.0,
+    (1976, "team_lotus"): -3.0,
+    (1976, "brabham-alfa_romeo"): -2.0,
+    (1977, "ferrari"): -30.0,
+    (1977, "team_lotus"): -5.0,
+    (1977, "mclaren"): -9.0,
+    (1977, "shadow"): -1.0,
+    (1978, "team_lotus"): -30.0,
+    (1978, "ferrari"): -7.0,
+    (1978, "brabham"): -16.0,
+    (1978, "tyrrell"): -3.0,
+    (1978, "mclaren"): -1.0,
 }
 
-# Ajustes oficiais de pontos de pilotos. Entre 1980 e 1990 vigorava a regra
-# dos melhores resultados (descartes): a soma bruta dos GPs difere do standings
+# Ajustes oficiais de pontos de pilotos. A regra dos melhores resultados
+# (descartes) vigorou de 1975 a 1990: a soma bruta dos GPs difere do standings
 # oficial. Os pontos brutos seguem nos resultados; o ajuste existe apenas para
 # reconciliar a validação com o standings oficial, nunca para alterar dados.
+# 1977: Lauda 72 brutos / 70 oficiais; Reutemann 42 / 41.
+# 1979: Scheckter 60 / 51, Villeneuve 53 / 47, Jones 43 / 40,
+#       Regazzoni 32 / 29, Depailler 22 / 20 e Reutemann 25 / 20.
 # 1980: só os 5 melhores resultados de cada metade do campeonato contavam —
 # Jones 71 brutos / 67 oficiais, Reutemann 49 brutos / 42 oficiais.
 # 1990: só os 11 melhores resultados contavam — Prost 73 brutos / 71 oficiais,
 # Piquet 44 brutos / 43 oficiais.
 DRIVER_POINT_ADJUSTMENTS = {
+    (1977, "lauda"): -2.0,
+    (1977, "reutemann"): -1.0,
+    (1979, "scheckter"): -9.0,
+    (1979, "gilles_villeneuve"): -6.0,
+    (1979, "jones"): -3.0,
+    (1979, "regazzoni"): -3.0,
+    (1979, "depailler"): -2.0,
+    (1979, "reutemann"): -5.0,
     (1980, "jones"): -4.0,
     (1980, "reutemann"): -7.0,
     (1985, "prost"): -3.0,

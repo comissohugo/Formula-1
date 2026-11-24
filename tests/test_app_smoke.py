@@ -180,7 +180,7 @@ def test_app_vencedores_por_seculo():
     assert not app.exception, [str(e) for e in app.exception]
     markdowns = [str(m.value) for m in app.markdown]
     assert any("Maiores vencedores por século" in m for m in markdowns)
-    assert any("Século XX (1980–1999)" in m for m in markdowns)
+    assert any("Século XX (1975–1999)" in m for m in markdowns)
     assert any("Século XXI (2000–2026)" in m for m in markdowns)
     warnings = [str(w.value) for w in app.warning]
-    assert any("faltam as temporadas 1950–1979" in w for w in warnings), warnings
+    assert any("faltam as temporadas 1950–1974" in w for w in warnings), warnings

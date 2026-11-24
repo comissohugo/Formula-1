@@ -1,4 +1,4 @@
-"""Cadastra pilotos/equipes que só aparecem na Wikipédia (1980–1992).
+"""Cadastra pilotos/equipes que só aparecem na Wikipédia (1975–1992).
 
 A fonte primária (Jolpica) não registra classificação nesses anos e, por isso,
 não chegou a criar cadastro para pilotos que apenas tentaram a classificação.
@@ -95,6 +95,81 @@ DRIVERS = [
         "nationality": "British",
         "url": "https://en.wikipedia.org/wiki/Stephen_South",
     },
+    # 1975–1979: pilotos que apenas tentaram a classificação e por isso não
+    # aparecem nos resultados da fonte primária. Nomes/nacionalidades vêm das
+    # páginas individuals da Wikipédia (en), sem qualquer estatística inferida.
+    {
+        "driver_id": "tony_trimmer",
+        "given_name": "Tony",
+        "family_name": "Trimmer",
+        "full_name": "Tony Trimmer",
+        "nationality": "British",
+        "url": "https://en.wikipedia.org/wiki/Tony_Trimmer",
+    },
+    {
+        "driver_id": "masami_kuwashima",
+        "given_name": "Masami",
+        "family_name": "Kuwashima",
+        "full_name": "Masami Kuwashima",
+        "nationality": "Japanese",
+        "url": "https://en.wikipedia.org/wiki/Masami_Kuwashima",
+    },
+    {
+        "driver_id": "bernard_de_dryver",
+        "given_name": "Bernard",
+        "family_name": "de Dryver",
+        "full_name": "Bernard de Dryver",
+        "nationality": "Belgian",
+        "url": "https://en.wikipedia.org/wiki/Bernard_de_Dryver",
+    },
+    {
+        "driver_id": "mikko_kozarowitzky",
+        "given_name": "Mikko",
+        "family_name": "Kozarowitzky",
+        "full_name": "Mikko Kozarowitzky",
+        "nationality": "Finnish",
+        "url": "https://en.wikipedia.org/wiki/Mikko_Kozarowitzky",
+    },
+    {
+        "driver_id": "hans_heyer",
+        "given_name": "Hans",
+        "family_name": "Heyer",
+        "full_name": "Hans Heyer",
+        "nationality": "German",
+        "url": "https://en.wikipedia.org/wiki/Hans_Heyer",
+    },
+    {
+        "driver_id": "teddy_pilette",
+        "given_name": "Teddy",
+        "family_name": "Pilette",
+        "full_name": "Teddy Pilette",
+        "nationality": "Belgian",
+        "url": "https://en.wikipedia.org/wiki/Teddy_Pilette",
+    },
+    {
+        "driver_id": "divina_galica",
+        "given_name": "Divina",
+        "family_name": "Galica",
+        "full_name": "Divina Galica",
+        "nationality": "British",
+        "url": "https://en.wikipedia.org/wiki/Divina_Galica",
+    },
+    {
+        "driver_id": "alberto_colombo",
+        "given_name": "Alberto",
+        "family_name": "Colombo",
+        "full_name": "Alberto Colombo",
+        "nationality": "Italian",
+        "url": "https://en.wikipedia.org/wiki/Alberto_Colombo_(racing_driver)",
+    },
+    {
+        "driver_id": "gimax",
+        "given_name": "Carlo",
+        "family_name": "Franchi",
+        "full_name": "Gimax",
+        "nationality": "Italian",
+        "url": "https://en.wikipedia.org/wiki/Gimax",
+    },
 ]
 
 CONSTRUCTORS = [
@@ -103,6 +178,13 @@ CONSTRUCTORS = [
         "name": "Coloni",
         "nationality": "Italian",
         "url": "https://en.wikipedia.org/wiki/Coloni_(Formula_One)",
+    },
+    {
+        # Equipe suíça de Loris Kessel, inscrita apenas no GP da Itália de 1977.
+        "constructor_id": "apollon",
+        "name": "Apollon",
+        "nationality": "Swiss",
+        "url": "https://en.wikipedia.org/wiki/Apollon_(Formula_One)",
     },
 ]
 

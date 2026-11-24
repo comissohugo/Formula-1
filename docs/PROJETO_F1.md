@@ -1,14 +1,14 @@
 # F1 DATA CENTER --- Documento central do projeto
 
 **Versão:** 2.3\
-**Status:** base 1980–2025 importada e validada; temporada 2026 em andamento
+**Status:** base 1975–2025 importada e validada; temporada 2026 em andamento
 (etapas concluídas importadas; títulos de pilotos e construtores já garantidos
 matematicamente por Antonelli e Mercedes). As poles e voltas rápidas de
-1980–2003, ausentes na fonte primária, foram complementadas pela Wikipédia
-(pt), e o qualifying de 1980–2002 foi complementado pela Wikipédia (en), sempre
+1975–2003, ausentes na fonte primária, foram complementadas pela Wikipédia
+(pt), e o qualifying de 1975–2002 foi complementado pela Wikipédia (en), sempre
 com fonte e data registradas. A fonte primária mantém prioridade.
 O painel também mostra os **maiores vencedores por século** — século XX
-(1980–1999, com aviso de recorte incompleto) e século XXI (2000–2026) —, com o
+(1975–1999, com aviso de recorte incompleto) e século XXI (2000–2026) —, com o
 circuito onde cada piloto mais venceu (empates explícitos), as vitórias por
 circuito e os **circuitos fora do calendário atual**, calculados a partir do
 calendário importado.\
@@ -151,7 +151,7 @@ https://www.formula1.com/ - https://www.fia.com/
 ### Regras importantes
 
 1.  Não afirmar que a base está completa antes de importar e conferir os
-    resultados de GP de cada temporada (821 GPs encerrados de 1980 a 2025,
+    resultados de GP de cada temporada (899 GPs encerrados de 1975 a 2025,
     mais as etapas concluídas de 2026).
 2.  Preservar os registros completos, não somente o Top 10.
 3.  Não confundir pole position com primeiro colocado no grid efetivo.
@@ -182,7 +182,7 @@ https://www.formula1.com/ - https://www.fia.com/
 14. Quando a fonte primária não trouxer pole, volta mais rápida ou a
     classificação completa, a lacuna pode ser complementada por fonte
     alternativa confiável (Wikipédia em português para premiações e em
-    inglês para o qualifying de 1980 a 2002), guardando URL e data. A fonte
+    inglês para o qualifying de 1975 a 2002), guardando URL e data. A fonte
     primária sempre tem prioridade e nenhum dado é preenchido por suposição.
 
 ## 4. Modelo de dados sugerido
@@ -197,7 +197,7 @@ Separar entidades em tabelas ou arquivos normalizados:
 -   `drivers`: identificador, nome, código, número, nacionalidade.
 -   `constructors`: identificador, nome, nacionalidade.
 -   `qualifying_results`: temporada, rodada, piloto, equipe, posição,
-    Q1, Q2, Q3 (em 1980–2002, o tempo da sessão única fica em Q1 e Q2/Q3
+    Q1, Q2, Q3 (em 1975–2002, o tempo da sessão única fica em Q1 e Q2/Q3
     ficam nulos), URL e data da fonte.
 -   `race_results`: temporada, rodada, piloto, equipe, posição, posição
     textual, grid, voltas, pontos, status, tempo.
@@ -311,8 +311,8 @@ inventar estatísticas nem preencher dados ausentes por suposição.
 
 ## 9. Definição de pronto da primeira versão
 
-A primeira versão histórica será considerada pronta quando: - as quarenta e
-seis temporadas encerradas (1980–2025) estiverem carregadas; - os 821 GPs
+A primeira versão histórica será considerada pronta quando: - as cinquenta e
+uma temporadas encerradas (1975–2025) estiverem carregadas; - os 899 GPs
 encerrados estiverem identificados; - cada GP tiver resultado completo
 de corrida e pole identificada (classificação completa na fonte primária
 ou complementada com proveniência); - pole, vencedor, pódio, Top 10 e volta

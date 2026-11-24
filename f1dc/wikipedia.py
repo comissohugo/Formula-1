@@ -52,6 +52,8 @@ DRIVER_ALIASES: dict[str, str] = {
     "rubens barrichelo": "barrichello",
     # A Wikipédia usa "JJ Lehto"; a fonte primária registra "Jyrki Järvilehto".
     "jj lehto": "lehto",
+    # Gimax é o nome de corrida de Carlo Franchi (1978, Itália).
+    "carlo franchi": "gimax",
 }
 
 # Equipes que a Wikipédia (en) nomeia de forma diferente do cadastro da fonte

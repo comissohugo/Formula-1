@@ -1355,6 +1355,53 @@ validação da base.
 
 ------------------------------------------------------------------------
 
+## 2026-11-23 --- Extensão da base para 1975–1979
+
+-   **Decisão:** atender ao pedido do usuário de encerrar o dia com a base a
+    partir de 1975 ("acho que vou parar em 75 talvez"), mantendo 2026 em
+    andamento. A faixa 1970–1974 ficou como possibilidade futura, não executada.
+-   **Arquivos alterados:** `f1dc/config.py`, `f1dc/wikipedia_qualifying.py`,
+    `f1dc/wikipedia.py`, `f1dc/export.py`, `f1dc/__init__.py`, `app.py`,
+    `README.md`, `docs/PROJETO_F1.md`, `scripts/seed_wiki_entities.py`,
+    `tests/test_app_smoke.py`, `data/f1.db`, `data/validation_report.json` e o
+    ZIP de exportação.
+-   **O que foi implementado:**
+    -   importação via Jolpica de 78 GPs (14, 16, 17, 16 e 15 por temporada),
+        1.903 resultados, standings oficiais e campeões conferidos:
+        Lauda/Ferrari (75), Hunt/Ferrari (76), Lauda/Ferrari (77),
+        Mario Andretti/Team Lotus (78) e Scheckter/Ferrari (79);
+    -   qualifying completo de 1975–1979 (1.951 linhas em 78 GPs) pela
+        Wikipédia (en), com `source_url`/`fetched_at` por linha. O parser passou
+        a aceitar cabeçalho `time gap`, vírgula decimal (`1:26,40`), uma casa
+        decimal (`6:58.6`), posições em itálico e construtor sem wikilink;
+        gaps (`+0.43`) nunca viram tempo de volta, e DNQ/EX/DNA seguem sem
+        posição inventada. A conferência das poles P1 contra a Wikipédia (pt)
+        não encontrou divergência;
+    -   78 voltas rápidas complementadas pela Wikipédia (pt), com proveniência.
+        As poles já vêm do P1 do qualifying importado;
+    -   cadastro mínimo de pilotos que só aparecem no qualifying antigo (Tony
+        Trimmer, Masami Kuwashima, Bernard de Dryver, Mikko Kozarowitzky, Hans
+        Heyer, Teddy Pilette, Divina Galica, Alberto Colombo e Gimax), da equipe
+        Apollon e do alias `Carlo Franchi` → `gimax`;
+    -   ajustes oficiais de reconciliação de pontos: descartes de pilotos em
+        1977 (Lauda -2, Reutemann -1) e 1979 (Scheckter -9, Villeneuve -6,
+        Jones -3, Regazzoni -3, Depailler -2, Reutemann -5), e a regra de
+        construtores de 1975–1978 (só o melhor carro da equipe em cada GP,
+        mais descarte). Nenhum resultado importado foi alterado;
+    -   painel "Maiores vencedores por século — século XX" ampliado para
+        1975–1999, com aviso de recorte incompleto para 1950–1974;
+    -   textos de cobertura (README, PROJETO_F1, export) atualizados para
+        1975–2026 (899 GPs encerrados + etapas de 2026).
+-   **Testes realizados:** validação da base `APROVADO` (19/19 checagens),
+    simulação do qualifying sem erros antes da gravação, `pytest -q` com
+    **79 passed**, `py_compile` e `wal_checkpoint(TRUNCATE)` com `(0, 0, 0)`.
+-   **Problemas conhecidos:** 2026 segue em andamento com 21 de 23 GPs; o
+    fechamento depende da publicação dos resultados finais de R23 na API.
+-   **Próxima ação:** publicar o commit e confirmar o Streamlit Cloud; depois
+    acompanhar R22 (29/11), R23 (06/12) e `Fecha2026` (07/12).
+
+------------------------------------------------------------------------
+
 ## Modelo para próximas atualizações
 
 ### AAAA-MM-DD --- Título da alteração

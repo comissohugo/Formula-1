@@ -1,4 +1,4 @@
-"""F1 Data Center - dashboard histórico (1980-2026, com 2026 em andamento).
+"""F1 Data Center - dashboard histórico (1975-2026, com 2026 em andamento).
 
 Execute com:
     streamlit run app.py
@@ -1530,22 +1530,22 @@ with tab_ranking:
         st.markdown("#### Maiores vencedores por século — top 10")
         st.caption(
             "Dois recortes calculados a partir da base carregada: século XX "
-            "(1980–1999) e século XXI (2000–2026). Empates são exibidos "
+            "(1975–1999) e século XXI (2000–2026). Empates são exibidos "
             "explicitamente; nunca são resolvidos por ordem arbitrária."
         )
         render_century_winners(
             frames,
-            "Século XX (1980–1999)",
-            "seculo_xx_1980_1999",
-            1980,
+            "Século XX (1975–1999)",
+            "seculo_xx_1975_1999",
+            1975,
             1999,
-            "Critério: os 10 pilotos com mais vitórias entre 1980 e 1999, com "
+            "Critério: os 10 pilotos com mais vitórias entre 1975 e 1999, com "
             "desempate por pódios e corridas. O circuito é contado por traçado, "
             "não pelo nome do GP. Vitórias em sprints não entram.",
             warning=(
-                "Recorte incompleto: a base começa em 1980, então faltam as "
-                "temporadas 1950–1979 do século XX. Esta lista mostra apenas "
-                "os vencedores de 1980–1999."
+                "Recorte incompleto: a base começa em 1975, então faltam as "
+                "temporadas 1950–1974 do século XX. Esta lista mostra apenas "
+                "os vencedores de 1975–1999."
             ),
         )
         render_century_winners(

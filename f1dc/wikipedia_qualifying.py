@@ -4,7 +4,7 @@ A fonte primária (Jolpica/Ergast) não possui classificação completa em todas
 etapas de 1980–2002. As páginas de cada Grande Prêmio na Wikipédia em inglês
 trazem a tabela de qualifying com posição, piloto, equipe e tempo, citando os
 arquivos da FIA. Este módulo importa **apenas os GPs em que a fonte primária
-não tem nenhuma linha de classificação**.
+não tem nenhuma linha de classificação**. A cobertura vai de 1975 a 2002.
 
 Regras de integridade:
 
@@ -60,10 +60,11 @@ WIKIPEDIA_MARKER = "wikipedia.org"
 # Temporadas cujas páginas de GP usam o formato de tabela suportado por este
 # importador (posição, piloto, equipe e tempo; grid quando existir). 1990–1994
 # usam duas sessões (Q1/Q2) e às vezes uma tabela de pré-classificação antes da
-# principal. 1980–1984 usam ``Time`` ou duas sessões (Q1/Q2), com tempos de duas
+# principal. 1975–1984 usam ``Time`` ou duas sessões (Q1/Q2), com tempos de duas
 # ou três casas decimais; 1996 usa coluna de tempo; 1998 usa ``Lap Time``; 2000 usa tabelas
 # sem coluna de grid e predefinições {{sort}}/{{sortname}}; 2001 usa ``Lap``.
 SUPPORTED_SEASONS = (
+    1975, 1976, 1977, 1978, 1979,
     1980, 1981, 1982, 1983, 1984,
     1985, 1986, 1987, 1988, 1989,
     1990, 1991, 1992, 1993, 1994,
@@ -75,7 +76,7 @@ SUPPORTED_SEASONS = (
 # de várias formas conforme a página: ``Q1``/``Q2``, ``Q1 Time``/``Q2 Time`` ou
 # ``Friday Time``/``Saturday Time``.
 TIME_LABELS = (
-    "time", "lap", "lap time",
+    "time", "lap", "lap time", "time gap",
     "q1", "q2", "q1 time", "q2 time",
     "friday time", "saturday time",
 )
@@ -86,6 +87,12 @@ CONSTRUCTOR_LABELS = ("constructor", "team")
 
 MIN_CLASSIFIED = 10
 
+# 1977 R4 (Espanha): a tabela de qualifying da Wikipédia traz 1:21.630 para a
+# pole de Lauda, enquanto o infobox da mesma página traz 1:21.650. Mantemos o
+# valor da tabela de classificação, que é a fonte do campo `q1`; o infobox não
+# sobrescreve a classificação. Nenhum dos dois foi "corrigido" por suposição.
+# https://en.wikipedia.org/wiki/1977_Spanish_Grand_Prix
+#
 # Divergências conhecidas entre a fonte primária e a Wikipédia em GPs que a
 # fonte primária já cobre. A fonte primária é mantida (nunca sobrescrita) e a
 # divergência vira aviso, sem bloquear o preenchimento dos demais GPs. Cada
@@ -210,11 +217,31 @@ def _driver_name(cell: str) -> str | None:
     return re.sub(r"\s*\([^)]*\)\s*$", "", name).strip()
 
 
+def _constructor_name(cell: str) -> str | None:
+    """Nome da equipe, sem o motor, mesmo quando a célula não tem wikilink."""
+    name = _first_link(cell)
+    if name is None:
+        name = _clean_cell(cell)
+    if not name:
+        return None
+    # Células antigas sem link escrevem ``ATS-Ford``, ``Lotus-Ford`` etc.
+    # A equipe vem antes do hífen; o motor nunca faz parte do cadastro.
+    name = re.split(r"\s*[-–]\s*", name, maxsplit=1)[0].strip()
+    return name or None
+
+
 def _lap_time(cell: str) -> str | None:
     text = _clean_cell(cell)
-    # 1980–1984 costuma usar apenas duas casas decimais (ex.: ``1:44.17``);
-    # as páginas mais recentes usam três. Ambas são válidas e viram texto.
-    match = re.search(r"\b(\d+:\d{2}\.\d{2,3}|\d+\.\d{2,3})\b", text)
+    # 1975–1979 usa vírgula decimal (``1:26,40``) e às vezes só uma casa
+    # (``6:58.6``); 1980–1984 costuma ter duas e as páginas recentes, três.
+    # Todas são válidas: normalizamos a vírgula e gravamos o texto original.
+    text = text.replace(",", ".")
+    # Numa coluna ``Time/Gap`` só a pole traz o tempo absoluto; os demais
+    # valores são diferenças (``+0.43``). Diferença não é tempo de volta e
+    # nunca pode virar q1 — fica ausente, como manda a regra de integridade.
+    if text.startswith(("+", "-", "–", "—")):
+        return None
+    match = re.search(r"\b(\d+:\d{2}\.\d{1,3}|\d+\.\d{1,3})\b", text)
     return match.group(1) if match else None
 
 
@@ -316,8 +343,9 @@ def parse_qualifying_table(wikitext: str) -> dict[str, Any]:
         position_text = _abbreviation(cells[position_idx]) or _clean_cell(
             cells[position_idx]
         )
-        # 1997 Bélgica usa ``6*`` para marcar nota de rodapé na posição.
-        position_text = position_text.rstrip("*")
+        # 1997 Bélgica usa ``6*`` e 1977 Espanha usa ``''25''`` para destacar
+        # a posição; nenhum dos dois é parte do número.
+        position_text = position_text.rstrip("*").replace("'", "")
         position_match = re.fullmatch(r"\d+", position_text)
         name = _driver_name(cells[driver_idx])
         if position_match is None:
@@ -337,7 +365,7 @@ def parse_qualifying_table(wikitext: str) -> dict[str, Any]:
             {
                 "position": int(position_match.group(0)),
                 "driver": name,
-                "constructor": _first_link(cells[constructor_idx]),
+                "constructor": _constructor_name(cells[constructor_idx]),
                 "time": best_time,
             }
         )
